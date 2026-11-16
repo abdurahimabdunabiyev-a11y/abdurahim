@@ -94,6 +94,24 @@ Birinchi kadr hech qachon statik "salom" bilan boshlanmaydi.
   - **Riser** — katta raqam yoki xulosadan oldin
 - SFX nutqni bosib ketmasin (nutqdan 6–10 dB past). Zichlik uslubga bog'liq: kino-podkast — kam; infografika/tech — har grafikada.
 
+## 7.5 Ovozni "eshitib" tekshirish — earshot (MAJBURIY)
+
+Men ovozni eshitmayman. Ovoz haqida hech qachon taxmin bilan gapirma — earshot raqamlari bilan gapir.
+O'rnatilgan: `~/earshot-venv/bin/earshot` (skill: `.claude/skills/earshot`). `EARSHOT_THREADS=4`.
+
+- **Har bir renderdan keyin:** `earshot critique video.mp4` → verdict (launch-grade / close / needs work) va tuzatishlar ro'yxati. Kamida **launch-grade** bo'lmaguncha foydalanuvchiga yuborma (yoki sababini ayt).
+- Batafsil: `earshot timeline video.mp4` (har bir kesishda ovoz bormi), `earshot sheet video.mp4 -o sheet.png` (rasmni ko'r).
+- **SFX manbai — earshot bank** (252 ta, mualliflik huquqisiz): `earshot sfx render ID -o x.wav --json` → `onset_s`/`peak_s` bo'yicha joylash: pop/hit onset kesishda (tap −10…−40 ms oldin), whoosh peak kesishdan +37 ms, reverse swell peak +42 ms. Shablon: `shablon_ovoz.py`.
+- Musiqa/SFX tanlash: `earshot rank "<tavsif>" papka/`, `earshot describe fayl`.
+
+**earshot'dan o'rganilgan qoidalar (2026-11-16, birinchi qoralama):**
+- Har bir kesish/B-roll kirishiga ovoz (whoosh, pop, shutter, hit) — ovozsiz kesish ≤ 1 ta.
+- Musiqani gap ostida **qattiq sidechain qilma** (daqiqasiga 20+ "stop-down" — professional: 0–9). Statik past daraja; faqat katta hitdan oldin 0.3–0.4 s pasaytir (stop-down), hitda qaytar.
+- Kichik effektlar (pop, shutter) −12…−14 dB; salient hit zichligi ≤ 1.7/s.
+- SFX'ni chap/o'ngga taqsimla (pan ±0.3…0.8); musiqaga `extrastereo` (stereowiden basni o'ldiradi — ishlatma).
+- Hook hiti ostiga `cut_hit/sub` bas qatlami; CTA'ga yakuniy sting (`mallet/flourish`) — oxiri sust bo'lmasin.
+- Bassiz musiqa (M2) "thin bottom" beradi — infografika uchun ham bas bor trek afzal.
+
 ## 8. Rang (color grading)
 
 - Bitta videoda barcha kadrlar bir xil kayfiyatda; B-rollni spiker kadriga moslashtir.
