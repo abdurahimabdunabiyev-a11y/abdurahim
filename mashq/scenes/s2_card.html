@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="common.css">
+<style>
+  body { background: #F2F1EF; }
+  #card { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; border-radius: 0;
+          box-shadow: 0 40px 90px rgba(0,0,0,0); transform-origin: 50% 42%; }
+  #m2 { position: absolute; left: 0; right: 0; top: 1500px; text-align: center; font-family: "Inter Display Black";
+        font-size: 150px; color: #041512; letter-spacing: -4px; opacity: 0; }
+  #m2 small { display: block; font-family: "Inter Display SemiBold"; font-size: 54px; color: #22674D; letter-spacing: 0; }
+</style></head><body>
+<div id="card"><img class="full" data-seq="solar" data-max="150"></div>
+<div id="m2">1 MW<small>quyosh stansiyasi</small></div>
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="common.js"></script>
+<script>
+  addLabel('MASHQ 2 · KARTAGA KICHRAYISH');
+  const tl = gsap.timeline({ paused: true });
+  tl.to('#card', { scale: 0.62, y: -210, borderRadius: 60, boxShadow: '0 40px 90px rgba(0,0,0,0.28)',
+                   duration: 0.65, ease: 'power3.inOut' }, 1.0)
+    .fromTo('#m2', { opacity: 0, y: 60, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: 'back.out(1.8)' }, 1.55)
+    .set({}, {}, 3.5);
+  window.tl = tl;
+</script></body></html>

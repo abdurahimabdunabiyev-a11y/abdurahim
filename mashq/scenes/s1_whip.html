@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="common.css">
+<style>
+  #a, #b { will-change: transform; }
+  #b { transform: translateX(1080px); }
+  .cap { position: absolute; left: 0; right: 0; text-align: center; }
+</style></head><body>
+<svg width="0" height="0" style="position:absolute">
+  <filter id="hbA" x="-20%" y="0" width="140%" height="100%"><feGaussianBlur id="gA" stdDeviation="0 0"/></filter>
+  <filter id="hbB" x="-20%" y="0" width="140%" height="100%"><feGaussianBlur id="gB" stdDeviation="0 0"/></filter>
+</svg>
+<div class="layer" id="a" style="filter:url(#hbA)"><img class="full" data-seq="spk" data-max="150"></div>
+<div class="layer" id="b" style="filter:url(#hbB)"><img class="full" data-seq="ship" data-start="1.0" data-max="150"></div>
+<div class="cap key" id="t1" style="top:1300px;font-size:120px;opacity:0">birinchi qo'ldan</div>
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="common.js"></script>
+<script>
+  addLabel('MASHQ 1 · WHIP-SLIDE');
+  const tl = gsap.timeline({ paused: true });
+  const W = 0.28, T = 1.2;
+  // chiqayotgan kadr chapga, kirayotgani o'ngdan; gorizontal blur cho'qqisi o'rtada
+  tl.to('#a', { x: -540, duration: W, ease: 'power3.in' }, T)
+    .to('#b', { x: 0, duration: W, ease: 'power3.out' }, T)
+    .fromTo('#gA', { attr: { stdDeviation: '0 0' } }, { attr: { stdDeviation: '90 0' }, duration: W, ease: 'power2.in' }, T)
+    .fromTo('#gB', { attr: { stdDeviation: '90 0' } }, { attr: { stdDeviation: '0 0' }, duration: W + 0.08, ease: 'power2.out' }, T)
+    .fromTo('#t1', { opacity: 0, y: 30, filter: 'blur(12px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.22, ease: 'power2.out' }, T + 0.3)
+    .set({}, {}, 3.0);
+  window.tl = tl;
+</script></body></html>

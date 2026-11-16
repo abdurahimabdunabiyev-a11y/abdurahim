@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="common.css">
+<style>
+  #grad { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,.65) 100%); }
+  #chat { position: absolute; left: 70px; right: 70px; top: 1060px; display: flex; flex-direction: column; gap: 26px; }
+  .row { display: flex; align-items: flex-end; gap: 16px; }
+  .row.r { justify-content: flex-end; }
+  .av { width: 64px; height: 64px; border-radius: 50%; background: #F2F1EF; flex: none; display: grid; place-items: center;
+        font-family: "Inter Display Black"; font-size: 28px; color: #041512; }
+  .av.ps { background: #22674D; color: #F6B52F; }
+  .b { max-width: 640px; padding: 22px 30px; border-radius: 34px; font-family: "Inter Display SemiBold"; font-size: 46px; line-height: 1.2; transform-origin: 0 100%; }
+  .l .b { background: rgba(242,241,239,.95); color: #111; border-bottom-left-radius: 10px; }
+  .r .b { background: #22674D; color: #fff; border-bottom-right-radius: 10px; transform-origin: 100% 100%; }
+</style></head><body>
+<img class="full" data-seq="spk" data-max="150"><div id="grad"></div>
+<div id="chat">
+  <div class="row l" id="m1"><div class="av">M</div><div class="b">Panel qancha turadi?</div></div>
+  <div class="row r" id="m2"><div class="b">Ulgurji narxda — import o'zimizdan</div><div class="av ps">PS</div></div>
+  <div class="row l" id="m3"><div class="av">M</div><div class="b">Kafolat bormi?</div></div>
+  <div class="row r" id="m4"><div class="b">Ha, chek ham, kafolat ham ✓</div><div class="av ps">PS</div></div>
+</div>
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="common.js"></script>
+<script>
+  addLabel('MASHQ 8 · CHAT DIALOG');
+  const tl = gsap.timeline({ paused: true });
+  gsap.set(['#m1','#m2','#m3','#m4'], { opacity: 0 });
+  [['#m1', 0.4], ['#m2', 1.2], ['#m3', 2.0], ['#m4', 2.7]].forEach(([id, t]) => {
+    tl.to(id, { opacity: 1, duration: 0.01 }, t)
+      .fromTo(id + ' .b', { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: 'back.out(2.2)' }, t)
+      .fromTo(id + ' .av', { scale: 0 }, { scale: 1, duration: 0.25, ease: 'back.out(2)' }, t);
+  });
+  tl.set({}, {}, 4.0);
+  window.tl = tl;
+</script></body></html>

@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="common.css">
+<style>
+  #dim { position: absolute; inset: 0; background: rgba(0,0,0,.25); }
+  #box { position: absolute; left: 110px; right: 110px; top: 1180px; background: #fff; border-radius: 28px;
+         padding: 34px 40px; font-family: "Inter Display SemiBold"; font-size: 54px; line-height: 1.25; color: #111;
+         box-shadow: 0 20px 60px rgba(0,0,0,.35); transform-origin: 50% 50%; }
+  #cur { display: inline-block; width: 4px; height: 56px; background: #111; vertical-align: -8px; margin-left: 3px; }
+</style></head><body>
+<img class="full" data-seq="ship" data-max="150"><div id="dim"></div>
+<div id="box"><span id="txt"></span><span id="cur"></span></div>
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="common.js"></script>
+<script>
+  addLabel('MASHQ 6 · TYPEWRITER');
+  const full = "Panellarni to'g'ridan-to'g'ri o'zimiz import qilamiz";
+  const tl = gsap.timeline({ paused: true });
+  const st = { n: 0 };
+  tl.fromTo('#box', { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: 'back.out(2)' }, 0.3)
+    .to(st, { n: full.length, duration: 1.9, ease: 'none',
+              onUpdate: () => { document.getElementById('txt').textContent = full.slice(0, Math.round(st.n)); } }, 0.6);
+  // kursor: deterministik miltillash (har 0.5 s)
+  for (let t = 2.5; t < 4; t += 0.5) tl.set('#cur', { opacity: 0 }, t).set('#cur', { opacity: 1 }, t + 0.25);
+  tl.set({}, {}, 3.8);
+  window.tl = tl;
+</script></body></html>

@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="common.css">
+<style> .g { position: absolute; inset: 0; transform-origin: 50% 45%; } </style></head><body>
+<!-- A sahna (quyosh) + 5 ta "arvoh" nusxa radial blur uchun; B sahna (kema) xuddi shunday -->
+<div id="A"><div class="g a0"><img class="full" data-seq="solar"></div>
+  <div class="g a1"><img class="full" data-seq="solar"></div><div class="g a2"><img class="full" data-seq="solar"></div>
+  <div class="g a3"><img class="full" data-seq="solar"></div><div class="g a4"><img class="full" data-seq="solar"></div></div>
+<div id="B" style="opacity:0"><div class="g b0"><img class="full" data-seq="ship" data-start="1.25"></div>
+  <div class="g b1"><img class="full" data-seq="ship" data-start="1.25"></div><div class="g b2"><img class="full" data-seq="ship" data-start="1.25"></div>
+  <div class="g b3"><img class="full" data-seq="ship" data-start="1.25"></div><div class="g b4"><img class="full" data-seq="ship" data-start="1.25"></div></div>
+<div id="fl" style="position:absolute;inset:0;background:#fff;opacity:0"></div>
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="common.js"></script>
+<script>
+  addLabel('MASHQ 4 · ZOOM-BLUR');
+  const tl = gsap.timeline({ paused: true });
+  const T = 1.0, D = 0.28;
+  gsap.set(['.a1','.a2','.a3','.a4','.b1','.b2','.b3','.b4'], { opacity: 0 });
+  [1,2,3,4].forEach(k => {
+    tl.to('.a'+k, { opacity: 0.32, duration: 0.08 }, T)
+      .to('.a'+k, { scale: 1.9 + k*0.18, duration: D, ease: 'power3.in' }, T)
+      .fromTo('.b'+k, { scale: 1.5 + k*0.18, opacity: 0.32 }, { scale: 1, opacity: 0, duration: D + 0.05, ease: 'power3.out' }, T + D);
+  });
+  tl.to('.a0', { scale: 1.9, duration: D, ease: 'power3.in' }, T)
+    .set('#B', { opacity: 1 }, T + D).set('#A', { opacity: 0 }, T + D)
+    .fromTo('.b0', { scale: 1.5 }, { scale: 1, duration: D + 0.1, ease: 'power3.out' }, T + D)
+    .fromTo('#fl', { opacity: 0 }, { opacity: 0.35, duration: 0.06, yoyo: true, repeat: 1 }, T + D - 0.06)
+    .set({}, {}, 2.6);
+  window.tl = tl;
+</script></body></html>

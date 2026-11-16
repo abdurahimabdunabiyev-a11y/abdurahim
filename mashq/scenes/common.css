@@ -1,0 +1,11 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; font-family: "Inter Display", "Inter", sans-serif; }
+.full { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+.layer { position: absolute; inset: 0; overflow: hidden; }
+.mlabel { position: absolute; top: 60px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: Michroma, sans-serif;
+  font-size: 26px; letter-spacing: 6px; color: #F6B52F; background: rgba(4,21,18,.82); padding: 14px 28px; border-radius: 999px; z-index: 99; }
+.key { font-family: "Inter Display Black", "Inter Display", sans-serif; font-weight: 900; color: #F2F1EF;
+  text-shadow: 0 6px 24px rgba(0,0,0,.45); letter-spacing: -2px; }
+.ctx { font-family: "Inter Display SemiBold", "Inter Display", sans-serif; font-weight: 600; color: #F2F1EF;
+  text-shadow: 0 4px 16px rgba(0,0,0,.5); }
+.sun { color: #F6B52F; }
