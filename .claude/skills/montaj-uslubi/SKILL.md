@@ -130,10 +130,29 @@ Tanlovni montaj planida qisqa asoslab yoz.
 6. Render → kontakt-varaq bilan o'zing tekshir → foydalanuvchiga yubor.
 7. Musiqa/SFX fayllari: foydalanuvchi yuborgan kutubxonani ishlat; yo'q bo'lsa HyperFrames `media-use` ichidagi bepul SFX. Topilmasa — ayt.
 
+## 10.5 Brend: Premium Solar
+
+- Instagram: **@premiumsolar.uz** — "Quyosh paneli | Ta'minotchi", O'zbekiston bo'yicha quyosh energetikasi ta'minotchisi (B2B ham). Hamkor brendlar postlarda: LONGi, Deye.
+- Logotip: `assets/logo_premium_solar.png` (1536x1024, to'q yashil fon; CTA va intro/outro uchun fonini kesib PNG qil).
+- Ranglar (logotipdan o'lchangan):
+
+  | Rol | HEX |
+  |---|---|
+  | Asosiy fon (to'q yashil) | `#041512` → gradient `#142E28` |
+  | Brend yashil (panellar) | `#22674D` |
+  | Aksent sariq (quyosh, "SOLAR") | `#F6B52F` / `#FAB42D` |
+  | Oq matn | `#F2F1EF` |
+
+- Shrift xarakteri: "PREMIUM" — keng, ekstended geometrik bosh harflar (Michroma / Syncopate / Eurostile Extended uslubi); "SOLAR" — ingichka, keng harf oralig'i bilan. Bo'lim yorliqlari va CTA da shu xarakterni ishlat.
+- **Aksent qoidasi:** pul/raqam va urg'u so'zlar — **sariq `#F6B52F`**; ijobiy/eko so'zlar — **yashil `#22674D`** (to'q fonda yorqinroq `#2E8A63`); salbiy — qizil `#E53935`. Referenslardagi ko'k o'rniga brend sariq ishlatiladi.
+- Grafik kartochkalar/qutilar: to'q yashil fon (`#041512`, 85–90% shaffoflik), ingichka sariq yoki yashil ramka.
+- CTA: yumaloq avatar (logotip) + `@premiumsolar.uz` pill + "Obuna" tugmasi (sariq) va/yoki "Ariza qoldiring / izohga '+' yozing" — sotuv videolarida ariza (B2B katalog) chaqiruvi.
+- Mavzular: quyosh panellari, tejash, elektr narxi, biznes uchun SES, import, ombor, mijozlar → odatda **B. Infografika** yoki ekspert intervyu (V4 uslubi). B-roll: solar farm, rooftop solar, factory, electricity bill, city at night (Mixkit: `solar panels`, `solar energy`, `power lines`, `factory`).
+
 ## 11. Ochiq savollar (foydalanuvchidan hali javob kutilmoqda)
 
 - ~~Asosiy uslub~~ → javob: mavzuga qarab tanla.
 - Musiqa manbasi → foydalanuvchining Telegram kanali `t.me/dilshodkhamraevmuzika`. Telegram bu muhitda bloklangan va fayllarni yuklab bo'lmaydi — foydalanuvchi treklarni 📎 orqali yuboradi; ularni `music/` papkasiga saqlab, BPM va kayfiyat bo'yicha katalog qil.
 - Aniq shrift nomlari / fayllari.
 - O'z SFX kutubxonasi (yo'q bo'lsa HyperFrames `media-use` SFX).
-- Instagram nik, avatar, brend ranglari (CTA uchun).
+- ~~Instagram nik, avatar, brend ranglari~~ → 10.5-bo'limga qarang.
