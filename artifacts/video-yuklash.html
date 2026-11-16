@@ -59,7 +59,7 @@ li { background: var(--surface); border: 1px solid var(--line); border-radius: 1
     <div class="brand">PREMIUM SOLAR · MONTAJ</div>
     <h1>Xom videoni yuklash</h1>
   </header>
-  <p class="lead">4K 60 fps ham, katta fayllar ham asl sifatda yuklanadi. Sahifa videoni 19 MB lik bo'laklarga bo'lib yuboradi, Claude ularni qayta bitta videoga yig'adi.</p>
+  <p class="lead">4K 60 fps ham, katta fayllar ham asl sifatda yuklanadi. Sahifa videoni 15 MB lik bo'laklarga bo'lib yuboradi, Claude ularni qayta bitta videoga yig'adi.</p>
 
   <section class="drop" id="drop">
     <input type="file" id="file" accept="video/*" multiple hidden>
@@ -83,9 +83,10 @@ li { background: var(--surface); border: 1px solid var(--line); border-radius: 1
 </div>
 
 <script>
-const CHUNK = 19 * 1024 * 1024;
+// Bo'laklar base64 matn (text/plain) sifatida yuboriladi: platforma video bo'lakni MP4 emas deb rad etadi, matnni esa tekshirmaydi.
+const CHUNK = 15000000; // 15 MB xom → ~20 MB base64 (chegara 20 MiB)
 const $ = (id) => document.getElementById(id);
-let assets = null, db = null, busy = false, wake = null;
+let assets = null, db = null, busy = false, wake = null, current = null;
 
 function fmt(b) {
   if (b >= 1024 ** 3) return (b / 1024 ** 3).toFixed(2) + ' GB';
@@ -95,20 +96,18 @@ function fmt(b) {
 function say(text, kind) { const m = $('msg'); m.textContent = text; m.className = 'msg ' + kind; m.hidden = !text; }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-// Bo'lak boshi "<" bilan boshlansa, platforma uni HTML deb rad etadi — chegarani biroz orqaga suramiz.
-async function safeStart(file, pos) {
-  for (let i = 0; i < 4096 && pos > 0; i++) {
-    const head = new Uint8Array(await file.slice(pos, pos + 64).arrayBuffer());
-    let k = 0; while (k < head.length && [9, 10, 13, 32].includes(head[k])) k++;
-    if (k >= head.length || head[k] !== 0x3C) return pos;
-    pos -= 1;
-  }
-  return pos;
+function toBase64(blob) {
+  return new Promise((res, rej) => {
+    const fr = new FileReader();
+    fr.onload = () => { const s = String(fr.result); res(s.slice(s.indexOf(',') + 1)); };
+    fr.onerror = () => rej({ code: 'read_error', message: 'Faylni o\'qib bo\'lmadi' });
+    fr.readAsDataURL(blob);
+  });
 }
 
 async function uploadPart(blob) {
   for (let attempt = 0; attempt < 4; attempt++) {
-    try { return await assets.upload(blob, { type: 'video/mp4' }); }
+    try { return await assets.upload(new Blob([await toBase64(blob)], { type: 'text/plain' }), { type: 'text/plain' }); }
     catch (e) {
       const c = e && e.code;
       if (c === 'store_unavailable' || c === 'upstream_error') { await sleep(2000 * (attempt + 1)); continue; }
@@ -129,17 +128,17 @@ async function refreshUsage() {
 async function sendFile(file, idx, total) {
   const ref = db.collection('uploads').doc();
   const meta = { name: file.name || 'video.mp4', size: file.size, mime: file.type || '', lastModified: file.lastModified || 0,
-                 createdAt: new Date().toISOString(), status: 'uploading', uploaded: 0, chunks: [] };
+                 createdAt: new Date().toISOString(), status: 'uploading', uploaded: 0, encoding: 'base64', chunks: [] };
   await ref.set(meta);
+  current = { ref, chunks: meta.chunks };
   $('sName').textContent = meta.name;
   $('sAll').textContent = total > 1 ? `${idx + 1} / ${total} video` : '';
   let pos = 0; const chunks = [];
   while (pos < file.size) {
-    let end = Math.min(pos + CHUNK, file.size);
-    if (end < file.size) end = await safeStart(file, end);
+    const end = Math.min(pos + CHUNK, file.size);
     $('sDetail').textContent = `${chunks.length + 1}-bo'lak · ${fmt(pos)} / ${fmt(file.size)}`;
     const r = await uploadPart(file.slice(pos, end));
-    chunks.push({ id: r.id, start: pos, size: end - pos });
+    chunks.push({ id: r.id, start: pos, size: end - pos }); current.chunks = chunks;
     pos = end;
     const pct = Math.round((pos / file.size) * 100);
     $('sBar').style.width = pct + '%'; $('sPct').textContent = pct + '%';
@@ -162,6 +161,8 @@ async function handle(files) {
     say(ok > 1 ? `${ok} ta video yuklandi. Claude'ga "yukladim" deb yozing.` : `Video yuklandi. Claude'ga "yukladim" deb yozing.`, 'ok');
   } catch (e) {
     const c = e && e.code;
+    // Yarim qolgan yuklamani belgilaymiz (bo'sh bo'lsa — butunlay o'chiramiz).
+    try { if (current) { if (!current.chunks.length) await current.ref.delete(); else await current.ref.update({ status: 'failed' }); } } catch (_) {}
     const text = c === 'quota_or_state' ? "Joy tugadi. Pastdagi eski videolarni o'chiring yoki Claude'dan tozalashni so'rang, keyin qayta urinib ko'ring."
       : c === 'not_granted' ? "Yuklashga ruxsat berilmadi. Sahifani claude.ai'ga o'z akkauntingiz bilan kirgan holda oching."
       : `Yuklash to'xtadi (${c || 'xato'}). Internetni tekshirib, videoni qayta tanlang.`;
@@ -183,9 +184,9 @@ function render(snap) {
     const v = d.data(); const li = document.createElement('li');
     const nm = document.createElement('div'); nm.className = 'nm'; nm.textContent = v.name;
     const pill = document.createElement('span');
-    const done = v.status === 'done';
-    pill.className = 'pill ' + (done ? 'done' : 'up');
-    pill.textContent = done ? 'Tayyor' : `Yuklanmoqda ${Math.round((v.uploaded / v.size) * 100) || 0}%`;
+    const done = v.status === 'done', failed = v.status === 'failed';
+    pill.className = 'pill ' + (done ? 'done' : failed ? 'bad' : 'up');
+    pill.textContent = done ? 'Tayyor' : failed ? 'Chala qoldi' : `Yuklanmoqda ${Math.round((v.uploaded / v.size) * 100) || 0}%`;
     const meta = document.createElement('div'); meta.className = 'meta';
     meta.textContent = `${fmt(v.size)} · ${(v.chunks || []).length} bo'lak`;
     const del = document.createElement('button'); del.className = 'del'; del.type = 'button'; del.textContent = "O'chirish";

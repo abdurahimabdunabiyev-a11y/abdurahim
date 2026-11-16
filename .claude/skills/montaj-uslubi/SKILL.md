@@ -116,9 +116,9 @@ Claude ilovasi 30 MB dan katta faylni qabul qilmaydi. Foydalanuvchida App Store/
 Yechim — **"Montaj Yuklash" sahifasi**: https://claude.ai/artifact/J1Emidie83yWqgp1qwL6rm
 (manba: `artifacts/video-yuklash.html`, capabilities: assets + db + user).
 
-- Sahifa videoni 19 MiB bo'laklarga bo'lib `assets` ga `video/mp4` sifatida yuklaydi (bo'lak boshi `<` bo'lmasligi uchun chegarani suradi).
-- Har bir video uchun `uploads` kolleksiyasida hujjat: `{name, size, mime, status: "uploading"|"done", uploaded, chunks: [{id, start, size}]}`.
-- **Yig'ish:** `ArtifactData list` (`collection: "uploads"`) → `status == "done"` hujjatni ol → har bir `chunks[i].id` ni `Artifact read` (`url` + `path: <id>`) bilan yuklab ol → `start` tartibida `cat` qil → hajm `size` ga tengligini va `ffprobe` ochishini tekshir.
+- Sahifa videoni 15 MB bo'laklarga bo'lib, har birini **base64 matn (`text/plain`)** qilib `assets` ga yuklaydi. (Video bo'lakni `video/mp4` deb yuklab bo'lmaydi — platforma MP4 sarlavhasini tekshirib `unsupported_type` beradi; matnni tekshirmaydi.)
+- Har bir video uchun `uploads` kolleksiyasida hujjat: `{name, size, mime, encoding: "base64", status: "uploading"|"done"|"failed", uploaded, chunks: [{id, start, size}]}`.
+- **Yig'ish:** `ArtifactData list` (`collection: "uploads"`) → `status == "done"` hujjatni ol → har bir `chunks[i].id` ni `Artifact read` (`url` + `path: <id>`) bilan yuklab ol (`.txt` bo'lib tushadi) → `start` tartibida har birini `base64 -d` qilib birlashtir → hajm `size` ga tengligini va `ffprobe` ochishini tekshir.
 - Ishlov berib bo'lgach, foydalanuvchi sahifadagi **"O'chirish"** tugmasi bilan tozalaydi (yoki so'rasa, Claude o'chiradi) — joy (quota) cheklangan.
 
 ## 10. Ish tartibi (xom video kelganda)
