@@ -112,6 +112,13 @@ O'rnatilgan: `~/earshot-venv/bin/earshot` (skill: `.claude/skills/earshot`). `EA
 - Hook hiti ostiga `cut_hit/sub` bas qatlami; CTA'ga yakuniy sting (`mallet/flourish`) — oxiri sust bo'lmasin.
 - Bassiz musiqa (M2) "thin bottom" beradi — infografika uchun ham bas bor trek afzal.
 
+## 7.6 Videoni "ko'rish" — /watch (claude-video plagini)
+
+- Plagin: `watch@claude-video` (github.com/bradautomates/claude-video). Skript: `/root/.claude/plugins/cache/claude-video/watch/*/skills/watch/scripts/watch.py`.
+- **local** (sozlangan): `watch.py <video> --question "..." --detail balanced` → vaqt belgili kadrlar; nutq uchun o'zimizning faster-whisper large-v3 (uz) ishlatiladi (watch'ning ASR fallback'i o'chirilgan: `backend none`).
+- **gemini** (kalit bo'lsa): Gemini videoni ovozi bilan to'liq ko'radi — referens tahlili va tayyor montajni "tomosha qilib" baholash uchun. Kalit muhit tarmoq sirida (`generativelanguage.googleapis.com`, header `x-goog-api-key`); `~/.config/watch/.env` da `GEMINI_API_KEY=proxy-injected`.
+- Instagram/TikTok/YouTube havolalarini yuklab olish bu muhitda ishlamaydi (CDN manzillari dinamik) — videoni foydalanuvchi yuboradi.
+
 ## 8. Rang (color grading)
 
 - Bitta videoda barcha kadrlar bir xil kayfiyatda; B-rollni spiker kadriga moslashtir.
