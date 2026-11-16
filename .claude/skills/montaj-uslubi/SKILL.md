@@ -110,6 +110,17 @@ Tanlovni montaj planida qisqa asoslab yoz.
 | B. Infografika | V4, V5 | Biznes, raqamlar, investitsiya |
 | C. Tech-HUD | V6 | Shaxsiy brend, marketing, zamonaviy mavzular |
 
+## 9.5 Katta videolarni qabul qilish (4K 60)
+
+Claude ilovasi 30 MB dan katta faylni qabul qilmaydi. Foydalanuvchida App Store/Google Drive yo'q.
+Yechim — **"Montaj Yuklash" sahifasi**: https://claude.ai/artifact/J1Emidie83yWqgp1qwL6rm
+(manba: `artifacts/video-yuklash.html`, capabilities: assets + db + user).
+
+- Sahifa videoni 19 MiB bo'laklarga bo'lib `assets` ga `video/mp4` sifatida yuklaydi (bo'lak boshi `<` bo'lmasligi uchun chegarani suradi).
+- Har bir video uchun `uploads` kolleksiyasida hujjat: `{name, size, mime, status: "uploading"|"done", uploaded, chunks: [{id, start, size}]}`.
+- **Yig'ish:** `ArtifactData list` (`collection: "uploads"`) → `status == "done"` hujjatni ol → har bir `chunks[i].id` ni `Artifact read` (`url` + `path: <id>`) bilan yuklab ol → `start` tartibida `cat` qil → hajm `size` ga tengligini va `ffprobe` ochishini tekshir.
+- Ishlov berib bo'lgach, foydalanuvchi sahifadagi **"O'chirish"** tugmasi bilan tozalaydi (yoki so'rasa, Claude o'chiradi) — joy (quota) cheklangan.
+
 ## 10. Ish tartibi (xom video kelganda)
 
 1. **Ko'rib chiq:** `ffprobe` (o'lcham, fps, ovoz), kontakt-varaqlar (`fps=2,tile`), transkripsiya:
