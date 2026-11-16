@@ -82,6 +82,27 @@ Birinchi kadr hech qachon statik "salom" bilan boshlanmaydi.
 - O'tishlar: oddiy cut asosiy; vaqti-vaqti bilan **doira wipe**, **flash kadr**, **xromatik aberratsiya glitch**, oq fonli grafik sahnaga o'tish. Bitta videoda 2–3 xil o'tishdan oshma.
 - **CTA (oxirgi 3–5 s):** yumaloq avatar + @nik "pill" + "Obuna" tugmasi bosiladi (✓ / "Rahmat"), va/yoki "izohlarda **7** raqamini qoldiring" (ulkan raqam).
 
+## 6.5 O'tishlar va animatsiya (2-to'plam, batafsil: `references/referenslar_2.md`)
+
+**O'tishlar** — asosiysi toza kesish; "katta" o'tish faqat bo'lim almashganda (har 8–15 s), bitta videoda 2–3 xil:
+- **Whip-slide** 0.2–0.3 s: yangi kadr yon tomondan, kuchli gorizontal motion-blur, ease-out (+ `whoosh_fast/whip`).
+- **Kartaga kichrayish** 0.5–0.7 s: to'liq kadr yumaloq burchakli kartaga kichrayadi (oq/rangli fon), keyin grafik sahna.
+- **Karta push/expand** 0.6–0.8 s: kichik video karta chetdan kirib to'liq ekranga kattalashadi.
+- **Zoom-blur push-in** 0.3 s: obyektga tez zoom + radial blur → keyingi sahna.
+- **Glitch/to'lqin** 0.4–0.5 s: displacement + RGB siljish (kamdan-kam).
+- **Defokus → fokus** video boshida; matn chiqishi pastga siljib + blur.
+
+**Animatsiya/grafika arsenali** (mavzuga mos tanla, hammasini birdan emas):
+- Kinetik matn: **bosh atrofida yoy (arc) matn**, harf-harf rang to'ldirish, **typewriter + kursor** (oq quti), chizib tashlash, **qo'lda chizilgan doira**, qo'shtirnoqli ko'chirma.
+- 3D: muz/shisha/xrom raqam va so'zlar, 3D ikonka kartalar (gradient kvadrat), mahsulot render + callout yorliqlar (01, 02, 03).
+- UI: **chat pufakchalari** (2 spiker dialogi), iOS toggle, bildirishnoma stack, qidiruv paneli, tanlov tugmalari, AI/ilova kartalari, REC viewfinder.
+- Editorial: Didone serif sarlavha, **tilla italik script** ikkinchi qator, halftone poster, piksel shrift.
+- Raqamlar: **rolling sanagich** + orqada ulkan xira raqam, to'q sariq lower bar.
+- Atmosfera: chang/uchqun zarralari, spotlight nur.
+- Layout: pastki 30% qora gradient + chapga tekislangan matn (N2); 4:5 kadr 9:16 ichida (N8).
+- Imo-ishora bilan bog'langan obyekt (qo'ldan uchib chiqadi) — trek qilinadi.
+- Asbob: murakkab animatsiyalar **HyperFrames** (HTML→video, GSAP) bilan quriladi; oddiylari ffmpeg/ASS.
+
 ## 7. Ovoz dizayni
 
 - **Musiqa foni hech qachon to'xtamaydi**, nutqdan ~12–18 dB past (nutq ~−20 dB, fon ~−30…−36 dB). Bass ko'p musiqada nutq diapazonini (1–4 kHz) EQ bilan bo'shat.
@@ -103,6 +124,15 @@ O'rnatilgan: `~/earshot-venv/bin/earshot` (skill: `.claude/skills/earshot`). `EA
 - Batafsil: `earshot timeline video.mp4` (har bir kesishda ovoz bormi), `earshot sheet video.mp4 -o sheet.png` (rasmni ko'r).
 - **SFX manbai — earshot bank** (252 ta, mualliflik huquqisiz): `earshot sfx render ID -o x.wav --json` → `onset_s`/`peak_s` bo'yicha joylash: pop/hit onset kesishda (tap −10…−40 ms oldin), whoosh peak kesishdan +37 ms, reverse swell peak +42 ms. Shablon: `shablon_ovoz.py`.
 - Musiqa/SFX tanlash: `earshot rank "<tavsif>" papka/`, `earshot describe fayl`.
+
+**REELS PROFILI (asosiy!):** `earshot critique video.mp4 --profile .claude/skills/montaj-uslubi/reels_profile.json` — foydalanuvchining 14 ta referens reels'idan yasalgan (V1–V6, N1–N8). Standart (launch film) profilni emas, SHUNI ishlat. Yangi referens kelganda profilni qayta yasa: `earshot profile <papka> -o reels_profile.json`.
+Reels me'yorlari: −14 LUFS, LRA 1.6–3.7, kesishda ovoz ≥ 85%, salient hit 1.4–2.0/s, stereo deyarli mono (normal), oxiri asosiy qismdan past emas.
+
+**2-to'plamdan (N1–N8) ovoz qoidalari** (batafsil: `references/referenslar_2_ovoz.md`):
+- Musiqa 3–5 bo'lim, har 6–15 s da trek/janr almashadi (bo'lim almashganda). Janrlar: corporate (boshida), trap, hip-hop bass, techno, funk, glitch hop; vocal chop'li.
+- Har bir matn/karta/ikonka paydo bo'lishiga **UI pop** (`ui_pop/*`) — eng ko'p ishlatiladigan effekt.
+- Muhim raqam/fakt ostiga **sub drop**; bo'lim boshiga **impact**; o'tishlarga **whip whoosh**; ijobiy urg'uga **pluck/glock**; reveal oldidan **reverse swell** (kam).
+- 0.3–0.5 s **stop-down** dramatik pauza uchun; CTA'da musiqa pasaymaydi.
 
 **earshot'dan o'rganilgan qoidalar (2026-11-16, birinchi qoralama):**
 - Har bir kesish/B-roll kirishiga ovoz (whoosh, pop, shutter, hit) — ovozsiz kesish ≤ 1 ta.
