@@ -100,7 +100,9 @@ Birinchi kadr hech qachon statik "salom" bilan boshlanmaydi.
 - Spiker: iliq teri ohangi, yumshoq-o'rta kontrast, biroz past saturatsiya, chuqur soyalar (kinematografik).
 - Kino-uslub: teal-orange, qorong'i; infografika-uslub: toza, oq-ko'k; tech-uslub: zaytun fon + neon aksent.
 
-## 9. Uslub variantlari (mavzuga qarab tanla, foydalanuvchidan so'ra)
+## 9. Uslub variantlari — **mavzuga qarab o'zing tanla** (foydalanuvchi qarori, 2026-11-16)
+
+Tanlovni montaj planida qisqa asoslab yoz.
 
 | Variant | Referens | Qachon |
 |---|---|---|
@@ -130,7 +132,8 @@ Birinchi kadr hech qachon statik "salom" bilan boshlanmaydi.
 
 ## 11. Ochiq savollar (foydalanuvchidan hali javob kutilmoqda)
 
-- Asosiy uslub qaysi (A/B/C yoki mavzuga qarab)?
+- ~~Asosiy uslub~~ → javob: mavzuga qarab tanla.
+- Musiqa manbasi → foydalanuvchining Telegram kanali `t.me/dilshodkhamraevmuzika`. Telegram bu muhitda bloklangan va fayllarni yuklab bo'lmaydi — foydalanuvchi treklarni 📎 orqali yuboradi; ularni `music/` papkasiga saqlab, BPM va kayfiyat bo'yicha katalog qil.
 - Aniq shrift nomlari / fayllari.
-- Musiqa janri va o'z SFX/musiqa kutubxonasi.
+- O'z SFX kutubxonasi (yo'q bo'lsa HyperFrames `media-use` SFX).
 - Instagram nik, avatar, brend ranglari (CTA uchun).
