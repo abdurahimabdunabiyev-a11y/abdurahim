@@ -63,6 +63,26 @@ Birinchi kadr hech qachon statik "salom" bilan boshlanmaydi.
   - Raqam/sarlavha: tor bosh harflar (Bebas Neue / Oswald uslubi)
   - Bo'lim yorlig'i: keng ekstended (Druk Wide / Archivo Expanded uslubi)
 
+## 4.5 Shriftlar (foydalanuvchining TOP-20 ro'yxati asosida, 2026-11-16)
+
+O'rnatish: `bash .claude/skills/montaj-uslubi/shriftlar/ornat.sh` (setup skriptida avtomatik). Fayllar gitga kirmaydi.
+**Nomlash:** har qalinlik alohida oila — `"<Oila> <Qalinlik>"`, masalan `General Sans SemiBold`, `Archivo Expanded Black`, `Anton Regular`, `Instrument Serif Regular Italic`. ASS (`Fontname`) va HTML (`font-family`) da aynan shu nom.
+Namuna varag'i: `mashq/scenes/shriftlar.html`. Hammasi o'zbekcha (o', g', «») to'g'ri ko'rsatadi.
+
+| Vazifa | Asosiy | Muqobil |
+|---|---|---|
+| **Premium subtitr** (kontekst + kalit so'z) | `General Sans SemiBold/Regular` | Satoshi, Manrope, Plus Jakarta Sans |
+| **Kuchli hook** (keng, og'ir) | `Archivo Expanded Black` (Druk Wide o'rnida) | Unbounded Black, Clash Display SemiBold |
+| **Professional montaj** (toza grotesk) | `Cabinet Grotesk` / `Inter Tight` (Neue Montreal / Neue Haas / Helvetica Now o'rnida) | Instrument Sans, Hanken Grotesk |
+| **Katta sarlavha** (tor, baland) | `Anton Regular` | Bebas Neue, Oswald Bold |
+| **Zamonaviy / kreativ** | `Space Grotesk Bold` | Syne ExtraBold, Bricolage Grotesque |
+| **Editorial / nafis urg'u** (italik 2-qator) | `Instrument Serif Regular Italic` | — |
+| **Raqamlar / sanagich** | `Bebas Neue` / `Anton` | Archivo Expanded |
+| **Brend yorlig'i** (Premium Solar) | `Michroma` | Archivo Expanded |
+
+Qoidalar: bitta videoda **2 (ko'pi bilan 3) oila** — bitta subtitr + bitta hook/sarlavha (+ ixtiyoriy editorial italik). Gotham o'rnida Montserrat.
+**Pullik shriftlar** (Druk Wide, Neue Montreal, Helvetica Now, Gotham, Neue Haas Grotesk) — o'rnatilmagan, litsenziyasiz yuklab olinmaydi; foydalanuvchi sotib olgan faylni yuborsa, `~/.fonts/montaj/` ga shu nomlash bilan o'rnat.
+
 ## 5. B-roll
 
 - Videoning **~30–55%** vaqti B-roll yoki to'liq ekranli grafika.

@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; background: #0b0f0e; color: #F2F1EF; padding: 50px 50px; font-family: "Inter Regular"; }
+  h1 { font-family: "Michroma"; font-size: 28px; letter-spacing: 6px; color: #F6B52F; margin-bottom: 30px; }
+  .row { border-top: 1px solid #22332e; padding: 18px 0 20px; display: grid; grid-template-columns: 250px 1fr; gap: 20px; align-items: center; }
+  .nm { font-family: "Inter Medium"; font-size: 22px; color: #9DB3AA; line-height: 1.3; }
+  .nm b { display: block; color: #F6B52F; font-family: "Inter SemiBold"; font-weight: 400; font-size: 18px; }
+  .s { font-size: 64px; line-height: 1.05; }
+  .s small { display: block; font-size: 30px; opacity: .75; margin-top: 6px; }
+</style></head><body>
+<h1>SHRIFTLAR · O'ZBEKCHA SINOV</h1>
+<div id="list"></div>
+<script>
+const F = [
+  ["General Sans SemiBold", "General Sans Regular", "General Sans", "TOP · premium subtitr"],
+  ["Archivo Expanded Black", "Archivo Expanded Bold", "Archivo Expanded", "Druk Wide muqobili · hook"],
+  ["Unbounded Black", "Unbounded Medium", "Unbounded", "keng hook"],
+  ["Clash Display SemiBold", "Clash Display Regular", "Clash Display", "bonus · hook / sarlavha"],
+  ["Anton Regular", "Anton Regular", "Anton", "TOP · katta sarlavha"],
+  ["Bebas Neue Regular", "Bebas Neue Regular", "Bebas Neue", "tor sarlavha / raqam"],
+  ["Oswald Bold", "Oswald Regular", "Oswald", "tor sarlavha"],
+  ["Space Grotesk Bold", "Space Grotesk Regular", "Space Grotesk", "TOP · zamonaviy / kreativ"],
+  ["Satoshi Black", "Satoshi Medium", "Satoshi", "subtitr / UI"],
+  ["Cabinet Grotesk ExtraBold", "Cabinet Grotesk Medium", "Cabinet Grotesk", "bonus · Neue Montreal muqobili"],
+  ["Inter Tight Bold", "Inter Tight Regular", "Inter Tight", "Helvetica Now / Neue Haas muqobili"],
+  ["Manrope ExtraBold", "Manrope Medium", "Manrope", "toza subtitr"],
+  ["Plus Jakarta Sans ExtraBold", "Plus Jakarta Sans Medium", "Plus Jakarta Sans", "yumshoq subtitr"],
+  ["Montserrat Black", "Montserrat Medium", "Montserrat", "Gotham muqobili"],
+  ["Archivo Black Regular", "Archivo Black Regular", "Archivo Black", "og'ir sarlavha"],
+  ["Bricolage Grotesque ExtraBold", "Bricolage Grotesque Regular", "Bricolage Grotesque", "xarakterli sarlavha"],
+  ["Syne ExtraBold", "Syne Regular", "Syne", "san'at / kreativ"],
+  ["Instrument Serif Regular Italic", "Instrument Serif Regular", "Instrument Serif", "editorial / tilla script o'rnida"],
+];
+const L = document.getElementById('list');
+F.forEach(([big, small, name, role]) => {
+  L.insertAdjacentHTML('beforeend', `<div class="row"><div class="nm">${name}<b>${role}</b></div>
+   <div class="s" style="font-family:'${big}'">30 YIL kafolat<small style="font-family:'${small}'">o'zbekcha: g'alaba, sho'rva, «ulgurji» 0123</small></div></div>`);
+});
+</script></body></html>
