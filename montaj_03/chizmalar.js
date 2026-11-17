@@ -1,21 +1,30 @@
 // Montaj 03 — kodda chizilgan illyustratsiyalar (stiker uslubi, qora kontur #1d1a16)
 const K = '#1d1a16';
 window.ART = {
-  tesla: (old = false) => `<svg viewBox="0 0 400 520">
-    <path d="M60 520 C60 400 110 360 200 350 C290 360 340 400 340 520 Z" fill="${old ? '#4a4a52' : '#2b2b33'}" stroke="${K}" stroke-width="8"/>
-    <path d="M160 350 L200 430 L240 350 Z" fill="#FBF8F1" stroke="${K}" stroke-width="6"/>
-    <path d="M182 372 L200 392 L218 372 L200 412 Z" fill="${K}"/>
-    <rect x="168" y="290" width="64" height="70" fill="#E3B58E" stroke="${K}" stroke-width="7"/>
-    <path d="M118 170 C118 92 160 58 200 58 C240 58 282 92 282 170 C282 250 248 312 200 318 C152 312 118 250 118 170 Z" fill="#EBC39C" stroke="${K}" stroke-width="8"/>
-    <path d="M112 168 C100 70 160 30 205 34 C262 36 300 80 288 168 C280 120 262 96 238 88 C226 112 212 118 200 118 C188 110 170 96 160 88 C138 98 120 122 112 168 Z" fill="${old ? '#9a9aa2' : '#1f1b1a'}" stroke="${K}" stroke-width="7"/>
-    <path d="M200 40 L200 112" stroke="${old ? '#7a7a82' : '#3a3330'}" stroke-width="5"/>
-    <path d="M150 178 Q168 168 186 178 M214 178 Q232 168 250 178" stroke="${K}" stroke-width="7" fill="none" stroke-linecap="round"/>
-    <ellipse cx="168" cy="196" rx="7" ry="8" fill="${K}"/><ellipse cx="232" cy="196" rx="7" ry="8" fill="${K}"/>
-    <path d="M200 205 L192 240 L206 242" stroke="#b9875f" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M168 262 Q200 248 232 262 Q214 256 200 258 Q186 256 168 262 Z" fill="${old ? '#8a8a92' : '#1f1b1a'}" stroke="${K}" stroke-width="4"/>
-    <path d="M182 280 Q200 288 218 280" stroke="#a36f4c" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M140 230 Q150 250 160 252 M260 230 Q250 250 240 252" stroke="#c99b74" stroke-width="4" fill="none"/>
-  </svg>`,
+  // 1890-yilgi mashhur portretga qarab chizilgan (real foto emas)
+  tesla: (old = false) => { const H = old ? '#a7a7ae' : '#1c1816', M = old ? '#bdbdc4' : '#1c1816', J = old ? '#55555e' : '#2a2a30';
+    return `<svg viewBox="0 0 400 520">
+    <path d="M30 520 C34 420 90 372 170 356 L250 356 C320 370 372 420 376 520 Z" fill="${J}" stroke="${K}" stroke-width="8"/>
+    <g stroke="#3d3d45" stroke-width="3" opacity=".7"><path d="M70 440 L110 520 M110 420 L150 520 M300 420 L270 520 M335 450 L310 520"/></g>
+    <path d="M150 360 L205 470 L178 520 M262 356 L220 470" stroke="${K}" stroke-width="7" fill="none"/>
+    <circle cx="206" cy="488" r="9" fill="#55555e" stroke="${K}" stroke-width="5"/>
+    <path d="M162 300 L240 300 L246 352 L206 378 L156 352 Z" fill="#E3B58E" stroke="${K}" stroke-width="7"/>
+    <path d="M150 330 C170 352 240 352 258 330 L262 372 C236 392 176 392 146 372 Z" fill="#FBF8F1" stroke="${K}" stroke-width="7"/>
+    <path d="M200 386 L190 404 L212 404 Z" fill="${K}"/>
+    <ellipse cx="118" cy="196" rx="16" ry="30" fill="#E3B58E" stroke="${K}" stroke-width="7"/><ellipse cx="290" cy="196" rx="16" ry="30" fill="#E3B58E" stroke="${K}" stroke-width="7"/>
+    <path d="M124 150 C122 92 160 66 204 66 C250 66 286 92 284 150 C284 230 262 300 204 322 C148 300 124 230 124 150 Z" fill="#EBC39C" stroke="${K}" stroke-width="8"/>
+    <path d="M140 230 Q160 268 186 280 M268 230 Q248 268 222 280" stroke="#c99b74" stroke-width="4" fill="none"/>
+    <path d="M116 150 C100 82 136 30 196 22 C244 16 300 40 300 104 C302 126 296 146 288 158 C284 120 270 104 252 100 C238 92 226 96 214 92 C206 104 194 108 182 104 C170 100 158 104 148 112 C134 122 126 138 124 160 Z" fill="${H}" stroke="${K}" stroke-width="7"/>
+    <path d="M206 24 Q196 60 208 96" stroke="${old ? '#e2e2e6' : '#4a403b'}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M150 60 Q182 40 210 52 M196 36 Q236 28 262 46 M228 70 Q256 64 276 84" stroke="${old ? '#d4d4da' : '#3a3330'}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M146 160 Q170 148 192 158 L190 168 Q170 160 148 170 Z M262 160 Q238 148 216 158 L218 168 Q238 160 260 170 Z" fill="${H}" stroke="${K}" stroke-width="3"/>
+    <path d="M154 186 Q172 176 188 186 Q172 194 154 186 Z M220 186 Q236 176 254 186 Q236 194 220 186 Z" fill="#FBF8F1" stroke="${K}" stroke-width="4"/>
+    <circle cx="172" cy="186" r="6.5" fill="${K}"/><circle cx="236" cy="186" r="6.5" fill="${K}"/>
+    <path d="M152 180 Q172 170 190 180 M218 180 Q236 170 256 180" stroke="${K}" stroke-width="5" fill="none"/>
+    <path d="M206 186 L198 238 Q204 246 216 240" stroke="#a87b56" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M160 270 C172 252 192 250 206 258 C220 250 240 252 252 270 C244 266 232 262 222 266 C214 272 198 272 190 266 C180 262 168 266 160 270 Z" fill="${M}" stroke="${K}" stroke-width="5"/>
+    <path d="M188 284 Q206 290 224 284" stroke="#a36f4c" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </svg>`; },
   edison: () => `<svg viewBox="0 0 400 520">
     <path d="M50 520 C50 400 110 360 200 350 C290 360 350 400 350 520 Z" fill="#3E5C76" stroke="${K}" stroke-width="8"/>
     <path d="M165 350 L200 420 L235 350 Z" fill="#FBF8F1" stroke="${K}" stroke-width="6"/>
