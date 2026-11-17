@@ -2,14 +2,14 @@
 """Montaj 03 (Tesla): ovoz + musiqa + SFX -> video bilan birlashtirish."""
 import json, subprocess, os
 W = os.path.dirname(os.path.abspath(__file__)); os.chdir(W)
-TOTAL = 88.6
+TOTAL = 105.4
 SFXBIN = os.path.expanduser('~/earshot-venv/bin/earshot')
 MUSIC = '/tmp/claude-0/-home-user-abdurahim/95b55091-90bf-59e6-b39c-f98dfd0220b8/scratchpad/music/M3.m4a'
 MSTART = 71.3  # M3 dagi 1:57 'drop' 45.7 s (1954 burilishi) ga to'g'ri keladi
-VOICE = 'ovoz/ovoz.wav'
+VOICE = 'ovoz/ovoz_full.wav'
 def run(c): subprocess.run(c, check=True)
 
-CUTS = (4.7, 14.9, 21.2, 34.8, 41.1, 45.7, 55.6, 64.3, 70.9, 78.7, 82.9)
+CUTS = (4.7, 14.9, 21.2, 34.8, 41.1, 45.7, 55.6, 64.3, 70.9, 78.7, 82.9, 88.9)
 SFX = [('whoosh_fast/crisp', a, 0.131, -13) for a in CUTS]
 SFX += [
     # S1 hook: chaqmoqlar, to'xtatildi
@@ -46,6 +46,12 @@ SFX += [
     ('cut_hit/kick', 83.02, 0.013, -10), ('swish/blade', 83.3, 0.059, -14), ('pop/4', 85.62, 0.004, -11), ('pop/2', 87.02, 0.009, -12),
 ]
 SFX += [('hover_tick/ping', 71.6 + k * 0.3, 0.004, -20) for k in range(5)]
+SFX += [(sid, 88.9 + t, pk, db) for sid, t, pk, db in [
+    ('pop/2', 0.45, 0.009, -12), ('ui_pop/wide', 3.1, 0.044, -12), ('fit/pop/lip_pop', 5.25, 0.009, -11),
+    ('logo_sting/whoosh_glass', 6.5, 0.201, -11), ('cut_hit/punch', 6.55, 0.058, -10),
+    ('whoosh_big/swell', 8.0, 0.436, -13), ('pop/4', 8.35, 0.004, -12), ('ui_pop/wide', 10.2, 0.044, -12),
+    ('riser/snatch', 11.9, 0.386, -15), ('notify/m1', 12.0, 0.004, -17), ('logo_sting/whoosh_glass', 13.2, 0.201, -12), ('pop/2', 14.05, 0.009, -12)]]
+SFX += [('hover_tick/ping', 88.9 + 10.3 + i * 0.13, 0.004, -19) for i in range(12)]
 os.makedirs('sfx', exist_ok=True)
 ins, flt = [], []
 for k, (sid, t, pk, db) in enumerate(SFX):

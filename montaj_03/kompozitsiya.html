@@ -178,6 +178,22 @@
   <div class="tag gold" id="s13c" style="top:1520px;font-size:54px;opacity:0">💬 IZOHDA YOZING</div>
 </div>
 
+
+<!-- S14 Premium Solar reklama -->
+<div class="sc" id="s14" style="background:#22674D">
+  <svg class="torn" id="t14" width="1080" height="1920" style="position:absolute;inset:0"></svg>
+  <div class="stk" id="r1" style="left:70px;top:430px;width:940px;height:560px"></div>
+  <div class="tag gold" id="r1t" style="top:220px;font-size:66px">O'ZBEKISTON<br>QUYOSHGA O'TMOQDA</div>
+  <div class="tag" id="r2t" style="top:1080px;font-size:74px;opacity:0">KIM OLIB KELYAPTI?</div>
+  <div class="stamp" id="r2q" style="top:1250px;font-size:200px;opacity:0;border:none;background:none;color:#F6B52F">?</div>
+  <img id="r3l" src="../.claude/skills/montaj-uslubi/assets/logo_premium_solar_shaffof.png" style="position:absolute;left:50%;top:640px;width:760px;margin-left:-380px;opacity:0">
+  <div class="stk" id="r4" style="left:70px;top:420px;width:940px;height:560px;opacity:0"></div>
+  <div class="tag dark" id="r4t" style="top:1040px;font-size:62px;opacity:0">XITOYDAN · KATTA HAJMDA</div>
+  <div class="tag gold" id="r5t" style="top:200px;font-size:96px;opacity:0">12 VILOYAT</div>
+  <div id="vil" style="position:absolute;left:80px;top:420px;width:920px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;opacity:0"></div>
+  <img id="r6l" src="../.claude/skills/montaj-uslubi/assets/logo_premium_solar_shaffof.png" style="position:absolute;left:50%;top:560px;width:700px;margin-left:-350px;opacity:0">
+  <div class="tag gold" id="r6t" style="top:1080px;font-size:58px;opacity:0">TESLANING ORZUSI —<br>ENDI SIZNING TOMINGIZDA</div>
+</div>
 <div class="paper"></div><div class="vig"></div>
 <svg id="wipe" viewBox="0 0 1500 2200"><path id="wipep" fill="#1d1a16"/></svg>
 
@@ -200,7 +216,9 @@ put('#t1', PH('foto/wm/Tesla_Broadcast_Tower_1904.jpeg', -2)); put('#t4', PH('fo
 put('#inv', ART.investor()); put('#bag', ART.bag()); put('#sun6', ART.sun()); put('#ts6', PH('foto/tesla_1890.jpg', 3)); put('#pat', ART.patent());
 put('#pg1', ART.pigeon()); put('#pg2', ART.pigeon()); put('#ts7', PH('foto/tesla_keksa.jpg', -2)); put('#sand', PH('foto/qum.jpg', -3)); put('#waf', ART.wafer()); put('#sun8', ART.sun()); put('#bulb8', ART.bulb());
 put('#pan9', PH('foto/panel.jpg', -2)); put('#pan10', PH('foto/panel.jpg', 2)); put('#inv10', ART.inverter()); put('#tf10', PH('foto/tesla_1890.jpg', 6)); put('#stn10', PH('foto/stanok.jpg', -2));
-put('#pan11', PH('foto/panel.jpg', -3)); put('#sun12', ART.sun()); put('#fac12', PH('foto/tom.jpg', -1.5)); put('#inv13', ART.investor()); put('#ts13', PH('foto/tesla_1890.jpg', 3));
+put('#pan11', PH('foto/panel.jpg', -3)); put('#sun12', ART.sun()); put('#fac12', PH('foto/tom.jpg', -1.5)); put('#r1', PH('foto/tom.jpg', 2)); put('#r4', PH('foto/kema.jpg', -2));
+$('#t14').innerHTML = `<path d="${poly([[0,1920],[1080,1920],...tornEdge(1080,1500,0,1600,22,36)])}" fill="#174e3b"/>`;
+$('#vil').innerHTML = ['Andijon','Buxoro','Farg\'ona','Jizzax','Xorazm','Namangan','Navoiy','Qashqadaryo','Samarqand','Sirdaryo','Surxondaryo','Toshkent'].map(v => `<div class="vl" style="background:#174e3b;border:4px solid #F6B52F;border-radius:18px;padding:22px 10px;text-align:center;font-family:'Archivo Black Regular';font-size:34px;color:#F1EADB">☀ ${v}</div>`).join(''); put('#inv13', ART.investor()); put('#ts13', PH('foto/tesla_1890.jpg', 3));
 // chaqmoqlar (S1)
 const bolt = (x, y, len, ang) => { let d = `M${x} ${y}`, cx = x, cy = y; for (let i = 0; i < 7; i++) { cx += Math.cos(ang) * len / 7 + (rnd() - .5) * 60; cy += Math.sin(ang) * len / 7 + (rnd() - .5) * 60; d += ` L${cx.toFixed(0)} ${cy.toFixed(0)}`; } return d; };
 $('#bolts1').innerHTML = [0, 1, 2, 3, 4, 5].map(i => `<path class="bl" d="${bolt(540, 700, 380, -Math.PI / 2 + (i - 2.5) * 0.5)}" stroke="#bfe9ff" stroke-width="9" fill="none" stroke-linejoin="round" opacity="0"/>`).join('');
@@ -220,7 +238,7 @@ const sunnyIdx = [...Array(365).keys()].filter(i => (i * 37) % 365 < 300);
 // ===== TIMELINE =====
 const tl = gsap.timeline({ paused: true });
 const SC = [['#s1', 0, 4.7], ['#s2', 4.7, 14.9], ['#s3', 14.9, 21.2], ['#s4', 21.2, 34.8], ['#s6', 34.8, 41.1], ['#s7', 41.1, 45.7], ['#s8', 45.7, 55.6],
-  ['#s9', 55.6, 64.3], ['#s10', 64.3, 70.9], ['#s11', 70.9, 78.7], ['#s12', 78.7, 82.9], ['#s13', 82.9, 89.0]];
+  ['#s9', 55.6, 64.3], ['#s10', 64.3, 70.9], ['#s11', 70.9, 78.7], ['#s12', 78.7, 82.9], ['#s13', 82.9, 88.9], ['#s14', 88.9, 105.6]];
 SC.forEach(([id, a, b]) => { tl.set(id, { opacity: 1 }, a); tl.set(id, { opacity: 0 }, b); });
 const WC = ['#1d1a16', '#22674D', '#F6B52F', '#3E5C76', '#C8372D', '#1d1a16', '#F6B52F', '#22674D', '#3E5C76', '#1d1a16', '#C8372D'];
 SC.slice(1).forEach(([, a], k) => tl.set('#wipep', { attr: { fill: WC[k % WC.length] } }, a - 0.22).fromTo('#wipe', { x: 0 }, { x: -2700, duration: 0.44, ease: 'power2.inOut' }, a - 0.22));
@@ -292,6 +310,19 @@ pop('#s12a', 80.6); tl.fromTo('#logo12', { y: 40, opacity: 0 }, { y: 0, opacity:
 // S13
 pop('#s13a', 83.0); tl.fromTo('#inv13', { x: -300 }, { x: 0, duration: 0.4, ease: 'power3.out' }, 83.2).fromTo('#ts13', { x: 300 }, { x: 0, duration: 0.4, ease: 'power3.out' }, 83.2);
 pop('#s13b', 85.6); pop('#s13c', 87.0); tl.to('#s13c', { scale: 1.08, duration: 0.25, yoyo: true, repeat: 3 }, 87.4);
-tl.set({}, {}, 89.0);
+// S14 reklama (O=88.9)
+const O = 88.9;
+tl.fromTo('#r1', { y: 600, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: 'back.out(1.2)' }, O + 0.05); pop('#r1t', O + 0.4);
+pop('#r2t', O + 3.05); tl.fromTo('#r2q', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(3)' }, O + 5.2);
+tl.to(['#r1', '#r1t', '#r2t', '#r2q'], { opacity: 0, duration: 0.15 }, O + 6.3);
+tl.fromTo('#r3l', { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: 'back.out(2)' }, O + 6.4).to('#r3l', { opacity: 0, duration: 0.15 }, O + 7.9);
+tl.fromTo('#r4', { x: 900, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'power3.out' }, O + 7.95); pop('#r4t', O + 8.3);
+tl.to(['#r4', '#r4t'], { opacity: 0, duration: 0.15 }, O + 10.05);
+pop('#r5t', O + 10.15); tl.set('#vil', { opacity: 1 }, O + 10.2);
+document.querySelectorAll('.vl').forEach((v, i) => tl.fromTo(v, { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: 'back.out(2.5)' }, O + 10.25 + i * 0.13));
+document.querySelectorAll('.vl').forEach((v, i) => tl.to(v, { backgroundColor: '#F6B52F', color: '#1d1a16', duration: 0.1 }, O + 11.9 + i * 0.06));
+tl.to(['#vil', '#r5t'], { opacity: 0, duration: 0.15 }, O + 13.0);
+tl.fromTo('#r6l', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out' }, O + 13.05); pop('#r6t', O + 14.0);
+tl.set({}, {}, 105.6);
 window.tl = tl;
 </script></body></html>
