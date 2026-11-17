@@ -14,8 +14,23 @@
   .tag.v { background: #FFF3D6; color: #8a5a00; }
   svg { width: 380px; height: 380px; }
 </style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="logo" viewBox="0 0 120 70">
+    <g fill="#2E8A63"><path d="M8 52 L22 36 H40 L26 52Z"/><path d="M30 52 L44 36 H62 L48 52Z"/><path d="M22 34 L34 20 H52 L40 34Z"/><path d="M44 34 L56 20 H74 L62 34Z"/></g>
+    <path d="M62 52 L88 22 L114 52 H104 L88 34 L72 52Z" fill="#F2F1EF"/>
+    <path d="M94 20 A14 14 0 0 1 116 34" fill="none" stroke="#F6B52F" stroke-width="7"/>
+  </symbol>
+  <symbol id="cap" viewBox="0 0 240 140">
+    <path d="M30 100 C30 40 80 8 130 8 C186 8 220 46 220 100 Z" fill="#0B2A22"/>
+    <path d="M128 10 C110 40 106 70 108 100" stroke="#123c31" stroke-width="5" fill="none"/>
+    <circle cx="130" cy="10" r="8" fill="#F6B52F"/>
+    <path d="M20 98 H232 C236 98 238 112 226 118 C170 132 70 132 22 120 C10 116 12 98 20 98Z" fill="#0F3A2E"/>
+    <path d="M24 104 H228" stroke="#F6B52F" stroke-width="3"/>
+    <use href="#logo" x="70" y="38" width="96" height="56"/>
+  </symbol>
+</defs></svg>
 <h1>PREMIUM SOLAR · PERSONAJ</h1>
-<div class="sub">3 ta konsept — noldan, hech kimdan ko'chirilmagan</div>
+<div class="sub">3 ta konsept · logotipli kepka · B2B: korxona, zavod va biznes egalari uchun</div>
 
 <!-- 1. QUYOSHVOY -->
 <div class="card">
@@ -29,10 +44,8 @@
     <g transform="rotate(270 200 200)"><path d="M200 28 l18 44 h-36z"/></g><g transform="rotate(315 200 200)"><path d="M200 28 l18 44 h-36z"/></g>
   </g>
   <circle cx="200" cy="205" r="122" fill="url(#sg)"/>
-  <!-- doppi -->
-  <path d="M112 132 q88 -62 176 0 l-10 26 q-78 -40 -156 0z" fill="#22674D"/>
-  <path d="M120 150 q80 -42 160 0" stroke="#F4F1EA" stroke-width="5" fill="none" stroke-dasharray="10 8"/>
-  <g fill="#F4F1EA"><path d="M168 110 l8 -10 8 10 -8 10z"/><path d="M224 110 l8 -10 8 10 -8 10z"/><path d="M196 102 l8 -10 8 10 -8 10z"/></g>
+  <!-- kepka -->
+  <use href="#cap" x="78" y="40" width="250" height="146"/>
   <!-- ko'zlar -->
   <ellipse cx="160" cy="196" rx="14" ry="17" fill="#041512"/><ellipse cx="240" cy="196" rx="14" ry="17" fill="#041512"/>
   <circle cx="165" cy="190" r="5" fill="#fff"/><circle cx="245" cy="190" r="5" fill="#fff"/>
@@ -50,17 +63,14 @@
   <path d="M302 262 q-10 -16 -24 -8" stroke="#F39A1E" stroke-width="12" fill="none" stroke-linecap="round"/>
 </svg>
 <div><div class="num">01</div><div class="nm">QUYOSHVOY</div>
-<div class="desc">Doppili, mo'ylovli, kulib turuvchi "quyosh aka". Hazilkash, dono, maslahatchi. Elektr narxidan kuyib-pishgan qo'shnilarga quyosh tekinligini tushuntiradi.</div>
-<div class="tags"><span class="tag">40–50 yosh xarakter</span><span class="tag">hazil + ishonch</span><span class="tag">o'zbekona</span><span class="tag v">🎙 o'rta yosh erkak, iliq</span></div></div>
+<div class="desc">Mo'ylovli, ishonchli "quyosh aka" — biznes maslahatchi. Zavod va do'kon egalariga elektr xarajatini qanday nolga tushirishni hisob-kitob bilan, hazil aralash tushuntiradi.</div>
+<div class="tags"><span class="tag">B2B maslahatchi</span><span class="tag">ishonch + hazil</span><span class="tag">biznes egalari</span><span class="tag v">🎙 o'rta yosh erkak, iliq</span></div></div>
 </div>
 
 <!-- 2. PANELBEK -->
 <div class="card">
 <svg viewBox="0 0 400 400">
   <ellipse cx="200" cy="378" rx="100" ry="12" fill="#041512" opacity=".12"/>
-  <!-- antenna + kichik quyosh -->
-  <path d="M200 72 v-34" stroke="#22674D" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="200" cy="30" r="18" fill="#F6B52F"/><circle cx="200" cy="30" r="27" fill="none" stroke="#F6B52F" stroke-width="4" stroke-dasharray="6 7"/>
   <!-- tana-panel -->
   <rect x="78" y="72" width="244" height="210" rx="26" fill="#22674D"/>
   <rect x="94" y="88" width="212" height="178" rx="14" fill="#0E2A4A"/>
@@ -79,12 +89,13 @@
   <!-- oyoqlar -->
   <rect x="140" y="282" width="24" height="60" rx="10" fill="#22674D"/><rect x="236" y="282" width="24" height="60" rx="10" fill="#22674D"/>
   <rect x="124" y="334" width="56" height="26" rx="13" fill="#041512"/><rect x="220" y="334" width="56" height="26" rx="13" fill="#041512"/>
+  <use href="#cap" x="92" y="-6" width="220" height="128"/>
   <!-- chaqmoq belgisi -->
   <path d="M300 58 l-18 30 h14 l-10 28 26 -36 h-14 l10 -22z" fill="#F6B52F"/>
 </svg>
 <div><div class="num">02</div><div class="nm">PANELBEK</div>
-<div class="desc">Quyosh panelidan yasalgan quvnoq robot. Ekran-yuzida his-tuyg'ular. Texnologiyani oddiy tilda tushuntiradi, "svet ketdimi? menda unaqasi yo'q!"</div>
-<div class="tags"><span class="tag">yosh, energiyali</span><span class="tag">texno, aqlli</span><span class="tag">yoshlar + B2B</span><span class="tag v">🎙 yosh erkak, baland, jonli</span></div></div>
+<div class="desc">Quyosh panelidan yasalgan muhandis-robot. Ekran-yuzida grafik va raqamlar: kVt, tejash, qoplanish muddati. Korxonaga SES loyihasini oddiy tilda tushuntiradi.</div>
+<div class="tags"><span class="tag">B2B muhandis</span><span class="tag">raqamlar, aniqlik</span><span class="tag">zavod / ombor</span><span class="tag v">🎙 yosh erkak, baland, jonli</span></div></div>
 </div>
 
 <!-- 3. NURCHIK -->
@@ -98,7 +109,7 @@
   <path d="M60 350 q90 -40 116 -96" stroke="#F6B52F" stroke-width="10" fill="none" stroke-linecap="round" opacity=".5"/>
   <!-- tomchi/yulduz tana -->
   <path d="M210 60 C270 120 300 170 300 220 C300 280 258 316 210 316 C162 316 120 280 120 220 C120 170 150 120 210 60z" fill="url(#ng)"/>
-  <path d="M210 60 l12 40 -12 -6 -12 6z" fill="#fff" opacity=".6"/>
+  <use href="#cap" x="128" y="62" width="170" height="99"/>
   <!-- katta ko'zlar -->
   <ellipse cx="180" cy="210" rx="22" ry="28" fill="#041512"/><ellipse cx="242" cy="210" rx="22" ry="28" fill="#041512"/>
   <circle cx="188" cy="199" r="9" fill="#fff"/><circle cx="250" cy="199" r="9" fill="#fff"/><circle cx="176" cy="220" r="4" fill="#fff"/><circle cx="238" cy="220" r="4" fill="#fff"/>
@@ -109,7 +120,7 @@
   <path d="M320 290 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5z" fill="#F6B52F"/>
 </svg>
 <div><div class="num">03</div><div class="nm">NURCHIK</div>
-<div class="desc">Quyoshning eng kichkina nuri: tez, sho'x, quvnoq. Panelga "sakrab tushib" chiroqni yoqadi. Bolalar va oilalar uchun eng yoqimli, eslab qolinadigan qahramon.</div>
-<div class="tags"><span class="tag">sho'x, tez</span><span class="tag">yoqimli, oilaviy</span><span class="tag">animatsiyaga qulay</span><span class="tag v">🎙 o'smir qiz, baland</span></div></div>
+<div class="desc">Quyoshning eng kichkina nuri — brendning "imzo" belgisi. Reels oxirida logotip bilan chiqadi, raqam va faktlarni ko'rsatadi. Asosiy B2B qahramonga yordamchi.</div>
+<div class="tags"><span class="tag">yordamchi / logo</span><span class="tag">eslab qolinadi</span><span class="tag">animatsiyaga qulay</span><span class="tag v">🎙 o'smir qiz, baland</span></div></div>
 </div>
 </body></html>

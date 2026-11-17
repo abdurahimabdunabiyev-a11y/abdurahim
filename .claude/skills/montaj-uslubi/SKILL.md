@@ -245,6 +245,9 @@ Yechim — **"Montaj Yuklash" sahifasi**: https://claude.ai/artifact/J1Emidie83y
 - **Aksent qoidasi:** pul/raqam va urg'u so'zlar — **sariq `#F6B52F`**; ijobiy/eko so'zlar — **yashil `#22674D`** (to'q fonda yorqinroq `#2E8A63`); salbiy — qizil `#E53935`. Referenslardagi ko'k o'rniga brend sariq ishlatiladi.
 - Grafik kartochkalar/qutilar: to'q yashil fon (`#041512`, 85–90% shaffoflik), ingichka sariq yoki yashil ramka.
 - CTA: yumaloq avatar (logotip) + `@premiumsolar.uz` pill + "Obuna" tugmasi (sariq) va/yoki "Ariza qoldiring / izohga '+' yozing" — sotuv videolarida ariza (B2B katalog) chaqiruvi.
+- **⚠️ ASOSIY AUDITORIYA — B2B** (foydalanuvchi talabi, 2026-11-17, UNUTMA): korxona, zavod, ombor, do'kon, fermer va biznes egalari. Ohang: professional-do'stona, raqamlar bilan (kVt, oylik tejash, qoplanish muddati, kafolat, ulgurji narx). Xonadon/bolalar ohangi — faqat ikkinchi darajali.
+- **Personaj (maskot)**: konseptlar `mashq/scenes/personaj.html` — 01 Quyoshvoy (B2B maslahatchi "quyosh aka"), 02 Panelbek (B2B muhandis-robot, ekranda raqamlar), 03 Nurchik (yordamchi/logo-imzo). Hammasi **Premium Solar logotipli to'q yashil kepka** kiyadi (logo: yashil panellar + oq tom + sariq quyosh). Tanlov foydalanuvchida.
+- **Personaj ovozi**: OmniVoice "voice design" o'zbekchada tabiiy/yoqimli emas (foydalanuvchi bahosi 2026-11-17) — maskot uchun **jonli ovoz aktyori (rozilik + kelishuv) → klonlash** tavsiya; noldan sintez ishlatma.
 - Mavzular: quyosh panellari, tejash, elektr narxi, biznes uchun SES, import, ombor, mijozlar → odatda **B. Infografika** yoki ekspert intervyu (V4 uslubi). B-roll: solar farm, rooftop solar, factory, electricity bill, city at night (Mixkit: `solar panels`, `solar energy`, `power lines`, `factory`).
 
 ## 11. Ochiq savollar (foydalanuvchidan hali javob kutilmoqda)
