@@ -162,6 +162,18 @@ Reels me'yorlari: −14 LUFS, LRA 1.6–3.7, kesishda ovoz ≥ 85%, salient hit 
 - Hook hiti ostiga `cut_hit/sub` bas qatlami; CTA'ga yakuniy sting (`mallet/flourish`) — oxiri sust bo'lmasin.
 - Bassiz musiqa (M2) "thin bottom" beradi — infografika uchun ham bas bor trek afzal.
 
+## 7.55 Azvuchka (o'zbekcha TTS) — OmniVoice (VoiceStudio dvigateli)
+
+- Manba: foydalanuvchi yuborgan t.me/momedov_blog/128 → VoiceStudio (github.com/debpalash/VoiceStudio, AGPL) → dvigateli **k2-fsa/OmniVoice** (600+ til, **o'zbek `uz` — 115 soat o'quv nutqi**, "Northern Uzbek" `uzn` ham bor).
+- O'rnatilgan: `~/tts-venv` (CPU torch + `pip install omnivoice`). Model HF'dan birinchi chaqiruvda yuklanadi.
+- **Ovoz dizayni** (klonsiz, tavsif bilan):
+  `~/tts-venv/bin/omnivoice-infer --text "<matn>" --language uz --instruct "female, young adult" --output out.wav --device cpu`
+  (`--instruct` misollar: "male, middle-aged, low pitch", "female, young adult"; `--speed`, `--duration` bilan vaqtga moslash).
+- **Klonlash**: `--ref_audio ref.wav --ref_text "<ref matni>"` (3–10 s toza yozuv). ⚠️ Faqat ovoz egasining **roziligi** bilan.
+- Tezlik (4 CPU): ~9 s ovoz ≈ 85–100 s (model yuklanishi bilan). Uzun matnni jumlalarga bo'lib yarat.
+- **Sifat tekshiruvi (majburiy):** (1) Whisper uz bilan qayta transkripsiya — so'zlar tanilishi kerak; (2) `earshot realness` ≥ 0.77. Sinov 2026-11-17: erkak 0.91, ayol 0.94; ayol ovozi Whisper'da deyarli to'liq tanildi.
+- Chiqish 24 kHz mono → montajda `loudnorm` va musiqa ostida miks.
+
 ## 7.6 Videoni "ko'rish" — /watch (claude-video plagini)
 
 - Plagin: `watch@claude-video` (github.com/bradautomates/claude-video). Skript: `/root/.claude/plugins/cache/claude-video/watch/*/skills/watch/scripts/watch.py`.
