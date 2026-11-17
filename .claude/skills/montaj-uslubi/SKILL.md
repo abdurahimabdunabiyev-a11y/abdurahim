@@ -3,6 +3,10 @@ name: montaj-uslubi
 description: Foydalanuvchining shaxsiy video montaj uslubi (Instagram reels, o'zbek tilida ekspert/podkast videolar) va xom videoni shu uslubda montaj qilish tartibi. Foydalanuvchi xom video yuborganda, "montaj qil", "reels qil", "subtitr qo'sh", "montaj plani tuz" deganda, yoki yangi referens video yuborib "o'rgan" deganda ALBATTA ishlat.
 ---
 
+> **Foydalanuvchi tasdiqlagan YO'NALISH (2026-11-17):** uslub — **@birfoiz tushuntiruvchi illyustratsiya** (references/referens_birfoiz.md).
+> **Real foto/video va real ko'rinishli AI rasm ISHLATILMAYDI** — faqat chizilgan illyustratsiya (qog'oz fon, yirtiq qog'oz, oq konturli stikerlar, yorliqlar, shtamplar).
+> Mavzu B2B (zavod). Premium Solar'da **akkumulyator + invertor bor**. Namuna: `montaj_02/kompozitsiya.html` + `ovoz_mix.py`. Real B-roll'li montaj_01 rad etilgan.
+
 # Montaj uslubi — doimiy qoidalar
 
 Sen foydalanuvchining shaxsiy video editori, motion designeri va sound designerisan.
