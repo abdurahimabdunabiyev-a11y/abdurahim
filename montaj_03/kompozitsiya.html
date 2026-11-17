@@ -26,7 +26,7 @@
 <div class="sc" id="s1" style="background:#152238">
   <svg width="1080" height="1920" style="position:absolute;inset:0"><g fill="#F1EADB" opacity=".6">${''}</g><rect y="1500" width="1080" height="420" fill="#0d1626"/></svg>
   <svg id="bolts1" width="1080" height="1920" style="position:absolute;inset:0"></svg>
-  <div class="stk" id="t1" style="left:290px;top:560px;width:500px;height:875px"></div>
+  <div class="stk" id="t1" style="left:170px;top:560px;width:740px;height:820px"></div>
   <div class="tag gold" id="s1a" style="top:250px;font-size:110px">TEKIN ELEKTR</div>
   <div class="stamp" id="s1b" style="top:1000px;font-size:104px;opacity:0">TO'XTATILDI</div>
 </div>
@@ -46,19 +46,21 @@
       <path id="wT" class="wire" d="M60 450 Q110 400 160 450 T260 450 T360 450 T460 450 T560 450 T660 450 T760 450" stroke="#F6B52F" stroke-width="16"/>
       <text id="kmT" x="200" y="580" font-family="Archivo Black Regular" font-size="52" fill="#22674D">SHAHARDAN-SHAHARGA →</text></g>
   </svg>
+  <div class="stk" id="ed2" style="left:760px;top:930px;width:230px;height:300px;opacity:0"></div>
   <div class="stk" id="cityT" style="left:800px;top:1330px;width:240px;height:183px"></div>
 </div>
 
 <!-- S3 Niagara -->
 <div class="sc" id="s3" style="background:#9FC3D6">
   <svg width="1080" height="1920" style="position:absolute;inset:0">
-    <path d="M0 700 L360 700 L360 1500 L0 1500 Z" fill="#7d6a52" stroke="#1d1a16" stroke-width="8"/>
-    <g id="fall" clip-path="url(#fc)"><clipPath id="fc"><rect x="60" y="700" width="260" height="800"/></clipPath>
+    
+    <g id="fall" clip-path="url(#fc)" style="display:none"><clipPath id="fc"><rect x="60" y="700" width="260" height="800"/></clipPath>
       ${''}</g>
     <rect y="1500" width="1080" height="420" fill="#4f88b0"/><path d="M0 1500 H1080" stroke="#1d1a16" stroke-width="8"/>
     <rect x="380" y="1260" width="200" height="240" fill="#E4D6BC" stroke="#1d1a16" stroke-width="8"/><circle cx="480" cy="1360" r="50" fill="#F6B52F" stroke="#1d1a16" stroke-width="7" id="turb"/>
     <path id="wN" class="wire" d="M580 1300 Q680 1250 760 1300 Q840 1250 920 1300" stroke="#1d1a16" stroke-width="8"/>
   </svg>
+  <div class="stk" id="nia" style="left:50px;top:400px;width:980px;height:600px"></div>
   <div class="tag dark" id="s3a" style="top:220px;font-size:96px">NIAGARA · 1896</div>
   <div class="tag gold" id="s3b" style="left:760px;top:1150px;font-size:70px;opacity:0">40 km</div>
   <div class="stk" id="cityN" style="left:700px;top:1300px;width:340px;height:259px"></div>
@@ -67,7 +69,7 @@
 <!-- S4-S5 minora orzu va to'xtatish -->
 <div class="sc" id="s4" style="background:#2b2448">
   <svg id="rings" width="1080" height="1920" style="position:absolute;inset:0"></svg>
-  <div class="stk" id="t4" style="left:340px;top:640px;width:400px;height:700px"></div>
+  <div class="stk" id="t4" style="left:280px;top:640px;width:600px;height:700px"></div>
   <div id="ruler" style="position:absolute;left:220px;top:640px;width:10px;height:700px;background:#F6B52F;border:4px solid #1d1a16"></div>
   <div class="tag gold" id="s4h" style="left:150px;top:960px;font-size:58px;transform:translateX(-50%) rotate(-90deg)">57 m</div>
   <div id="houses"></div>
@@ -194,11 +196,11 @@ $('#t13').innerHTML = `<path d="${poly([[1080, 0], [1080, 1920], ...tornEdge(560
 // art joylash
 const put = (id, html) => $(id).innerHTML = html;
 const PH = (src, rot = -3) => `<div class="photo" style="transform:rotate(${rot}deg)"><img src="${src}"><div class="tape"></div></div>`;
-put('#t1', ART.tower()); put('#t4', ART.tower()); put('#ts2', PH('foto/tesla_1890.jpg', -3)); put('#roz', ART.rozetka()); put('#cityT', ART.city()); put('#cityN', ART.city());
+put('#t1', PH('foto/wm/Tesla_Broadcast_Tower_1904.jpeg', -2)); put('#t4', PH('foto/wm/Tesla_Broadcast_Tower_1904.jpeg', 2)); put('#ts2', PH('foto/tesla_1890.jpg', -3)); put('#roz', ART.rozetka()); put('#ed2', PH('foto/wm/Thomas_Edison2-crop.jpg', 4)); put('#cityT', ART.city()); put('#cityN', ART.city()); put('#nia', PH('foto/niagara.jpg', -2));
 put('#inv', ART.investor()); put('#bag', ART.bag()); put('#sun6', ART.sun()); put('#ts6', PH('foto/tesla_1890.jpg', 3)); put('#pat', ART.patent());
-put('#pg1', ART.pigeon()); put('#pg2', ART.pigeon()); put('#ts7', PH('foto/tesla_keksa.jpg', -2)); put('#sand', ART.sand()); put('#waf', ART.wafer()); put('#sun8', ART.sun()); put('#bulb8', ART.bulb());
-put('#pan9', ART.panel()); put('#pan10', ART.panel()); put('#inv10', ART.inverter()); put('#tf10', PH('foto/tesla_1890.jpg', 6)); put('#stn10', ART.stanok());
-put('#pan11', ART.panel()); put('#sun12', ART.sun()); put('#fac12', ART.factory()); put('#inv13', ART.investor()); put('#ts13', PH('foto/tesla_1890.jpg', 3));
+put('#pg1', ART.pigeon()); put('#pg2', ART.pigeon()); put('#ts7', PH('foto/tesla_keksa.jpg', -2)); put('#sand', PH('foto/qum.jpg', -3)); put('#waf', ART.wafer()); put('#sun8', ART.sun()); put('#bulb8', ART.bulb());
+put('#pan9', PH('foto/panel.jpg', -2)); put('#pan10', PH('foto/panel.jpg', 2)); put('#inv10', ART.inverter()); put('#tf10', PH('foto/tesla_1890.jpg', 6)); put('#stn10', PH('foto/stanok.jpg', -2));
+put('#pan11', PH('foto/panel.jpg', -3)); put('#sun12', ART.sun()); put('#fac12', PH('foto/tom.jpg', -1.5)); put('#inv13', ART.investor()); put('#ts13', PH('foto/tesla_1890.jpg', 3));
 // chaqmoqlar (S1)
 const bolt = (x, y, len, ang) => { let d = `M${x} ${y}`, cx = x, cy = y; for (let i = 0; i < 7; i++) { cx += Math.cos(ang) * len / 7 + (rnd() - .5) * 60; cy += Math.sin(ang) * len / 7 + (rnd() - .5) * 60; d += ` L${cx.toFixed(0)} ${cy.toFixed(0)}`; } return d; };
 $('#bolts1').innerHTML = [0, 1, 2, 3, 4, 5].map(i => `<path class="bl" d="${bolt(540, 700, 380, -Math.PI / 2 + (i - 2.5) * 0.5)}" stroke="#bfe9ff" stroke-width="9" fill="none" stroke-linejoin="round" opacity="0"/>`).join('');
@@ -234,10 +236,10 @@ pop('#s1a', 1.3); tl.to('.bl', { opacity: 0, duration: 0.05 }, 3.7).to('#t1', { 
 stamp('#s1b', 3.75); tl.fromTo('#s1', { x: 0 }, { x: 14, duration: 0.05, yoyo: true, repeat: 5 }, 3.95);
 // S2
 pop('#ts2', 5.1); pop('#s2n', 5.5); pop('#s2y', 5.8); pop('#roz', 6.6); pop('#s2t', 8.4);
-tl.fromTo('#rowE', { opacity: 0 }, { opacity: 1, duration: 0.2 }, 9.7); draw('#wE', 9.8, 0.8); pop('#kmE', 11.6);
+tl.fromTo('#rowE', { opacity: 0 }, { opacity: 1, duration: 0.2 }, 9.7); pop('#ed2', 9.75); tl.to('#ed2', { opacity: 0, duration: 0.2 }, 12.4); draw('#wE', 9.8, 0.8); pop('#kmE', 11.6);
 tl.fromTo('#rowT', { opacity: 0 }, { opacity: 1, duration: 0.2 }, 12.5); draw('#wT', 12.6, 1.2); pop('#kmT', 13.5); pop('#cityT', 13.6);
 // S3
-pop('#s3a', 15.0); push('#s3', 14.9, 21.2, 1.05);
+pop('#s3a', 15.0); tl.fromTo('#nia', { y: -700, rotation: -6 }, { y: 0, rotation: 0, duration: 0.5, ease: 'back.out(1.2)' }, 15.0); push('#s3', 14.9, 21.2, 1.05);
 $$('.drop').forEach((d, i) => tl.fromTo(d, { y: -300 }, { y: 900, duration: 0.9, ease: 'none', repeat: 6 }, 14.9 + i * 0.1));
 tl.to('#turb', { rotation: 720, svgOrigin: '480 1360', duration: 6, ease: 'none' }, 15.2);
 draw('#wN', 18.9, 0.8); pop('#s3b', 19.2); pop('#cityN', 16.6);
