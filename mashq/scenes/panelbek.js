@@ -1,0 +1,57 @@
+// Panelbek personaji: bot(face, wave) -> SVG ichki markup (viewBox 0 0 400 440)
+window.PB_LOGO = window.PB_LOGO || '../../.claude/skills/montaj-uslubi/assets/logo_premium_solar_shaffof.png';
+let uid = 0;
+const FACES = {
+  salom: `<ellipse cx="166" cy="166" rx="16" ry="20" fill="#5BE3C8"/><ellipse cx="234" cy="166" rx="16" ry="20" fill="#5BE3C8"/>
+          <circle cx="171" cy="159" r="5" fill="#fff"/><circle cx="239" cy="159" r="5" fill="#fff"/>
+          <path d="M172 196 q28 22 56 0" stroke="#5BE3C8" stroke-width="7" fill="none" stroke-linecap="round"/>`,
+  kozqisish: `<path d="M150 168 q16 -14 32 0" stroke="#5BE3C8" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <ellipse cx="234" cy="166" rx="16" ry="20" fill="#5BE3C8"/><circle cx="239" cy="159" r="5" fill="#fff"/>
+          <path d="M170 194 q30 24 60 -2" stroke="#5BE3C8" stroke-width="7" fill="none" stroke-linecap="round"/>`,
+  raqam: `<text x="200" y="176" text-anchor="middle" font-family="Archivo Expanded Black" font-size="40" fill="#F6B52F">−78%</text>
+          <text x="200" y="206" text-anchor="middle" font-family="General Sans SemiBold" font-size="17" fill="#5BE3C8">elektr xarajati</text>`,
+  hayron: `<circle cx="166" cy="164" r="20" fill="#5BE3C8"/><circle cx="234" cy="164" r="20" fill="#5BE3C8"/>
+          <circle cx="166" cy="164" r="8" fill="#062033"/><circle cx="234" cy="164" r="8" fill="#062033"/>
+          <ellipse cx="200" cy="204" rx="11" ry="13" fill="none" stroke="#5BE3C8" stroke-width="6"/>`,
+};
+function bot(face, wave = true) {
+  const id = 'b' + (uid++);
+  const leftArm = wave
+    ? `<path d="M80 196 q-44 -10 -50 -60" stroke="url(#fr${id})" stroke-width="18" fill="none" stroke-linecap="round"/><circle cx="30" cy="130" r="18" fill="#F6B52F"/><circle cx="24" cy="124" r="6" fill="#FFD978"/>`
+    : `<path d="M80 196 q-40 14 -42 70" stroke="url(#fr${id})" stroke-width="18" fill="none" stroke-linecap="round"/><circle cx="38" cy="270" r="18" fill="#F6B52F"/>`;
+  return `<defs>
+    <linearGradient id="fr${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E8A63"/><stop offset=".5" stop-color="#22674D"/><stop offset="1" stop-color="#143F31"/></linearGradient>
+    <linearGradient id="ce${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D4C80"/><stop offset="1" stop-color="#0A1F3B"/></linearGradient>
+    <linearGradient id="cp${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D5A47"/><stop offset=".6" stop-color="#103B2F"/><stop offset="1" stop-color="#08221B"/></linearGradient>
+  </defs>
+  <ellipse cx="200" cy="420" rx="120" ry="12" fill="#041512" opacity=".15"/>
+  <!-- oyoqlar -->
+  <rect x="140" y="292" width="26" height="100" rx="12" fill="url(#fr${id})"/><rect x="234" y="292" width="26" height="100" rx="12" fill="url(#fr${id})"/>
+  <path d="M120 386 h56 q14 0 14 14 v6 h-84 v-6 q0 -14 14 -14z" fill="#041512"/>
+  <path d="M224 386 h56 q14 0 14 14 v6 h-84 v-6 q0 -14 14 -14z" fill="#041512"/>
+  <!-- qo'llar -->
+  ${leftArm}
+  <path d="M320 196 q42 12 46 64" stroke="url(#fr${id})" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <circle cx="366" cy="266" r="18" fill="#F6B52F"/><circle cx="360" cy="260" r="6" fill="#FFD978"/>
+  <!-- tana: alyumin rama + kataklar -->
+  <rect x="76" y="70" width="248" height="232" rx="26" fill="url(#fr${id})"/>
+  <rect x="80" y="74" width="240" height="8" rx="4" fill="#fff" opacity=".18"/>
+  <rect x="92" y="86" width="216" height="198" rx="14" fill="url(#ce${id})"/>
+  <path d="M164 86 v198 M236 86 v198 M92 152 h216 M92 218 h216" stroke="#3E79B8" stroke-width="3" opacity=".7"/>
+  <path d="M96 90 L180 90 L110 190 L96 190Z" fill="#fff" opacity=".09"/>
+  <!-- ekran-yuz -->
+  <rect x="116" y="118" width="168" height="112" rx="24" fill="#062033" stroke="#5BE3C8" stroke-width="3"/>
+  <rect x="116" y="118" width="168" height="112" rx="24" fill="#5BE3C8" opacity=".06"/>
+  ${FACES[face]}
+  <text x="200" y="296" text-anchor="middle" font-family="Michroma" font-size="9" letter-spacing="3" fill="#F2F1EF" opacity=".85">PREMIUM SOLAR</text>
+  <!-- kepka -->
+  <path d="M100 84 C100 30 146 2 200 2 C254 2 300 30 300 84 Z" fill="url(#cp${id})"/>
+  <path d="M132 24 C120 40 114 60 114 80" stroke="#2A7A5E" stroke-width="7" fill="none" opacity=".4" stroke-linecap="round"/>
+  <circle cx="200" cy="5" r="7" fill="#F6B52F"/>
+  <image href="${window.PB_LOGO}" x="144" y="18" width="112" height="58"/>
+  <path d="M84 82 H316 C324 82 326 98 312 102 C250 114 150 114 88 102 C74 98 76 82 84 82Z" fill="#0C2D24"/>
+  <path d="M86 88 H314" stroke="#F6B52F" stroke-width="3"/>
+  <!-- chaqmoq -->
+  <path d="M338 40 l-18 30 h14 l-10 28 26 -36 h-14 l10 -22z" fill="#F6B52F"/>`;
+}
+window.bot = bot; window.FACES = FACES;

@@ -1,0 +1,8 @@
+out/
+broll/*.mp4
+broll/*.jpg
+ovoz/*.mp3
+ovoz/*.wav
+ovoz/resp.json
+grafika/snap*.png
+grafika/minis.png

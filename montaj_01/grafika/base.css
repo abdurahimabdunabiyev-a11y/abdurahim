@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body { background: radial-gradient(90% 55% at 50% 38%, #1b4a3a 0%, #0a2a21 45%, #041512 100%); font-family: "General Sans SemiBold"; color: #F2F1EF; position: relative; }
+.glow { position: absolute; left: 540px; top: 760px; width: 1100px; height: 1100px; margin: -550px 0 0 -550px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(246,181,47,.38) 0%, rgba(246,181,47,.12) 40%, rgba(246,181,47,0) 70%); }
+.grid { position: absolute; inset: 0; opacity: .07;
+  background-image: linear-gradient(#5BE3C8 2px, transparent 2px), linear-gradient(90deg, #5BE3C8 2px, transparent 2px); background-size: 120px 120px; }
+.bot { position: absolute; }
+.bot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.h1 { position: absolute; left: 0; right: 0; text-align: center; font-family: "Archivo Expanded Black"; letter-spacing: -2px; line-height: 1; }
+.pill { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; padding: 18px 40px; border-radius: 999px; font-size: 44px; }
+.sun { color: #F6B52F; }

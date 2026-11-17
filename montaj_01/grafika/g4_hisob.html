@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  #bot { left: 360px; top: 190px; width: 360px; height: 396px; }
+  #card { position: absolute; left: 60px; right: 60px; top: 660px; height: 560px; border-radius: 48px; background: rgba(4,21,18,.75);
+          border: 3px solid rgba(91,227,200,.35); box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+  #lbl { position: absolute; top: 60px; left: 0; right: 0; text-align: center; font-family: Michroma; font-size: 40px; letter-spacing: 8px; color: #5BE3C8; }
+  #num { position: absolute; top: 170px; left: 0; right: 0; text-align: center; font-family: "Archivo Expanded Black"; font-size: 118px; letter-spacing: -4px; }
+  #unit { position: absolute; top: 330px; left: 0; right: 0; text-align: center; font-size: 56px; color: #F2F1EF; opacity: .85; }
+  #bar { position: absolute; left: 70px; right: 70px; bottom: 60px; height: 22px; border-radius: 11px; background: rgba(255,255,255,.1); overflow: hidden; }
+  #fill { width: 100%; height: 100%; background: linear-gradient(90deg, #F6B52F, #E5482E); transform-origin: 0 50%; }
+</style></head><body>
+<div class="glow" style="top:900px"></div><div class="grid"></div>
+<div class="bot" id="bot"></div>
+<div id="card"><div id="lbl">OYIGA ELEKTR</div><div id="num">0</div><div id="unit">so'm</div><div id="bar"><div id="fill"></div></div></div>
+<script src="../../mashq/node_modules/gsap/dist/gsap.min.js"></script>
+<script src="../../mashq/scenes/common.js"></script>
+<script src="../../mashq/scenes/panelbek.js"></script>
+<script src="lib.js"></script>
+<script>
+  const B = document.getElementById('bot'); makeBot(B, ['salom', 'hayron'], false);
+  const N = document.getElementById('num'), L = document.getElementById('lbl');
+  const fmt = v => Math.round(v).toLocaleString('en-US').replace(/,/g, ' ');
+  const o = { v: 0 };
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#card', { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: 'power3.out' }, 0)
+    .fromTo(B, { y: -500 }, { y: 0, duration: 0.4, ease: 'back.out(1.6)' }, 0)
+    .fromTo(o, { v: 0 }, { v: 50e6, duration: 1.2, ease: 'expo.out', onUpdate: () => N.textContent = fmt(o.v) }, 0.3)
+    .fromTo('#fill', { scaleX: 0 }, { scaleX: 1 / 12, duration: 1.2, ease: 'expo.out' }, 0.3)
+    .call(() => { L.textContent = 'OYIGA ELEKTR'; N.style.color = '#F2F1EF'; }, null, 0.01)
+    .call(() => { L.textContent = 'YILIGA'; L.style.color = '#F6B52F'; N.style.color = '#F6B52F'; }, null, 2.05)
+    .call(() => { L.textContent = 'OYIGA ELEKTR'; L.style.color = '#5BE3C8'; N.style.color = '#F2F1EF'; }, null, 2.04)
+    .to(o, { v: 600e6, duration: 1.3, ease: 'expo.out', onUpdate: () => N.textContent = fmt(o.v) }, 2.1)
+    .to('#fill', { scaleX: 1, duration: 1.3, ease: 'expo.out' }, 2.1)
+    .fromTo('#card', { x: 0 }, { x: 14, duration: 0.05, yoyo: true, repeat: 5, ease: 'none' }, 2.75)
+    .call(() => { N.style.color = '#E5482E'; }, null, 2.8)
+    .call(() => { N.style.color = '#F6B52F'; }, null, 2.79);
+  face(tl, B, 'hayron', 2.75);
+  tl.set({}, {}, 3.8);
+  window.tl = tl;
+</script></body></html>
