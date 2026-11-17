@@ -36,6 +36,7 @@
     factory: [['#E4D6BC', 'url(#gWall)'], ['#9FC3D6', 'url(#gWin)'], ['#1F3F73', 'url(#gGlass)'], ['#8d7a5e', 'url(#gWood)']],
     house: [['#C8372D', 'url(#gRed)'], ['#C99A5B', 'url(#gLeather)']], city: [['#3E5C76', 'url(#gMetal)'], ['#C99A5B', 'url(#gLeather)'], ['#8DAA6B', '#7fa060']],
     tesla: [['#EBC39C', 'url(#gSkin)'], ['#E3B58E', 'url(#gSkin)'], ['#2a2a30', 'url(#gSuit)'], ['#1c1816', 'url(#gHair)']],
+    teslaOld: [['#2a2a30', 'url(#gSuit)']],
     edison: [['#EBC39C', 'url(#gSkin)'], ['#E3B58E', 'url(#gSkin)']],
   };
   // qo'shimcha yaltirash qatlami (shisha / metall / qog'oz)

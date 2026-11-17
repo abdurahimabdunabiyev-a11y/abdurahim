@@ -2,6 +2,26 @@
 const K = '#1d1a16';
 window.ART = {
   // 1890-yilgi mashhur portretga qarab chizilgan (real foto emas)
+  // keksa Tesla (umrining oxiridagi suratga qarab): ozg'in, mo'ylovsiz, oq soch, katta quloq
+  teslaOld: () => `<svg viewBox="0 0 400 520">
+    <path d="M36 520 C40 430 96 392 168 380 L240 380 C312 392 364 430 368 520 Z" fill="#2a2a30" stroke="${K}" stroke-width="8"/>
+    <path d="M168 380 L204 520 L236 380 L222 372 L204 420 L184 372 Z" fill="#EDE8DD" stroke="${K}" stroke-width="6"/>
+    <path d="M178 300 L230 300 L234 378 L206 400 L174 378 Z" fill="#E7C9AE" stroke="${K}" stroke-width="7"/>
+    <path d="M186 330 Q206 344 226 330" stroke="#b89276" stroke-width="4" fill="none"/>
+    <path d="M100 168 C84 150 82 214 102 236 C112 246 120 236 122 224 Z" fill="#E7C9AE" stroke="${K}" stroke-width="7"/>
+    <path d="M308 168 C324 150 326 214 306 236 C296 246 288 236 286 224 Z" fill="#E7C9AE" stroke="${K}" stroke-width="7"/>
+    <path d="M122 140 C120 84 160 56 204 56 C250 56 288 84 286 140 C286 228 262 296 204 318 C148 296 122 228 122 140 Z" fill="#EFD5BC" stroke="${K}" stroke-width="8"/>
+    <path d="M136 210 Q152 252 170 262 M272 210 Q256 252 238 262" stroke="#b89276" stroke-width="6" fill="none" opacity=".8"/>
+    <path d="M150 238 Q160 270 178 284 M258 238 Q248 270 230 284" stroke="#d2ae90" stroke-width="10" fill="none" opacity=".55"/>
+    <path d="M118 136 C108 78 150 34 210 34 C262 34 300 70 292 138 C286 108 268 86 244 84 C220 70 186 72 166 82 C140 90 126 110 118 136 Z" fill="#E4E2DC" stroke="${K}" stroke-width="7"/>
+    <path d="M150 70 Q190 48 236 58 M170 52 Q214 38 258 60" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M150 162 Q170 150 190 158 M218 158 Q238 150 258 162" stroke="#9c9a95" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M156 186 Q174 176 190 188 Q172 196 156 186 Z M218 188 Q234 176 252 186 Q236 196 218 188 Z" fill="#FBF8F1" stroke="${K}" stroke-width="4"/>
+    <circle cx="174" cy="187" r="7" fill="${K}"/><circle cx="234" cy="187" r="7" fill="${K}"/>
+    <path d="M154 198 Q172 210 192 200 M216 200 Q236 210 254 198" stroke="#b89276" stroke-width="4" fill="none"/>
+    <path d="M206 186 L196 246 Q206 260 222 250" stroke="#a87b56" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M182 276 Q206 268 230 278" stroke="#8a5d42" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </svg>`,
   tesla: (old = false) => { const H = old ? '#a7a7ae' : '#1c1816', M = old ? '#bdbdc4' : '#1c1816', J = old ? '#55555e' : '#2a2a30';
     return `<svg viewBox="0 0 400 520">
     <path d="M30 520 C34 420 90 372 170 356 L250 356 C320 370 372 420 376 520 Z" fill="${J}" stroke="${K}" stroke-width="8"/>
