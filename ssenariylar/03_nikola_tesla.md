@@ -1,54 +1,55 @@
-# Ssenariy 03 — "Rozetkadagi odam" (Nikola Tesla)
+# Ssenariy 03 (v2) — "3327-xona" (Nikola Tesla)
 
-**Format:** 9:16, ~85 s, @birfoiz uslubidagi illyustratsiya (real foto yo'q) · **Ovoz:** Liam (hikoyachi) + qisqa repliklar
-**Auditoriya:** 7 yoshdan 70 yoshgacha — hamma rozetka ishlatadi; oxirida Premium Solar bilan tabiiy bog'lanish.
-**Asosiy g'oya:** "Edison va Tesla urushi" — referensdagi "Samarqand va Toshkent" bahsi kabi **raundlar**; oxirida izohda bahs: *"Siz kim tomonda bo'lardingiz?"*
+**Format:** 9:16, ~95 s, @birfoiz uslubidagi illyustratsiya (real foto YO'Q) · **Ovoz:** Liam (past, sirli ohang) · **Kayfiyat:** vahima, sir, triller → bahs
+**Rasmlar:** aralash — qo'rqinchli atmosferali sahnalar (xona, laboratoriya, chaqmoq) Canva AI illyustratsiya; qolgani (stikerlar, raundlar, Panelbek, shtamplar) kodda.
+**Foydalanuvchi talabi:** vahima + bahs qo'shilsin, odamlar izohga yozsin, qo'rqinchli emotsiya bersin.
 
-## Nega bu ishlaydi (10/10 mexanikasi)
-1. **Hook — sir + adolatsizlik:** "Har bir rozetkada bir odamning ismi yashiringan... u esa kambag'al o'lgan." 2 soniyada savol tug'iladi: *kim? nega?*
-2. **Qahramon va dushman:** Tesla (yosh daho, kambag'al) vs Edison (boy, mashhur). Hamma "underdog"ga tarafdor bo'ladi.
-3. **Raundlar:** tomoshabin "kim yutadi?" deb oxirigacha ko'radi (retention).
-4. **Burilish:** g'olib bo'ladi — lekin baribir hammasini yo'qotadi. Hissiyot.
-5. **Kutilmagan final:** bahs bugun ham tugamagan — **sizning tomingizda yarashgan** (quyosh paneli = Edisonning toki, invertor = Teslaning toki). Faktga asoslangan, reklama emas, "voy!" effekti.
-6. **Izohga savol** — bahs → izohlar → algoritm.
-7. Raqamlar kam (4 sent, 50 000 dollar, 2 dollar, 1943) — hammasi oddiy, bola ham tushunadi.
+## Emotsiya xaritasi
+sir/qo'rquv (0–15 s) → hamdardlik (15–30) → **dahshat** (tok urushi, 30–45) → g'alaba (45–58) → fojia (58–72) → **sir qaytadi** (72–82) → "voy!" final (82–90) → **bahs** (90–95)
 
-## Sujet va sahnalar
+## Sahnalar
 
-| # | ~Vaqt | Kadr (illyustratsiya) | Ekrandagi matn | Ovoz |
-|---|---|---|---|---|
-| 1 | 0–4 | Devordagi rozetka (yaqin), ichidan yorug'lik; uchqun bilan Tesla siluyeti paydo bo'ladi | **ROZETKADAGI ODAM** | Uyingizdagi har bir rozetkada bitta odamning ismi yashiringan. U esa yolg'iz va kambag'al o'lgan. |
-| 2 | 4–9 | Qog'oz fon: kichkina Tesla, tashqarida chaqmoq chaqyapti; sana yorlig'i | **1856** · *rivoyatga ko'ra* | Uning ismi — Nikola Tesla. Rivoyat qilishlaricha, u chaqmoq chaqqan kechada tug'ilgan. |
-| 3 | 9–15 | Tesla boshidagi "fikr bulutida" mashina o'zi aylanyapti (chizmalar) | **QOG'OZSIZ IXTIRO** | U mashinani qog'ozga chizmasdan, boshida yig'ib, boshida sinab ko'rardi. |
-| 4 | 15–21 | Kema → Nyu-York; Tesla cho'ntagini ag'daradi, 4 ta tanga tushadi | **4 SENT** | Yigirma sakkiz yoshida Amerikaga keldi. Cho'ntagida — to'rt sent pul. |
-| 5 | 21–30 | Edison (oq sochli, to'la) Tesla bilan; "$50 000" chek → Edison kuladi, chek yirtiladi | **$50 000?** · qizil shtamp: **HAZIL!** | Mashhur Edisonga ishga kirdi. Teslaning aytishicha, Edison: "Mashinalarimni tuzatsang — ellik ming dollar" degan. Tesla tuzatdi. Edison esa kulib: "Bu amerikacha hazil edi", — dedi. |
-| 6 | 30–35 | Tesla qo'lida belkurak, ariq qazimoqda; yorliq "kuniga $2" | **KUNIGA 2 DOLLAR** | Tesla ishdan ketdi. Bir muddat kuniga ikki dollarga ariq qazidi. |
-| 7 | 35–38 | Ekran yirtilib ikkiga bo'linadi: chapda Edison (ko'k), o'ngda Tesla (tilla) — **VS** | **TOK URUSHI** | Va boshlandi... tok urushi! |
-| 8 | 38–46 | Panelbek hakam, hushtak: **1-RAUND · MASOFA**. Edison simi 2 km da tugaydi, Tesla simi shaharlar osha ketadi | Edison: **~2 km** · Tesla: **yuzlab km** | Edisonning to'g'ri toki bir-ikki kilometrga zo'rg'a yetardi. Teslaning o'zgaruvchan toki esa — shahardan-shaharga. |
-| 9 | 46–52 | **2-RAUND · YORUG'LIK**: 1893-yil Chikago ko'rgazmasi, yuz minglab lampa birdan yonadi | **CHIKAGO · 1893** | Ikkinchi raund: Chikago ko'rgazmasini Teslaning toki yuz minglab lampa bilan yoritdi. |
-| 10 | 52–58 | **3-RAUND · NIAGARA**: sharshara → turbina → sim → Buffalo shahri yonadi | **NIAGARA · 1896** | Uchinchi raund: Niagara sharsharasi qirq kilometr uzoqdagi shaharni yoritdi. G'olib — Tesla! |
-| 11 | 58–66 | Kubok... lekin qo'lidan tushib sinadi; hisob-kitob qog'ozlari yirtiladi; minora (Wardenclyffe) qurilishi to'xtaydi | **G'OLIB... LEKIN** | Lekin Tesla pulni hech qachon sanamadi. Kompaniyani qutqarish uchun shartnomasini yirtib tashlagani aytiladi. Simsiz elektr orzusiga pul topilmadi. |
-| 12 | 66–72 | Mehmonxona xonasi, deraza, kaptarlar; Tesla keksa, yolg'iz | **1943 · 3327-XONA** | Tesla 1943-yilda, Nyu-Yorkdagi mehmonxonada, qarzda va yolg'iz vafot etdi. Do'stlari — kaptarlar edi. |
-| 13 | 72–80 | **FINAL burilish:** zavod tomi, quyosh paneli → kabel → invertor → rozetka; ikki tomonda Edison va Tesla qo'l berib ko'rishadi | panel: **EDISON TOKI** · invertor: **TESLA TOKI** | Ammo bahs hali tugamagan. Quyosh paneli Edisonning to'g'ri tokini beradi. Invertor esa uni Teslaning o'zgaruvchan tokiga aylantiradi. Ikki raqib bugun sizning tomingizda yarashgan. |
-| 14 | 80–85 | Ekran ikkiga: Edison \| Tesla; savol lentasi; Panelbek ko'z qisadi; kichik logo | **SIZ KIM TOMONDASIZ?** | Siz kim tomonda bo'lardingiz — Edisonmi yoki Tesla? Izohda yozing. |
+| # | ~Vaqt | Kadr | Ekrandagi matn | Ovoz | Tovush |
+|---|---|---|---|---|---|
+| 1 | 0–5 | Qorong'i mehmonxona yo'lagi, eshikda **"BEZOVTA QILMANG"** osig'i, eshik ostidan ko'kimtir nur; kamera sekin yaqinlashadi (Canva) | **1943 · 3327-XONA** | 1943-yil. Nyu-York. 3327-xona. Ikki kundan beri eshikda "Bezovta qilmang" yozuvi osilib turibdi. | past drone, soat chiqillashi, yurak urishi |
+| 2 | 5–11 | Xizmatchi eshikni ochadi → qorong'i xona, deraza oldida kaptarlar, karavot; stol ustida qog'ozlar | — | Xizmatchi eshikni ochadi... Ichkarida dunyoni yoritgan odam jonsiz yotibdi. | eshik g'ichirlashi, kaptar qanoti, keskin sukut |
+| 3 | 11–16 | Qora siluet odamlar qog'oz va sandiqlarni olib chiqadi; qizil shtamp | **MAXFIY** | Bir necha kun o'tmay, hukumat odamlari uning qog'ozlari va sandiqlarini olib ketdi. Nega? | shtamp zarbasi, riser |
+| 4 | 16–23 | Devordagi rozetka, ichidan chaqmoq — Tesla yuzi paydo bo'ladi (stiker) | **NIKOLA TESLA** | Bu — Nikola Tesla. Uyingizdagi har bir rozetka uning ixtirosi bilan ishlaydi. Lekin dunyoni yoritgan odam qorong'ida, yolg'iz o'ldi. Qanday qilib? | elektr chirsillashi |
+| 5 | 23–29 | Bo'ronli kecha, chaqmoq, chaqaloq beshigi (Canva) | **1856** · *rivoyatga ko'ra* | Rivoyatga ko'ra, u chaqmoq chaqqan kechada tug'ilgan. Mashinalarni qog'ozsiz, boshida yig'ib sinab ko'rardi. | momaqaldiroq |
+| 6 | 29–34 | Cho'ntak ag'dariladi, 4 tanga tushadi | **4 SENT** | Amerikaga cho'ntagida to'rt sent bilan keldi. | tanga jarangi ×4 |
+| 7 | 34–41 | Edison (stiker) + chek **$50 000** → yirtiladi | shtamp **HAZIL!** | Teslaning aytishicha, Edison unga ellik ming dollar va'da qilgan. Ish bitgach esa kulib: "Bu amerikacha hazil edi", — degan. | qog'oz yirtilishi, sovuq kulgi |
+| 8 | 41–45 | Ekran yirtilib ikkiga: Edison (ko'k) **VS** Tesla (tilla) | **TOK URUSHI** | Va boshlandi... tok urushi. | zarba + chaqmoq |
+| 9 | 45–55 | **Dahshatli qism:** qizil-qora fon, uchqunlar, odamlar vahimada qochmoqda, **elektr stuli siluyeti** (qonsiz, faqat siluet) | **"BU TOK — O'LIM!"** · *1890* | Edison tarafdorlari odamlarni qo'rqitish uchun hayvonlarni ommaviy tarzda Teslaning toki bilan o'ldirib ko'rsatdi. Birinchi elektr stuli ham ataylab aynan shu tokda ishlatildi. Maqsad bitta: "Teslaning toki — o'lim!" | past bass zarbalar, olomon shovqini, elektr g'ichirlashi |
+| 10 | 55–63 | Panelbek hakam, 3 tez raund: **MASOFA** (2 km vs shaharlar) → **CHIKAGO 1893** (yuz minglab lampa) → **NIAGARA 1896** | **1-RAUND · 2-RAUND · 3-RAUND** · **G'OLIB — TESLA!** | Lekin haqiqat yutdi: Teslaning toki uzoqqa yetdi, Chikagoni yoritdi, Niagara sharsharasidan qirq kilometr naridagi shaharni yondirdi. G'olib — Tesla! | hushtak ×3, olqish |
+| 11 | 63–72 | Kubok tushib sinadi; laboratoriya yong'inda (Canva); minora qurilishi to'xtaydi | **G'OLIB... LEKIN** | Ammo uning laboratoriyasi yonib kul bo'ldi. Kompaniyani qutqarish uchun shartnomasini yirtgani aytiladi. Simsiz elektr minorasiga pul topilmadi. | yong'in chirsillashi, sekin pianino |
+| 12 | 72–82 | Qaytib 3327-xonaga: stoldagi qog'ozlarda chizmalar, "O'LIM NURI" yozuvi; qizil savol belgisi | **"O'LIM NURI"?** | Umrining oxirida Tesla "o'lim nuri" ixtiro qildim, deb e'lon qilgan edi. Rasmiy xulosa: qog'ozlarida xavfli narsa topilmadi. Lekin ko'pchilik bunga haligacha ishonmaydi. | qo'rqinchli drone qaytadi |
+| 13 | 82–90 | **FINAL:** zavod tomi, quyosh paneli → invertor → rozetka; Edison va Tesla qo'l berishadi | panel **EDISON TOKI** · invertor **TESLA TOKI** | Eng qizig'i: bu ikki dushman bugun sizning tomingizda birga ishlaydi. Quyosh paneli Edisonning tokini beradi, invertor uni Teslaning tokiga aylantiradi. | yorug' akkord |
+| 14 | 90–95 | Ekran ikkiga: Edison \| Tesla; ikkita savol lentasi; Panelbek ko'z qisadi; kichik logo | **EDISON — DAHO YOKI O'G'RI?** · **QOG'OZLARDA NIMA BOR EDI?** | Siz-chi? Edison — daho yoki o'g'ri? Teslaning qog'ozlarida nima bo'lgan? Izohda yozing. | soat chiqillashi, sukut |
 
-~200 so'z → ~85 s (2.3 so'z/s).
+~230 so'z → ~95 s.
 
-## Faktlar (manba bilan tekshirilgan; ehtiyotkor ifoda)
-- Tug'ilgan: 1856-yil 10-iyul, Smiljan. "Chaqmoq kechasi" — **rivoyat**, shunday deb aytiladi.
-- 1884: Nyu-Yorkka kelgan, **4 sent** bilan — Teslaning o'z xotirasi ("My Inventions").
-- **$50 000 / "American humor"** — Teslaning o'z hikoyasi → "Teslaning aytishicha" deb beriladi.
-- 1886–87: ariq qazish, kuniga **~$2** — biograflar.
-- To'g'ri tok (DC) tizimlari stansiyadan ~1–2 km atrofga xizmat qilgan; AC transformator bilan uzoqqa uzatiladi.
-- **1893 Chikago Butunjahon ko'rgazmasi** — Westinghouse/Tesla AC; "yuz minglab lampa" (manbalarda 100 000–200 000).
-- **1896-yil noyabr** — Niagara (Adams stansiyasi) → Buffalo, ~40 km.
-- Westinghouse bilan royalti shartnomasidan voz kechgani — keng tarqalgan hikoya → "aytiladi".
-- Wardenclyffe minorasi — simsiz energiya loyihasi, moliyalash to'xtagan.
-- **1943-yil 7-yanvar**, Hotel New Yorker, **3327-xona**, qarzda; kaptarlarni boqqan.
-- Quyosh paneli **DC** ishlab chiqaradi, invertor **AC** ga aylantiradi — texnik fakt; Premium Solar'da invertor bor.
-- ❌ Ishlatilmaydi (tasdiqlanmagan afsonalar): "Edison filni o'ldirgan" ishtiroki, "Morgan: hisoblagichni qayerga qo'yamiz?" iborasi, Teslaga tegishli deb yuradigan uydirma iqtiboslar.
+## Bahs nuqtalari (izohga yozdiradigan)
+1. **"Edison — daho yoki o'g'ri?"** — ikki tomonga bo'linadi (Samarqand/Toshkent effekti).
+2. **"Qog'ozlarda nima bor edi?"** — fitna nazariyasi muhokamasi.
+3. **"O'lim nuri"** — haqiqatmi, afsonami?
+4. Elektr stuli fakti — "bunday bo'lganmi?!" hayrat izohlari.
 
-## Vizual uslub
-- @birfoiz: qog'oz fon, yirtiq qog'oz o'tishlari, oq konturli stikerlar, yorliq va shtamplar.
-- Tesla va Edison — kodda chizilgan karikatura-illyustratsiya (real foto emas): Tesla — ozg'in, qora sochi o'rtadan taralgan, ingichka mo'ylov; Edison — to'la, oq sochli, jilet.
-- Ranglar: Edison tomoni — ko'k #3E5C76, Tesla tomoni — tilla #F6B52F; hakam — Panelbek.
+## Faktlar (tekshirilgan; ehtiyotkor ifoda)
+- 1943-yil 7/8-yanvar, Hotel New Yorker, **3327-xona**; eshikda "Do Not Disturb", xizmatchi topgan.
+- Vafotidan keyin AQSh **Begona mulk idorasi** qog'oz va buyumlarini olib qo'ygan; tekshirgan olim (John G. Trump) "xavfli narsa yo'q" degan xulosa bergan.
+- 1856, Smiljan; "chaqmoq kechasi" — **rivoyat**.
+- 1884: Nyu-York, **4 sent** — Teslaning o'z xotirasi. **$50 000 / "American humor"** — Teslaning o'z hikoyasi.
+- 1888-dan: Harold Brown (Edison laboratoriyasi yordamida) AC xavfini ko'rsatish uchun hayvonlarni tok bilan o'ldirib ko'rsatgan; **1890** — birinchi elektr stuli (Kemmler) AC generatorida; Edison lageri AC ni "o'lim toki" deb targ'ib qilgan.
+- 1893 Chikago ko'rgazmasi (AC, yuz minglab lampa); 1896 Niagara → Buffalo (~40 km).
+- **1895-yil mart** — Teslaning Nyu-Yorkdagi laboratoriyasi yong'inda yongan.
+- Westinghouse royaltisidan voz kechish — keng tarqalgan hikoya → "aytiladi".
+- Wardenclyffe minorasi — moliyalash to'xtagan.
+- **1934** — Tesla "o'lim nuri" (teleforce) ixtiro qildim deb matbuotga aytgan.
+- Quyosh paneli DC, invertor AC — texnik fakt; Premium Solar'da invertor bor.
+- ❌ Ishlatilmaydi: "Edison filni o'ldirgan" (Topsy — isbotlanmagan), "Morgan va hisoblagich" iborasi, uydirma iqtiboslar.
+
+## Qo'rqinchli kayfiyat uchun montaj qoidalari
+- Rang: sovuq ko'k-qora (1–3, 12-sahna), qizil-qora (9-sahna); qolganlari referensdagi iliq qog'oz.
+- Kamera: sekin "push-in" (vahima), keskin kesish zarba bilan.
+- Ovoz: Liam past va sekin boshlaydi (`[whispers]`/`[serious]`), raundlarda jonlanadi, oxirida yana past.
+- Sukut: 2- va 12-sahnadan oldin 0.4 s to'liq sukut — eng kuchli qo'rquv joyi.
