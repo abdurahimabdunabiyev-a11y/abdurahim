@@ -2,56 +2,38 @@
 """Montaj 03 (Tesla): ovoz + musiqa + SFX -> video bilan birlashtirish."""
 import json, subprocess, os
 W = os.path.dirname(os.path.abspath(__file__)); os.chdir(W)
-TOTAL = 105.4
+TOTAL = 74.4
 SFXBIN = os.path.expanduser('~/earshot-venv/bin/earshot')
 MUSIC = '/tmp/claude-0/-home-user-abdurahim/95b55091-90bf-59e6-b39c-f98dfd0220b8/scratchpad/music/M3.m4a'
-MSTART = 71.3  # M3 dagi 1:57 'drop' 45.7 s (1954 burilishi) ga to'g'ri keladi
-VOICE = 'ovoz/ovoz_full.wav'
+MSTART = 84.0  # M3 dagi 1:57 'drop' 45.7 s (1954 burilishi) ga to'g'ri keladi
+VOICE = 'ovoz/ovoz5.wav'
 def run(c): subprocess.run(c, check=True)
 
-CUTS = (4.7, 14.9, 21.2, 34.8, 41.1, 45.7, 55.6, 64.3, 70.9, 78.7, 82.9, 88.9)
+CUTS = (5.0, 9.95, 15.3, 24.4, 30.0, 32.95, 40.15, 43.6, 49.4, 58.45, 69.1)
 SFX = [('whoosh_fast/crisp', a, 0.131, -13) for a in CUTS]
 SFX += [
-    # S1 hook: chaqmoqlar, to'xtatildi
-    ('glitch/burst', 0.25, 0.361, -16), ('glitch/hit', 1.05, 0.252, -17), ('pop/4', 1.32, 0.004, -12), ('glitch/hit', 1.85, 0.252, -17),
-    ('downlifter/tape', 3.72, 0.103, -10), ('cut_hit/sub', 3.76, 0.021, -7), ('impact/punch', 3.8, 0.066, -11),
-    # S2
-    ('pop/2', 5.12, 0.009, -12), ('ui_pop/blip', 5.52, 0.017, -13), ('pop/4', 6.62, 0.004, -12), ('ui_pop/wide', 8.42, 0.044, -12),
-    ('swish/soft', 9.85, 0.110, -15), ('cut_hit/kick', 11.62, 0.013, -11), ('riser/snatch', 13.4, 0.386, -15), ('pop/2', 13.62, 0.009, -12),
-    # S3
-    ('pop/4', 15.02, 0.004, -12), ('ui_pop/soft', 16.62, 0.042, -13), ('swish/zing', 19.0, 0.065, -14), ('notify/mid_tine', 20.45, 0.038, -14),
-    # S4
-    ('pop/2', 21.62, 0.009, -12), ('riser/build', 23.6, 1.202, -16), ('ui_pop/wide', 23.42, 0.044, -13),
-    ('whoosh_big/swell', 26.0, 0.436, -14), ('notify/m1', 26.65, 0.004, -18),
-    # S5
-    ('cut_hit/punch', 29.05, 0.058, -11), ('whoosh_fast/heavy', 30.95, 0.135, -12), ('cut_hit/kick', 31.02, 0.013, -9),
-    ('impact/metal', 34.0, 0.117, -12), ('cut_hit/rumble', 33.8, 0.072, -12),
-    # S6
-    ('pop/2', 35.02, 0.009, -12), ('ui_pop/soft', 36.42, 0.042, -13), ('swish/soft', 39.3, 0.110, -14), ('cut_hit/punch', 40.12, 0.058, -10),
-    # S7 qayg'u
-    ('downlifter/sub_sink', 41.3, 0.152, -16), ('ui_pop/soft', 41.72, 0.042, -14),
-    # S8
-    ('pop/4', 46.22, 0.004, -12), ('pop/2', 49.52, 0.009, -12), ('swish/zing', 50.0, 0.065, -15), ('pop/2', 50.22, 0.009, -12), ('ui_pop/blip', 50.52, 0.017, -13),
-    ('riser/snatch', 52.6, 0.386, -15), ('glitch/chirp', 53.5, 0.076, -18), ('fit/snap/switch_flip', 54.12, 0.035, -9), ('notify/mid_tine', 54.2, 0.038, -15),
-    # S9
-    ('cut_hit/punch', 55.75, 0.058, -11), ('pop/2', 56.02, 0.009, -12), ('pop/2', 57.27, 0.009, -12), ('pop/2', 58.22, 0.009, -12),
-    ('ui_pop/wide', 59.17, 0.044, -11), ('notify/m2', 59.2, 0.004, -18), ('pop/4', 61.92, 0.004, -12),
-    # S10
-    ('pop/4', 64.37, 0.004, -12), ('ui_pop/soft', 65.77, 0.042, -12), ('pop/2', 66.82, 0.009, -12), ('pop/4', 68.02, 0.004, -12), ('click/thock', 69.9, 0.004, -11),
-    # S11
-    ('pop/2', 71.02, 0.009, -12), ('ui_pop/wide', 72.52, 0.044, -12), ('pop/4', 74.12, 0.004, -12), ('riser/snatch', 77.2, 0.386, -15), ('notify/m5', 77.4, 0.004, -16),
-    # S12
-    ('whoosh_big/swell', 79.0, 0.436, -14), ('ui_pop/wide', 80.62, 0.044, -12), ('logo_sting/whoosh_glass', 81.3, 0.201, -14),
-    # S13 bahs
-    ('cut_hit/kick', 83.02, 0.013, -10), ('swish/blade', 83.3, 0.059, -14), ('pop/4', 85.62, 0.004, -11), ('pop/2', 87.02, 0.009, -12),
+    ('glitch/burst', 0.25, 0.361, -16), ('glitch/hit', 1.05, 0.252, -17), ('pop/4', 1.47, 0.004, -12), ('glitch/hit', 2.6, 0.252, -17),
+    ('downlifter/tape', 4.12, 0.103, -10), ('cut_hit/sub', 4.18, 0.021, -7), ('impact/punch', 4.22, 0.066, -11),
+    ('pop/2', 5.12, 0.009, -12), ('ui_pop/blip', 5.62, 0.017, -13), ('pop/4', 7.12, 0.004, -12), ('ui_pop/wide', 8.87, 0.044, -12),
+    ('pop/4', 10.07, 0.004, -12), ('ui_pop/soft', 12.32, 0.042, -13), ('swish/zing', 13.3, 0.065, -14), ('notify/mid_tine', 14.72, 0.038, -14),
+    ('pop/2', 15.52, 0.009, -12), ('riser/build', 16.5, 1.202, -16), ('ui_pop/wide', 16.32, 0.044, -13), ('whoosh_big/swell', 18.1, 0.436, -14),
+    ('cut_hit/punch', 20.85, 0.058, -11), ('whoosh_fast/heavy', 21.9, 0.135, -12), ('cut_hit/kick', 21.92, 0.013, -9),
+    ('impact/metal', 23.0, 0.117, -12), ('cut_hit/rumble', 22.85, 0.072, -12), ('cut_hit/kick', 23.32, 0.013, -11),
+    ('pop/2', 24.52, 0.009, -12), ('ui_pop/soft', 25.92, 0.042, -13), ('swish/soft', 28.6, 0.110, -14), ('cut_hit/punch', 29.32, 0.058, -10),
+    ('downlifter/sub_sink', 30.2, 0.152, -16), ('ui_pop/soft', 31.35, 0.042, -14),
+    ('pop/4', 33.12, 0.004, -12), ('pop/2', 36.42, 0.009, -12), ('swish/zing', 36.9, 0.065, -15), ('pop/2', 37.22, 0.009, -12),
+    ('riser/snatch', 39.0, 0.386, -15), ('fit/snap/switch_flip', 39.62, 0.035, -9), ('notify/mid_tine', 39.66, 0.038, -15),
+    ('cut_hit/punch', 40.3, 0.058, -11), ('pop/2', 40.32, 0.009, -12), ('pop/2', 41.12, 0.009, -12), ('ui_pop/wide', 41.92, 0.044, -11),
+    ('pop/4', 43.72, 0.004, -12), ('pop/2', 44.22, 0.009, -12), ('pop/2', 45.62, 0.009, -12), ('pop/2', 46.32, 0.009, -12), ('pop/2', 47.12, 0.009, -12),
+    ('cut_hit/kick', 48.42, 0.013, -9),
+    ('pop/4', 49.52, 0.004, -12), ('pop/2', 50.92, 0.009, -12), ('riser/snatch', 54.2, 0.386, -15), ('notify/m5', 54.3, 0.004, -17),
+    ('cut_hit/punch', 55.35, 0.058, -11), ('riser/snatch', 58.0, 0.386, -14), ('impact/punch', 58.05, 0.066, -13),
+    ('pop/2', 58.8, 0.009, -12), ('ui_pop/wide', 60.77, 0.044, -12), ('fit/pop/lip_pop', 61.67, 0.009, -11),
+    ('logo_sting/whoosh_glass', 62.75, 0.201, -11), ('cut_hit/punch', 62.75, 0.058, -10), ('whoosh_big/swell', 63.6, 0.436, -13),
+    ('ui_pop/wide', 65.37, 0.044, -12), ('pop/4', 66.37, 0.004, -12), ('notify/m1', 66.9, 0.004, -17),
+    ('cut_hit/kick', 69.27, 0.013, -10), ('swish/blade', 69.4, 0.059, -14), ('pop/4', 71.42, 0.004, -11), ('pop/2', 73.02, 0.009, -12),
 ]
-SFX += [('hover_tick/ping', 71.6 + k * 0.3, 0.004, -20) for k in range(5)]
-SFX += [(sid, 88.9 + t, pk, db) for sid, t, pk, db in [
-    ('pop/2', 0.45, 0.009, -12), ('ui_pop/wide', 3.1, 0.044, -12), ('fit/pop/lip_pop', 5.25, 0.009, -11),
-    ('logo_sting/whoosh_glass', 6.5, 0.201, -11), ('cut_hit/punch', 6.55, 0.058, -10),
-    ('whoosh_big/swell', 8.0, 0.436, -13), ('pop/4', 8.35, 0.004, -12), ('ui_pop/wide', 10.2, 0.044, -12),
-    ('riser/snatch', 11.9, 0.386, -15), ('notify/m1', 12.0, 0.004, -17), ('logo_sting/whoosh_glass', 13.2, 0.201, -12), ('pop/2', 14.05, 0.009, -12)]]
-SFX += [('hover_tick/ping', 88.9 + 10.3 + i * 0.13, 0.004, -19) for i in range(12)]
+SFX += [('hover_tick/ping', 65.45 + i * 0.1, 0.004, -19) for i in range(12)]
 os.makedirs('sfx', exist_ok=True)
 ins, flt = [], []
 for k, (sid, t, pk, db) in enumerate(SFX):
