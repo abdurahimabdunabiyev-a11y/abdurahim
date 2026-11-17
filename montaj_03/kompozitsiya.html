@@ -17,6 +17,9 @@
   .small { position: absolute; font-family: "General Sans SemiBold"; font-size: 34px; color: #6b6152; }
   #wipe { position: absolute; top: -100px; width: 1500px; height: 2200px; left: 1200px; z-index: 50; }
   .wire { fill: none; stroke-linecap: round; }
+  .photo { position: absolute; inset: 0; background: #FBF8F1; padding: 16px 16px 46px; box-shadow: 0 16px 26px rgba(20,15,10,.35); transform: rotate(-3deg); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; }
+  .photo .tape { position: absolute; left: 50%; top: -22px; width: 150px; height: 44px; margin-left: -75px; background: rgba(246,181,47,.75); transform: rotate(4deg); }
 </style></head><body>
 
 <!-- S1 hook: minora tunda -->
@@ -190,11 +193,12 @@ $('#wipep').setAttribute('d', poly([...tornEdge(80, 0, 80, 2200, 26, 40), ...tor
 $('#t13').innerHTML = `<path d="${poly([[1080, 0], [1080, 1920], ...tornEdge(560, 1920, 520, 0, 24, 36)])}" fill="#F6B52F"/>`;
 // art joylash
 const put = (id, html) => $(id).innerHTML = html;
-put('#t1', ART.tower()); put('#t4', ART.tower()); put('#ts2', ART.tesla()); put('#roz', ART.rozetka()); put('#cityT', ART.city()); put('#cityN', ART.city());
-put('#inv', ART.investor()); put('#bag', ART.bag()); put('#sun6', ART.sun()); put('#ts6', ART.tesla()); put('#pat', ART.patent());
-put('#pg1', ART.pigeon()); put('#pg2', ART.pigeon()); put('#ts7', ART.teslaOld()); put('#sand', ART.sand()); put('#waf', ART.wafer()); put('#sun8', ART.sun()); put('#bulb8', ART.bulb());
-put('#pan9', ART.panel()); put('#pan10', ART.panel()); put('#inv10', ART.inverter()); put('#tf10', ART.tesla()); put('#stn10', ART.stanok());
-put('#pan11', ART.panel()); put('#sun12', ART.sun()); put('#fac12', ART.factory()); put('#inv13', ART.investor()); put('#ts13', ART.tesla());
+const PH = (src, rot = -3) => `<div class="photo" style="transform:rotate(${rot}deg)"><img src="${src}"><div class="tape"></div></div>`;
+put('#t1', ART.tower()); put('#t4', ART.tower()); put('#ts2', PH('foto/tesla_1890.jpg', -3)); put('#roz', ART.rozetka()); put('#cityT', ART.city()); put('#cityN', ART.city());
+put('#inv', ART.investor()); put('#bag', ART.bag()); put('#sun6', ART.sun()); put('#ts6', PH('foto/tesla_1890.jpg', 3)); put('#pat', ART.patent());
+put('#pg1', ART.pigeon()); put('#pg2', ART.pigeon()); put('#ts7', PH('foto/tesla_keksa.jpg', -2)); put('#sand', ART.sand()); put('#waf', ART.wafer()); put('#sun8', ART.sun()); put('#bulb8', ART.bulb());
+put('#pan9', ART.panel()); put('#pan10', ART.panel()); put('#inv10', ART.inverter()); put('#tf10', PH('foto/tesla_1890.jpg', 6)); put('#stn10', ART.stanok());
+put('#pan11', ART.panel()); put('#sun12', ART.sun()); put('#fac12', ART.factory()); put('#inv13', ART.investor()); put('#ts13', PH('foto/tesla_1890.jpg', 3));
 // chaqmoqlar (S1)
 const bolt = (x, y, len, ang) => { let d = `M${x} ${y}`, cx = x, cy = y; for (let i = 0; i < 7; i++) { cx += Math.cos(ang) * len / 7 + (rnd() - .5) * 60; cy += Math.sin(ang) * len / 7 + (rnd() - .5) * 60; d += ` L${cx.toFixed(0)} ${cy.toFixed(0)}`; } return d; };
 $('#bolts1').innerHTML = [0, 1, 2, 3, 4, 5].map(i => `<path class="bl" d="${bolt(540, 700, 380, -Math.PI / 2 + (i - 2.5) * 0.5)}" stroke="#bfe9ff" stroke-width="9" fill="none" stroke-linejoin="round" opacity="0"/>`).join('');
