@@ -261,3 +261,19 @@ Yechim — **"Montaj Yuklash" sahifasi**: https://claude.ai/artifact/J1Emidie83y
 - Aniq shrift nomlari / fayllari.
 - O'z SFX kutubxonasi (yo'q bo'lsa HyperFrames `media-use` SFX).
 - ~~Instagram nik, avatar, brend ranglari~~ → 10.5-bo'limga qarang.
+
+## §11 Xom kadr (isxodnik) asboblari — 2026-11-17 o'rnatildi
+Hammasi `asboblar/` da. Venv: `~/montaj-venv` (Python 3.12: mediapipe, opencv, torch-cpu, DeepFilterNet3). Modellar: `~/montaj-models/`, `~/.cache/DeepFilterNet/DeepFilterNet3`.
+
+| Vazifa | Buyruq | Izoh |
+|---|---|---|
+| **Ovoz tozalash** (shovqin, shamol, aks-sado) | `~/montaj-venv/bin/python asboblar/ovoz_tozala.py xom.mp4 toza.wav [--kuch 0.85]` | DeepFilterNet3 + EQ/de-esser/kompressor. Sinov: shovqin −50 → −66 dB. `--kuch 0.6` tabiiyroq. |
+| **Yuz kuzatish** | `~/montaj-venv/bin/python asboblar/kadr_ai.py yuz video.mp4 yuz.json` | har 0.2 s, silliqlangan |
+| **16:9 → 9:16 aqlli kesish** | `... kadr_ai.py kes video.mp4 vert.mp4 [--zoom 1.15] [--yuz yuz.json]` | kadr yuzni kuzatadi; 4K kirishni avval 1920 ga tushirish tezroq |
+| **Odam niqobi** | `... kadr_ai.py niqob video.mp4 niqob.mp4` | oq=odam. Matnni odam orqasiga: `[fon][matn]overlay[t];[t][asl][niqob]maskedmerge` (asl odam ustida). Fon blur: `[asl]boxblur[b];[b][asl][niqob]maskedmerge` |
+| **Jump-cut** | `~/claude-video-kit/.venv/bin/python asboblar/jumpcut.py xom.mp4 kes.mp4 [--pauza 0.35]` | pauza va "ee/mmm" kesiladi; `kes.words.json` — subtitr uchun yangi so'z vaqtlari. Takroriy dublni (bir gap 2 marta) o'zing tanla. Sinov: 22.0 → 17.3 s |
+| **Kino ranglar (LUT)** | `-vf lut3d=file=lut/NOM.cube` | `kino_teal`, `tungi_kok` (FERS kabi qorong'i ko'k-yashil), `iliq_premium`, `toza_tabiiy`, `brend_yashil`. Qayta yasash: `python3 asboblar/lut_yasa.py` |
+| **Musiqa (Mixkit)** | `python3 asboblar/musiqa.py qidir cinematic` · `... ol 614 ~/montaj-musiqa` | tijoratda bepul. Tayyor: 614 Silent Descent, 184 Vastness, 871 Fright Night, 676 Epical Drums, 1167 Close Up, 175 Digital Clouds |
+
+**Xom kadr ish tartibi:** ovoz_tozala → jumpcut → (kerak bo'lsa kes 9:16) → LUT + yengil push-in → subtitr (words.json) → B-roll/grafika → musiqa+SFX → loudnorm −14 → earshot critique.
+**Yuklash:** katta fayllar `artifacts/video-yuklash.html` sahifasi orqali (1 GiB kvota — har montajdan keyin bo'laklarni o'chir).
