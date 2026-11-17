@@ -1,0 +1,9 @@
+*.mp4
+*.wav
+*.mp3
+sfx/
+snap*.png
+snaps.png
+test_art.png
+render.log
+ovoz/resp.json

@@ -1,0 +1,291 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #F1EADB; }
+  body { position: relative; font-family: "General Sans SemiBold"; color: #1d1a16; }
+  .sc { position: absolute; inset: 0; opacity: 0; overflow: hidden; }
+  .paper { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; opacity: .5; z-index: 40;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .35 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"); }
+  .vig { position: absolute; inset: 0; pointer-events: none; z-index: 41; background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.35) 100%); }
+  .stk { position: absolute; filter: drop-shadow(5px 0 0 #fff) drop-shadow(-5px 0 0 #fff) drop-shadow(0 5px 0 #fff) drop-shadow(0 -5px 0 #fff) drop-shadow(0 14px 10px rgba(20,15,10,.3)); }
+  .stk svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .tag { position: absolute; left: 50%; white-space: nowrap; background: #FBF8F1; color: #1d1a16; font-family: "Archivo Black Regular"; text-align: center;
+         padding: 16px 34px; box-shadow: 0 10px 18px rgba(20,15,10,.25); transform: translateX(-50%) rotate(-2deg); line-height: 1.05; }
+  .tag.dark { background: #1d1a16; color: #FBF8F1; } .tag.gold { background: #F6B52F; } .tag.green { background: #22674D; color: #FBF8F1; } .tag.blue { background: #3E5C76; color: #FBF8F1; }
+  .stamp { position: absolute; left: 50%; white-space: nowrap; font-family: "Archivo Black Regular"; color: #C8372D; border: 10px solid #C8372D; text-align: center;
+           padding: 8px 32px; border-radius: 14px; transform: translateX(-50%) rotate(-6deg); background: rgba(251,248,241,.92); line-height: 1.02; }
+  .small { position: absolute; font-family: "General Sans SemiBold"; font-size: 34px; color: #6b6152; }
+  #wipe { position: absolute; top: -100px; width: 1500px; height: 2200px; left: 1200px; z-index: 50; }
+  .wire { fill: none; stroke-linecap: round; }
+</style></head><body>
+
+<!-- S1 hook: minora tunda -->
+<div class="sc" id="s1" style="background:#152238">
+  <svg width="1080" height="1920" style="position:absolute;inset:0"><g fill="#F1EADB" opacity=".6">${''}</g><rect y="1500" width="1080" height="420" fill="#0d1626"/></svg>
+  <svg id="bolts1" width="1080" height="1920" style="position:absolute;inset:0"></svg>
+  <div class="stk" id="t1" style="left:290px;top:560px;width:500px;height:875px"></div>
+  <div class="tag gold" id="s1a" style="top:250px;font-size:110px">TEKIN ELEKTR</div>
+  <div class="stamp" id="s1b" style="top:1000px;font-size:104px;opacity:0">TO'XTATILDI</div>
+</div>
+
+<!-- S2 Tesla kim + tok -->
+<div class="sc" id="s2" style="background:#F1EADB">
+  <div class="stk" id="ts2" style="left:80px;top:170px;width:440px;height:572px"></div>
+  <div class="tag dark" id="s2n" style="left:770px;top:260px;font-size:62px">NIKOLA<br>TESLA</div>
+  <div class="small" id="s2y" style="left:620px;top:440px;font-size:40px">1856 — 1943</div>
+  <div class="stk" id="roz" style="left:640px;top:520px;width:260px;height:260px"></div>
+  <div class="tag gold" id="s2t" style="top:850px;font-size:62px">O'ZGARUVCHAN TOK</div>
+  <svg width="1080" height="900" style="position:absolute;left:0;top:1000px">
+    <g id="rowE"><text x="60" y="80" font-family="Archivo Black Regular" font-size="44" fill="#3E5C76">EDISON</text>
+      <path id="wE" class="wire" d="M60 140 H330" stroke="#3E5C76" stroke-width="16"/>
+      <text id="kmE" x="360" y="160" font-family="Archivo Black Regular" font-size="56" fill="#C8372D">~2 km ✕</text></g>
+    <g id="rowT"><text x="60" y="380" font-family="Archivo Black Regular" font-size="44" fill="#b7861a">TESLA</text>
+      <path id="wT" class="wire" d="M60 450 Q110 400 160 450 T260 450 T360 450 T460 450 T560 450 T660 450 T760 450" stroke="#F6B52F" stroke-width="16"/>
+      <text id="kmT" x="200" y="580" font-family="Archivo Black Regular" font-size="52" fill="#22674D">SHAHARDAN-SHAHARGA →</text></g>
+  </svg>
+  <div class="stk" id="cityT" style="left:800px;top:1330px;width:240px;height:183px"></div>
+</div>
+
+<!-- S3 Niagara -->
+<div class="sc" id="s3" style="background:#9FC3D6">
+  <svg width="1080" height="1920" style="position:absolute;inset:0">
+    <path d="M0 700 L360 700 L360 1500 L0 1500 Z" fill="#7d6a52" stroke="#1d1a16" stroke-width="8"/>
+    <g id="fall" clip-path="url(#fc)"><clipPath id="fc"><rect x="60" y="700" width="260" height="800"/></clipPath>
+      ${''}</g>
+    <rect y="1500" width="1080" height="420" fill="#4f88b0"/><path d="M0 1500 H1080" stroke="#1d1a16" stroke-width="8"/>
+    <rect x="380" y="1260" width="200" height="240" fill="#E4D6BC" stroke="#1d1a16" stroke-width="8"/><circle cx="480" cy="1360" r="50" fill="#F6B52F" stroke="#1d1a16" stroke-width="7" id="turb"/>
+    <path id="wN" class="wire" d="M580 1300 Q680 1250 760 1300 Q840 1250 920 1300" stroke="#1d1a16" stroke-width="8"/>
+  </svg>
+  <div class="tag dark" id="s3a" style="top:220px;font-size:96px">NIAGARA · 1896</div>
+  <div class="tag gold" id="s3b" style="left:760px;top:1150px;font-size:70px;opacity:0">40 km</div>
+  <div class="stk" id="cityN" style="left:700px;top:1300px;width:340px;height:259px"></div>
+</div>
+
+<!-- S4-S5 minora orzu va to'xtatish -->
+<div class="sc" id="s4" style="background:#2b2448">
+  <svg id="rings" width="1080" height="1920" style="position:absolute;inset:0"></svg>
+  <div class="stk" id="t4" style="left:340px;top:640px;width:400px;height:700px"></div>
+  <div id="ruler" style="position:absolute;left:220px;top:640px;width:10px;height:700px;background:#F6B52F;border:4px solid #1d1a16"></div>
+  <div class="tag gold" id="s4h" style="left:150px;top:960px;font-size:58px;transform:translateX(-50%) rotate(-90deg)">57 m</div>
+  <div id="houses"></div>
+  <div class="tag gold" id="s4t" style="top:230px;font-size:76px">ORZU: SIMSIZ ELEKTR</div>
+  <div class="stk" id="inv" style="left:-40px;top:900px;width:420px;height:588px;opacity:0"></div>
+  <div class="stk" id="bag" style="left:330px;top:1200px;width:240px;height:256px;opacity:0"></div>
+  <div class="stamp" id="s5a" style="top:330px;font-size:84px;opacity:0">PUL TO'XTADI</div>
+  <div class="tag dark" id="s5b" style="top:1560px;font-size:64px;opacity:0">1917: MINORA BUZILDI</div>
+</div>
+
+<!-- S6 Tesla va quyosh, patent -->
+<div class="sc" id="s6" style="background:#F1EADB">
+  <div class="stk" id="sun6" style="left:-60px;top:120px;width:420px;height:420px"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0"><g id="rays6" stroke="#F6B52F" stroke-width="14" stroke-linecap="round" stroke-dasharray="30 22">
+    <path d="M300 420 L620 760"/><path d="M260 480 L520 860"/><path d="M340 360 L760 700"/></g></svg>
+  <div class="stk" id="ts6" style="left:560px;top:520px;width:420px;height:546px"></div>
+  <div class="tag dark" id="s6a" style="top:1150px;font-size:58px">ENERGIYA MANBAI — QUYOSH</div>
+  <div class="stk" id="pat" style="left:300px;top:1240px;width:330px;height:440px;opacity:0"></div>
+  <div class="stamp" id="s6b" style="left:770px;top:1420px;font-size:70px;opacity:0">PATENT<br>1901</div>
+</div>
+
+<!-- S7 1943 -->
+<div class="sc" id="s7" style="background:#1b2433">
+  <svg width="1080" height="1920" style="position:absolute;inset:0">
+    <rect x="260" y="300" width="560" height="640" fill="#2f4a6b" stroke="#0b0f14" stroke-width="16"/><path d="M540 300 V940 M260 620 H820" stroke="#0b0f14" stroke-width="14"/>
+    <circle cx="690" cy="430" r="60" fill="#e9e3d0" opacity=".85"/><rect x="230" y="930" width="620" height="30" fill="#0b0f14"/>
+  </svg>
+  <div class="stk" id="pg1" style="left:300px;top:850px;width:150px;height:112px"></div>
+  <div class="stk" id="pg2" style="left:620px;top:850px;width:150px;height:112px;transform:scaleX(-1)"></div>
+  <div class="stk" id="ts7" style="left:300px;top:1080px;width:480px;height:624px;filter:grayscale(.6) drop-shadow(5px 0 0 #fff) drop-shadow(-5px 0 0 #fff) drop-shadow(0 5px 0 #fff) drop-shadow(0 -5px 0 #fff)"></div>
+  <div class="tag" id="s7a" style="top:150px;font-size:64px">ORZULAR QOG'OZDA QOLDI</div>
+  <div class="tag dark" id="s7b" style="top:1000px;font-size:100px;opacity:0;z-index:5">1943</div>
+</div>
+
+<!-- S8 panel qanday ishlaydi -->
+<div class="sc" id="s8" style="background:#F1EADB">
+  <div class="tag gold" id="s8a" style="top:110px;font-size:58px">1954<br>BIRINCHI QUYOSH ELEMENTI</div>
+  <div class="stk" id="sand" style="left:80px;top:330px;width:330px;height:220px"></div>
+  <svg width="1080" height="600" style="position:absolute;left:0;top:330px"><path id="arr8" d="M440 110 H600" stroke="#1d1a16" stroke-width="12" fill="none" marker-end="url(#ah)"/>
+    <defs><marker id="ah" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#1d1a16"/></marker></defs></svg>
+  <div class="stk" id="waf" style="left:680px;top:320px;width:240px;height:240px"></div>
+  <div class="tag" id="s8b" style="top:600px;font-size:54px">KREMNIY = ODDIY QUM</div>
+  <div class="stk" id="sun8" style="left:60px;top:780px;width:260px;height:260px"></div>
+  <svg width="1080" height="1100" style="position:absolute;left:0;top:780px">
+    <rect x="200" y="420" width="680" height="70" fill="#2a3f6e" stroke="#1d1a16" stroke-width="8"/><rect x="200" y="490" width="680" height="40" fill="#8fa3c7" stroke="#1d1a16" stroke-width="6"/>
+    <g id="phot">${''}</g><g id="elec"></g>
+    <path id="w8" class="wire" d="M880 470 H980 V900 H700" stroke="#1d1a16" stroke-width="12"/>
+  </svg>
+  <div class="stk" id="bulb8" style="left:520px;top:1560px;width:170px;height:238px"></div>
+  <div class="tag green" id="s8c" style="left:300px;top:1640px;font-size:60px;opacity:0">NUR → TOK</div>
+</div>
+
+<!-- S9 afzalliklar -->
+<div class="sc" id="s9" style="background:#22674D">
+  <div class="stk" id="pan9" style="left:180px;top:160px;width:720px;height:500px"></div>
+  <div class="tag" id="c91" style="top:760px;font-size:56px">0 · AYLANADIGAN QISM</div>
+  <div class="tag" id="c92" style="top:900px;font-size:56px">0 · SHOVQIN</div>
+  <div class="tag" id="c93" style="top:1040px;font-size:56px">0 · YONILG'I</div>
+  <div class="tag gold" id="c94" style="top:1200px;font-size:110px">25+ YIL</div>
+  <div class="tag blue" id="c95" style="top:1450px;font-size:54px">❄ SOVUQDA SAMARADORLIK ↑</div>
+</div>
+
+<!-- S10 invertor -->
+<div class="sc" id="s10" style="background:#F1EADB">
+  <div class="stk" id="pan10" style="left:290px;top:120px;width:500px;height:348px"></div>
+  <div class="tag blue" id="d10" style="left:800px;top:520px;font-size:40px">TO'G'RI TOK</div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0">
+    <path id="w10a" class="wire" d="M540 470 V700" stroke="#3E5C76" stroke-width="16"/>
+    <path id="w10b" class="wire" d="M540 1130 Q570 1160 540 1190 T540 1250 T540 1310 T540 1370" stroke="#F6B52F" stroke-width="16"/>
+  </svg>
+  <div class="stk" id="inv10" style="left:390px;top:700px;width:300px;height:356px"></div>
+  <div class="stk" id="tf10" style="left:640px;top:690px;width:150px;height:195px;opacity:0"></div>
+  <div class="tag gold" id="s10a" style="left:250px;top:1180px;font-size:40px;opacity:0">TESLA TOKI</div>
+  <div class="stk" id="stn10" style="left:300px;top:1400px;width:480px;height:417px"></div>
+</div>
+
+<!-- S11 O'zbekiston quyoshi + pul -->
+<div class="sc" id="s11" style="background:#F6B52F">
+  <div class="tag dark" id="s11a" style="top:120px;font-size:62px">O'ZBEKISTON · YILIGA</div>
+  <div id="cal" style="position:absolute;left:90px;top:250px;width:900px;display:grid;grid-template-columns:repeat(25,1fr);gap:6px"></div>
+  <div class="tag" id="s11b" style="top:820px;font-size:80px;opacity:0">~300 QUYOSHLI KUN</div>
+  <div class="stk" id="pan11" style="left:90px;top:1080px;width:360px;height:250px"></div>
+  <div class="tag green" id="s11c" style="left:270px;top:1360px;font-size:56px">1 kVt</div>
+  <div class="tag" id="s11d" style="left:740px;top:1120px;font-size:44px">YILIGA</div>
+  <div id="sum11" style="position:absolute;left:490px;top:1200px;width:520px;text-align:center;font-family:'Archivo Black Regular';font-size:78px">0</div>
+  <div class="small" style="left:690px;top:1300px;font-size:44px;color:#1d1a16">so'mlik elektr</div>
+  <div class="small" style="left:60px;top:1830px;font-size:24px;color:#3b3125">1 kVt ≈ 1 500 kVt·soat/yil × 1 100 so'm (yuridik shaxslar, 2026-y. 1-iyundan)</div>
+</div>
+
+<!-- S12 orzu tomda -->
+<div class="sc" id="s12" style="background:#9FC3D6">
+  <div class="stk" id="sun12" style="left:720px;top:200px;width:300px;height:300px"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0"><rect y="1480" width="1080" height="440" fill="#8DAA6B"/></svg>
+  <div class="stk" id="fac12" style="left:70px;top:920px;width:940px;height:560px"></div>
+  <div class="tag dark" id="s12a" style="top:560px;font-size:64px">TESLANING ORZUSI —<br>ZAVOD TOMLARIDA</div>
+  <img id="logo12" src="../.claude/skills/montaj-uslubi/assets/logo_premium_solar_shaffof.png" style="position:absolute;left:50%;top:1600px;width:380px;margin-left:-190px;opacity:0">
+</div>
+
+<!-- S13 bahs -->
+<div class="sc" id="s13" style="background:#C8372D">
+  <svg class="torn" id="t13" width="1080" height="1920" style="position:absolute;inset:0"></svg>
+  <div class="stk" id="inv13" style="left:40px;top:560px;width:400px;height:560px"></div>
+  <div class="stk" id="ts13" style="left:600px;top:560px;width:440px;height:572px"></div>
+  <div class="tag dark" id="s13a" style="top:200px;font-size:62px">AGAR TO'XTATISHMAGANDA...</div>
+  <div class="tag" id="s13b" style="top:1250px;font-size:66px;opacity:0">ELEKTR TEKIN<br>BO'LARMIDI?</div>
+  <div class="tag gold" id="s13c" style="top:1520px;font-size:54px;opacity:0">💬 IZOHDA YOZING</div>
+</div>
+
+<div class="paper"></div><div class="vig"></div>
+<svg id="wipe" viewBox="0 0 1500 2200"><path id="wipep" fill="#1d1a16"/></svg>
+
+<script src="../mashq/node_modules/gsap/dist/gsap.min.js"></script>
+<script src="../mashq/scenes/common.js"></script>
+<script src="chizmalar.js"></script>
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+let seed = 11; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+function tornEdge(x0, y0, x1, y1, amp, step) { const pts = []; const n = Math.ceil(Math.hypot(x1 - x0, y1 - y0) / step);
+  for (let i = 0; i <= n; i++) { const t = i / n, nx = -(y1 - y0), ny = x1 - x0, L = Math.hypot(nx, ny), a = (rnd() - .5) * 2 * amp;
+    pts.push([x0 + (x1 - x0) * t + nx / L * a, y0 + (y1 - y0) * t + ny / L * a]); } return pts; }
+const poly = pts => 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L') + ' Z';
+$('#wipep').setAttribute('d', poly([...tornEdge(80, 0, 80, 2200, 26, 40), ...tornEdge(1420, 2200, 1420, 0, 26, 40)]));
+$('#t13').innerHTML = `<path d="${poly([[1080, 0], [1080, 1920], ...tornEdge(560, 1920, 520, 0, 24, 36)])}" fill="#F6B52F"/>`;
+// art joylash
+const put = (id, html) => $(id).innerHTML = html;
+put('#t1', ART.tower()); put('#t4', ART.tower()); put('#ts2', ART.tesla()); put('#roz', ART.rozetka()); put('#cityT', ART.city()); put('#cityN', ART.city());
+put('#inv', ART.investor()); put('#bag', ART.bag()); put('#sun6', ART.sun()); put('#ts6', ART.tesla()); put('#pat', ART.patent());
+put('#pg1', ART.pigeon()); put('#pg2', ART.pigeon()); put('#ts7', ART.tesla(true)); put('#sand', ART.sand()); put('#waf', ART.wafer()); put('#sun8', ART.sun()); put('#bulb8', ART.bulb());
+put('#pan9', ART.panel()); put('#pan10', ART.panel()); put('#inv10', ART.inverter()); put('#tf10', ART.tesla()); put('#stn10', ART.stanok());
+put('#pan11', ART.panel()); put('#sun12', ART.sun()); put('#fac12', ART.factory()); put('#inv13', ART.investor()); put('#ts13', ART.tesla());
+// chaqmoqlar (S1)
+const bolt = (x, y, len, ang) => { let d = `M${x} ${y}`, cx = x, cy = y; for (let i = 0; i < 7; i++) { cx += Math.cos(ang) * len / 7 + (rnd() - .5) * 60; cy += Math.sin(ang) * len / 7 + (rnd() - .5) * 60; d += ` L${cx.toFixed(0)} ${cy.toFixed(0)}`; } return d; };
+$('#bolts1').innerHTML = [0, 1, 2, 3, 4, 5].map(i => `<path class="bl" d="${bolt(540, 700, 380, -Math.PI / 2 + (i - 2.5) * 0.5)}" stroke="#bfe9ff" stroke-width="9" fill="none" stroke-linejoin="round" opacity="0"/>`).join('');
+// sharshara chiziqlari
+$('#fall').insertAdjacentHTML('beforeend', [...Array(9)].map((_, i) => `<rect class="drop" x="${70 + i * 28}" y="${700 - (i % 3) * 200}" width="16" height="260" rx="8" fill="#e6f4ff" opacity=".85"/>`).join(''));
+$('#fall').insertAdjacentHTML('afterbegin', '<rect x="60" y="700" width="260" height="800" fill="#4f88b0"/>');
+// halqalar va uylar (S4)
+$('#rings').innerHTML = [0, 1, 2].map(i => `<circle class="ring" cx="540" cy="780" r="60" fill="none" stroke="#F6B52F" stroke-width="10" opacity="0"/>`).join('');
+[[60, 1450], [300, 1520], [620, 1520], [860, 1450]].forEach(([x, y], k) => $('#houses').insertAdjacentHTML('beforeend', `<div class="stk hs" style="left:${x}px;top:${y}px;width:170px;height:170px">${ART.house()}</div>`));
+// fotonlar va elektronlar (S8)
+$('#phot').innerHTML = [...Array(6)].map((_, i) => `<circle class="ph" cx="${200 + i * 30}" cy="${160 + i * 10}" r="16" fill="#F6B52F" stroke="#1d1a16" stroke-width="5"/>`).join('');
+$('#elec').innerHTML = [...Array(6)].map((_, i) => `<g class="el"><circle cx="${300 + i * 100}" cy="455" r="20" fill="#5BE3C8" stroke="#1d1a16" stroke-width="5"/><text x="${300 + i * 100}" y="466" text-anchor="middle" font-family="Archivo Black Regular" font-size="32">−</text></g>`).join('');
+// kalendar (S11)
+$('#cal').innerHTML = [...Array(365)].map((_, i) => `<div class="day" style="aspect-ratio:1;background:#FBF8F1;border:3px solid #1d1a16;border-radius:5px"></div>`).join('');
+const sunnyIdx = [...Array(365).keys()].filter(i => (i * 37) % 365 < 300);
+
+// ===== TIMELINE =====
+const tl = gsap.timeline({ paused: true });
+const SC = [['#s1', 0, 4.7], ['#s2', 4.7, 14.9], ['#s3', 14.9, 21.2], ['#s4', 21.2, 34.8], ['#s6', 34.8, 41.1], ['#s7', 41.1, 45.7], ['#s8', 45.7, 55.6],
+  ['#s9', 55.6, 64.3], ['#s10', 64.3, 70.9], ['#s11', 70.9, 78.7], ['#s12', 78.7, 82.9], ['#s13', 82.9, 89.0]];
+SC.forEach(([id, a, b]) => { tl.set(id, { opacity: 1 }, a); tl.set(id, { opacity: 0 }, b); });
+const WC = ['#1d1a16', '#22674D', '#F6B52F', '#3E5C76', '#C8372D', '#1d1a16', '#F6B52F', '#22674D', '#3E5C76', '#1d1a16', '#C8372D'];
+SC.slice(1).forEach(([, a], k) => tl.set('#wipep', { attr: { fill: WC[k % WC.length] } }, a - 0.22).fromTo('#wipe', { x: 0 }, { x: -2700, duration: 0.44, ease: 'power2.inOut' }, a - 0.22));
+const pop = (sel, t, from = 0.3) => tl.fromTo(sel, { scale: from, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: 'back.out(2.2)' }, t);
+const stamp = (sel, t) => tl.fromTo(sel, { scale: 2.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.2, ease: 'power4.in' }, t);
+const draw = (sel, t, d = 0.6) => { const p = $(sel), L = p.getTotalLength(); tl.fromTo(p, { attr: { 'stroke-dasharray': L, 'stroke-dashoffset': L } }, { attr: { 'stroke-dashoffset': 0 }, duration: d, ease: 'power2.inOut' }, t); };
+const push = (id, a, b, s = 1.07) => tl.fromTo(id, { scale: 1 }, { scale: s, duration: b - a, ease: 'none', transformOrigin: '50% 45%' }, a);
+
+// S1
+push('#s1', 0, 4.7, 1.1);
+$$('.bl').forEach((b, i) => { for (let r = 0; r < 4; r++) tl.fromTo(b, { opacity: 0 }, { opacity: 1, duration: 0.05, yoyo: true, repeat: 1 }, 0.2 + i * 0.13 + r * 0.8); });
+pop('#s1a', 1.3); tl.to('.bl', { opacity: 0, duration: 0.05 }, 3.7).to('#t1', { filter: 'grayscale(1) brightness(.6)', duration: 0.1 }, 3.75);
+stamp('#s1b', 3.75); tl.fromTo('#s1', { x: 0 }, { x: 14, duration: 0.05, yoyo: true, repeat: 5 }, 3.95);
+// S2
+pop('#ts2', 5.1); pop('#s2n', 5.5); pop('#s2y', 5.8); pop('#roz', 6.6); pop('#s2t', 8.4);
+tl.fromTo('#rowE', { opacity: 0 }, { opacity: 1, duration: 0.2 }, 9.7); draw('#wE', 9.8, 0.8); pop('#kmE', 11.6);
+tl.fromTo('#rowT', { opacity: 0 }, { opacity: 1, duration: 0.2 }, 12.5); draw('#wT', 12.6, 1.2); pop('#kmT', 13.5); pop('#cityT', 13.6);
+// S3
+pop('#s3a', 15.0); push('#s3', 14.9, 21.2, 1.05);
+$$('.drop').forEach((d, i) => tl.fromTo(d, { y: -300 }, { y: 900, duration: 0.9, ease: 'none', repeat: 6 }, 14.9 + i * 0.1));
+tl.to('#turb', { rotation: 720, svgOrigin: '480 1360', duration: 6, ease: 'none' }, 15.2);
+draw('#wN', 18.9, 0.8); pop('#s3b', 19.2); pop('#cityN', 16.6);
+tl.to('#cityN .cw rect', { fill: '#FFE38A', duration: 0.05, stagger: 0.03 }, 20.4);
+// S4 orzu
+pop('#s4t', 21.6); tl.fromTo('#t4', { scaleY: 0, transformOrigin: '50% 100%' }, { scaleY: 1, duration: 1.0, ease: 'power2.out' }, 22.6);
+tl.fromTo('#ruler', { scaleY: 0, transformOrigin: '50% 100%' }, { scaleY: 1, duration: 1.0, ease: 'power2.out' }, 23.0); pop('#s4h', 23.4);
+$$('.ring').forEach((r, i) => tl.fromTo(r, { attr: { r: 60 }, opacity: 0.9 }, { attr: { r: 700 }, opacity: 0, duration: 1.4, ease: 'power1.out', repeat: 1 }, 25.9 + i * 0.45));
+$$('.hs').forEach((h, i) => { pop(h, 26.0 + i * 0.15); tl.to(h.querySelectorAll('.win'), { attr: { fill: '#FFE38A' }, duration: 0.05 }, 26.6 + i * 0.25); });
+// S5 to'xtatish
+tl.to(['#s4t', '#ruler', '#s4h'], { opacity: 0, duration: 0.2 }, 28.6).to('.ring', { opacity: 0, duration: 0.1 }, 28.6);
+tl.to('#s4', { backgroundColor: '#3a1e24', duration: 0.4 }, 28.7);
+tl.fromTo('#inv', { x: -400, opacity: 1 }, { x: 0, duration: 0.45, ease: 'power3.out' }, 29.0); pop('#bag', 29.3);
+tl.to('#bag', { x: -420, y: -120, rotation: -25, duration: 0.5, ease: 'power3.in' }, 30.9); stamp('#s5a', 31.0);
+tl.to('.hs .win', { attr: { fill: '#3a3a42' }, duration: 0.05 }, 31.2);
+tl.to('#t4', { rotation: 14, y: 260, opacity: 0, duration: 0.9, ease: 'power2.in', transformOrigin: '50% 100%' }, 33.7); stamp('#s5b', 34.0);
+// S6 quyosh, patent
+tl.fromTo('#sun6', { rotation: 0 }, { rotation: 40, duration: 6.3, ease: 'none' }, 34.8); pop('#ts6', 35.0); pop('#s6a', 36.4);
+tl.fromTo('#rays6 path', { attr: { 'stroke-dashoffset': 0 } }, { attr: { 'stroke-dashoffset': -520 }, duration: 6, ease: 'none' }, 34.8);
+tl.fromTo('#rays6', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 36.6);
+tl.fromTo('#pat', { y: 600, opacity: 0, rotation: -8 }, { y: 0, opacity: 1, rotation: -3, duration: 0.45, ease: 'back.out(1.4)' }, 39.2); stamp('#s6b', 40.1);
+// S7 1943
+push('#s7', 41.1, 45.7, 1.08); pop('#s7a', 41.7);
+tl.fromTo(['#pg1', '#pg2'], { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.3, ease: 'power2.out' }, 42.0);
+tl.fromTo('#s7b', { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out' }, 43.4);
+// S8 panel ishlashi
+pop('#s8a', 46.2); pop('#sand', 49.5); draw('#arr8', 49.9, 0.4); pop('#waf', 50.2); pop('#s8b', 50.5); pop('#sun8', 51.2);
+$$('.ph').forEach((p, i) => tl.fromTo(p, { x: 0, y: 0, opacity: 0 }, { x: 120 + i * 60, y: 240, opacity: 1, duration: 0.6, ease: 'power1.in' }, 51.4 + i * 0.12));
+tl.to('.ph', { opacity: 0, duration: 0.1 }, 52.6);
+$$('.el').forEach((e, i) => tl.fromTo(e, { y: 0, opacity: 0 }, { y: -50, opacity: 1, duration: 0.25, ease: 'back.out(3)' }, 52.6 + i * 0.08));
+tl.to('.el', { x: 260, duration: 1.1, ease: 'power1.in' }, 53.4).to('.el', { opacity: 0, duration: 0.15 }, 54.4);
+draw('#w8', 53.4, 0.8); tl.to('#bulb8 .glow', { opacity: 0.9, duration: 0.1 }, 54.1).to('#bulb8 .glass', { attr: { fill: '#FFE38A' }, duration: 0.1 }, 54.1); pop('#s8c', 54.2);
+// S9
+tl.fromTo('#pan9', { y: -500 }, { y: 0, duration: 0.45, ease: 'back.out(1.3)' }, 55.6);
+pop('#c91', 56.0); pop('#c92', 57.25); pop('#c93', 58.2); pop('#c94', 59.15, 0.1); pop('#c95', 61.9);
+tl.fromTo('#c95', { y: 0 }, { y: -10, duration: 0.3, yoyo: true, repeat: 3 }, 63.4);
+// S10
+pop('#pan10', 64.35); draw('#w10a', 64.7, 0.6); pop('#d10', 64.9); pop('#inv10', 65.75); pop('#tf10', 66.8);
+draw('#w10b', 67.2, 0.8); pop('#s10a', 67.4); pop('#stn10', 68.0);
+tl.to('#stn10 .scr', { attr: { fill: '#5BE3C8' }, duration: 0.05 }, 69.9).to('#stn10 .gear', { rotation: 360, svgOrigin: '345 190', duration: 1, ease: 'none', repeat: 1 }, 69.9);
+// S11
+pop('#s11a', 71.0);
+sunnyIdx.forEach((i, k) => tl.set(`#cal .day:nth-child(${i + 1})`, { backgroundColor: '#E8822A' }, 71.6 + k * 0.0052));
+pop('#s11b', 72.5); pop('#pan11', 74.1); pop('#s11c', 74.3); pop('#s11d', 75.4);
+const o = { v: 0 }; tl.fromTo(o, { v: 0 }, { v: 1650000, duration: 1.6, ease: 'expo.out', onUpdate: () => $('#sum11').textContent = Math.round(o.v).toLocaleString('en-US').replace(/,/g, ' ') }, 75.8);
+// S12
+tl.fromTo('#fac12', { y: 500, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: 'power3.out' }, 78.8);
+tl.fromTo('#sun12', { y: 300, opacity: 0, rotation: 0 }, { y: 0, opacity: 1, rotation: 30, duration: 4, ease: 'power2.out' }, 78.9);
+pop('#s12a', 80.6); tl.fromTo('#logo12', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 }, 81.2);
+// S13
+pop('#s13a', 83.0); tl.fromTo('#inv13', { x: -300 }, { x: 0, duration: 0.4, ease: 'power3.out' }, 83.2).fromTo('#ts13', { x: 300 }, { x: 0, duration: 0.4, ease: 'power3.out' }, 83.2);
+pop('#s13b', 85.6); pop('#s13c', 87.0); tl.to('#s13c', { scale: 1.08, duration: 0.25, yoyo: true, repeat: 3 }, 87.4);
+tl.set({}, {}, 89.0);
+window.tl = tl;
+</script></body></html>
