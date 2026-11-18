@@ -276,5 +276,5 @@ Hammasi `asboblar/` da. Venv: `~/montaj-venv` (Python 3.12: mediapipe, opencv, t
 | **Musiqa (Mixkit)** | `python3 asboblar/musiqa.py qidir cinematic` · `... ol 614 ~/montaj-musiqa` | tijoratda bepul. Tayyor: 614 Silent Descent, 184 Vastness, 871 Fright Night, 676 Epical Drums, 1167 Close Up, 175 Digital Clouds |
 
 **Xom kadr ish tartibi:** ovoz_tozala → jumpcut → (kerak bo'lsa kes 9:16) → LUT + yengil push-in → subtitr (words.json) → B-roll/grafika → musiqa+SFX → loudnorm −14 → earshot critique.
-**Yuklash:** 6 ta sahifa, har biri 1 GiB (jami 6 GB). Bitta fayl ≤ ~1 GB bo'lishi kerak. Har montajdan keyin bo'laklarni o'chir.
-1 J1Emidie83yWqgp1qwL6rm · 2 XrtEdFcoEyhyz6f5jk3TYd · 3 4scFBJ54EwhPNyLFeGCbi8 · 4 3m8stXeZdzPYoyHuQXXE4Q · 5 AdDQgwjjCPL54QsJRSEimu · 6 FGxvXeYoTjVpbmDm98dRH8 (https://claude.ai/artifact/<id>). DB: `uploads` kolleksiyasi (chunks[].id → /_blob/<id>, base64).
+**Yuklash:** 7 ta sahifa, har biri 1 GiB (jami 7 GB). Bitta fayl ≤ ~1 GB bo'lishi kerak. Har montajdan keyin bo'laklarni o'chir.
+1 J1Emidie83yWqgp1qwL6rm · 2 XrtEdFcoEyhyz6f5jk3TYd · 3 4scFBJ54EwhPNyLFeGCbi8 · 4 3m8stXeZdzPYoyHuQXXE4Q · 5 AdDQgwjjCPL54QsJRSEimu · 6 FGxvXeYoTjVpbmDm98dRH8 · 7 NSxgrXruaRhw9E3kRrVeVp (https://claude.ai/artifact/<id>). DB: `uploads` kolleksiyasi (chunks[].id → /_blob/<id>, base64).
