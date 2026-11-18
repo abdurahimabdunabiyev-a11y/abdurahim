@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "skills": {
+    "sound-effects": {
+      "source": "elevenlabs/skills",
+      "commit": "64271c12b46efb7c9a0b65c8ec521683bb35fc4a",
+      "sourceType": "github",
+      "skillPath": "sound-effects/SKILL.md",
+      "computedHash": "5c0a1d653194633986f9887c599f3f98c595bce0fcb0e16dc5d90935ec65a6df"
+    },
+    "taste-application": {
+      "source": "affaan-m/ecc",
+      "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7",
+      "sourceType": "github",
+      "skillPath": "skills/taste-application/SKILL.md",
+      "computedHash": "d1bd1db07a8d476f06f1b3d18f402921b982cc7fe7e6eccca107ce6664a087e7"
+    },
+    "taste-distillation": {
+      "source": "affaan-m/ecc",
+      "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7",
+      "sourceType": "github",
+      "skillPath": "skills/taste-distillation/SKILL.md",
+      "computedHash": "dddde968f78d3c2131b7f5caaa3add80673ca02648a653d706f422ece2b954b1"
+    },
+    "video-editing": {
+      "source": "affaan-m/ECC",
+      "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7",
+      "sourceType": "github",
+      "skillPath": "skills/video-editing/SKILL.md",
+      "computedHash": "b1a66c7e9337e7030cfef7c5a8b2a519123e63c8fef710105118eab89641e505"
+    }
+  }
+}
