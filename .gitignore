@@ -15,3 +15,7 @@ montaj_04/uch_sabab.mp4
 montaj_04/*.wav
 montaj_04/aroll_hi.mp4
 __pycache__/
+montaj_04/demo/*.mov
+montaj_04/demo/*.mp4
+montaj_04/demo/*.wav
+!montaj_04/demo/Demo_uslub_Claude.mp4

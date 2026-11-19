@@ -278,3 +278,6 @@ Hammasi `asboblar/` da. Venv: `~/montaj-venv` (Python 3.12: mediapipe, opencv, t
 **Xom kadr ish tartibi:** ovoz_tozala → jumpcut → (kerak bo'lsa kes 9:16) → LUT + yengil push-in → subtitr (words.json) → B-roll/grafika → musiqa+SFX → loudnorm −14 → earshot critique.
 **Yuklash:** 7 ta sahifa, har biri 1 GiB (jami 7 GB). Bitta fayl ≤ ~1 GB bo'lishi kerak. Har montajdan keyin bo'laklarni o'chir.
 1 J1Emidie83yWqgp1qwL6rm · 2 XrtEdFcoEyhyz6f5jk3TYd · 3 4scFBJ54EwhPNyLFeGCbi8 · 4 3m8stXeZdzPYoyHuQXXE4Q · 5 AdDQgwjjCPL54QsJRSEimu · 6 FGxvXeYoTjVpbmDm98dRH8 · 7 NSxgrXruaRhw9E3kRrVeVp (https://claude.ai/artifact/<id>). DB: `uploads` kolleksiyasi (chunks[].id → /_blob/<id>, base64).
+
+## Referens: Claude "Hiring editors" uslubi
+`references/referens_claude_hiring.md` — matn odam orqasida (niqob qatlamlari), harfma-harf katta italic so'z, PIP karta + halqa, nur chizig'i / gologramma o'tishlari, zich mayda SFX. Namuna kod: `montaj_04/demo/` (qatlam.html ?layer=back|front, kompozit.py, mix_demo.py).
