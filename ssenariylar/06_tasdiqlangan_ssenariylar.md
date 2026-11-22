@@ -17,3 +17,17 @@
 > Siz qaysi biriga tushgansiz? Izohga yozing. Xullas, ko'zingiz ochiq bo'lsin.
 
 **Ekranda:** tepada 1–10 shkala; tushish tartibi 10, 2, 5, 8, 4, 4, 3, 3; 1-o'rin oxirigacha "?".
+
+## №3. Bepul — eng qimmat strategiya (tasdiqlandi, 1-variant)
+
+**Format:** kameraga qarab, uyda/ofisda. ~45 s.
+
+> Instagram'dagi eng qimmat so'z bu "bepul".
+> Nega o'quv markazlar bepul sinov darsi beradi? Nega kurs egalari 3 kunlik bepul vebinar o'tkazadi? Saxiylikdan emas.
+> Bu bozordagi bir bo'lak qovunning onlayn versiyasi. Tekin olgan odamning ichida "qarzdorman" degan his paydo bo'ladi.
+> Ikkinchi sababni kam odam biladi. Bepul sinab ko'rgan narsasini odam o'ziniki deb his qila boshlaydi. Olimlar odamlarga krujka berib tekshirishgan: krujkasi bor odam uni sotish uchun ikki barobar qimmat narx so'ragan. O'zingniki bo'lib qolgan narsani yo'qotish og'riqli.
+> Shuning uchun "7 kun bepul"dan keyin pul to'lab yuborasiz.
+> Ekspert bo'lsangiz, bepul eng yaxshi narsangizni bering, o'rtachasini emas. Bepul dars qanchalik zo'r bo'lsa, kurs shunchalik oson sotiladi.
+> Xaridor bo'lsangiz, xullas, ko'zingiz ochiq bo'lsin.
+
+**Ekranda:** "BEPUL" katta, narx yorlig'iga aylanadi; "sinov darsi", "vebinar", "7 kun bepul"; krujka va "×2".
