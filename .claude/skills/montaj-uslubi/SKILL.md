@@ -7,6 +7,11 @@ description: Foydalanuvchining shaxsiy video montaj uslubi (Instagram reels, o'z
 > **Real foto/video va real ko'rinishli AI rasm ISHLATILMAYDI** — faqat chizilgan illyustratsiya (qog'oz fon, yirtiq qog'oz, oq konturli stikerlar, yorliqlar, shtamplar).
 > Mavzu B2B (zavod). Premium Solar'da **akkumulyator + invertor bor**. Namuna: `montaj_02/kompozitsiya.html` + `ovoz_mix.py`. Real B-roll'li montaj_01 rad etilgan.
 
+> **SHAXSIY BREND yo'nalishi (2026-11-22) — Premium Solar'dan ALOHIDA:** Abdurahimning o'z sahifasi (@abdurahim.abdunabiyev, rukn "Ko'rinmas marketing").
+> Bu yerda **real syomka, gapiruvchi spiker** ishlatiladi (illyustratsiya qoidasi faqat Premium Solar uchun).
+> Uslub manbai: `references/referenslar_shaxsiy_brend.md` (S1–S11: Jasur, Sardor, Fazliddin, Nosir, igor_linde, Abbos) — o'lchangan raqamlar, format banki, syomka standartlari.
+> Asosiy: 35–55 s, salomsiz hook, 140–160 so'z/min, har 2–4 s vizual o'zgarish (kesish yoki grafika), low-key yorug'lik, isbot ekranda, izohga kalit so'z CTA.
+
 # Montaj uslubi — doimiy qoidalar
 
 Sen foydalanuvchining shaxsiy video editori, motion designeri va sound designerisan.
@@ -183,7 +188,8 @@ Reels me'yorlari: −14 LUFS, LRA 1.6–3.7, kesishda ovoz ≥ 85%, salient hit 
 - Plagin: `watch@claude-video` (github.com/bradautomates/claude-video). Skript: `/root/.claude/plugins/cache/claude-video/watch/*/skills/watch/scripts/watch.py`.
 - **local** (sozlangan): `watch.py <video> --question "..." --detail balanced` → vaqt belgili kadrlar; nutq uchun o'zimizning faster-whisper large-v3 (uz) ishlatiladi (watch'ning ASR fallback'i o'chirilgan: `backend none`).
 - **gemini** (kalit bo'lsa): Gemini videoni ovozi bilan to'liq ko'radi — referens tahlili va tayyor montajni "tomosha qilib" baholash uchun. Kalit muhit tarmoq sirida (`generativelanguage.googleapis.com`, header `x-goog-api-key`); `~/.config/watch/.env` da `GEMINI_API_KEY=proxy-injected`.
-- Instagram/TikTok/YouTube havolalarini yuklab olish bu muhitda ishlamaydi (CDN manzillari dinamik) — videoni foydalanuvchi yuboradi.
+- **Instagram reels havolalari ishlaydi (2026-11-22):** muhitga `www.instagram.com`, `i.instagram.com`, `scontent-ord5-{1,2,3}.cdninstagram.com` qo'shilgan. `yt-dlp -q --write-info-json -o "dir/v.%(ext)s" <reel URL>`; 429 bo'lsa 30 s kutib qayta urin, 3–5 tadan yukla. Profil sahifasi (login talab qiladi) ochilmaydi. Boshqa CDN host chiqsa — muhitga qo'shishni so'ra.
+- **O'zbekcha nutq → matn: ElevenLabs Scribe** (faster-whisper uz da yaroqsiz): `curl -X POST https://api.elevenlabs.io/v1/speech-to-text -H "xi-api-key: dummy" -F model_id=scribe_v1 -F language_code=uzb -F timestamps_granularity=word -F file=@a.wav` (kalitni proxy qo'yadi).
 
 ## 8. Rang (color grading)
 
