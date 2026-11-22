@@ -19,3 +19,7 @@ montaj_04/demo/*.mov
 montaj_04/demo/*.mp4
 montaj_04/demo/*.wav
 !montaj_04/demo/Demo_uslub_Claude.mp4
+montaj_04/broll_panel_zavod/*.mp4
+montaj_04/broll_panel_zavod/*.jpg
+montaj_04/broll_panel_zavod/*.zip
+montaj_04/broll_panel_zavod/yuborish/
