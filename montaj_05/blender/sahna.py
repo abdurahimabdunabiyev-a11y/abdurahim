@@ -12,7 +12,7 @@ sc.cycles.use_denoising = True
 try: sc.cycles.denoiser = 'OPENIMAGEDENOISE'
 except Exception: pass
 sc.render.resolution_x, sc.render.resolution_y = 1080, 1920; sc.render.resolution_percentage = int(arg('--foiz', 100))
-sc.render.fps = 30; sc.frame_start, sc.frame_end = 1, int(arg('--oxiri', 180))
+FPS = 25; sc.render.fps = FPS; sc.frame_start, sc.frame_end = 1, int(arg('--oxiri', 400))
 sc.view_settings.view_transform = 'AgX'; sc.view_settings.look = 'AgX - Punchy'
 sc.cycles.max_bounces = 6; sc.cycles.caustics_reflective = False; sc.cycles.caustics_refractive = False
 w = bpy.data.worlds.new('W'); sc.world = w; w.use_nodes = True; wn = w.node_tree.nodes; wl = w.node_tree.links
@@ -38,15 +38,15 @@ def mat(name, base, metal=0., rough=.3, coat=0., img=None, emis=None, es=0.):
         b.inputs['Emission Color'].default_value = (*emis, 1); b.inputs['Emission Strength'].default_value = es
     return m
 
-PW, PH, PT, FW = 1.134, 2.278, .035, .028
+PW, PH, PT, FW = 1.10, 2.35, .030, .018   # Ronma SKYMAX: 2382 x 1134 x 30 mm
 # shisha yuza (hujayralar)
 bpy.ops.mesh.primitive_plane_add(size=1); face = bpy.context.object; face.scale = (PW, PH, 1); face.location.z = PT / 2 - .004
-face.data.materials.append(mat('shisha', (0, 0, 0), 0, .06, 1., img=os.path.join(D, 'hujayra.png')))
+face.data.materials.append(mat('shisha', (0, 0, 0), 0, .06, 1., img=os.path.join(D, 'ronma_hujayra.png')))
 bpy.ops.object.transform_apply(scale=True)
 # orqa list
 bpy.ops.mesh.primitive_cube_add(size=1); back = bpy.context.object; back.scale = (PW, PH, PT * .5); back.data.materials.append(mat('orqa', (.01, .01, .01), 0, .6))
 # ramka (anodlangan qora alyuminiy, faska bilan)
-frm = mat('ramka', (.015, .015, .016), 1., .28)
+frm = mat('ramka', (.72, .73, .75), 1., .32)   # kumush anodlangan alyuminiy
 parts = [((PW + 2 * FW, FW, PT), (0, PH / 2 + FW / 2, 0)), ((PW + 2 * FW, FW, PT), (0, -PH / 2 - FW / 2, 0)),
          ((FW, PH, PT), (PW / 2 + FW / 2, 0, 0)), ((FW, PH, PT), (-PW / 2 - FW / 2, 0, 0))]
 fr = []
@@ -65,9 +65,9 @@ bpy.ops.mesh.primitive_plane_add(size=30, location=(0, 0, -2.2)); wall = bpy.con
 bpy.ops.object.light_add(type='AREA', location=(0, .2, -.35)); rim = bpy.context.object; rim.data.size = 1.0; rim.data.energy = 0; rim.data.color = (1., .5, .16)
 rim.visible_camera = False
 bpy.ops.object.light_add(type='AREA', location=(0, 3.0, 5.0)); soft = bpy.context.object; soft.data.size = 4.0; soft.data.energy = 120; soft.data.color = (1., .78, .55)
-soft.rotation_euler = (math.radians(-30), 0, 0); soft.visible_camera = False
+soft.rotation_euler = (math.radians(-30), 0, 0); soft.visible_camera = False; soft.visible_glossy = False
 bpy.ops.object.light_add(type='AREA', location=(1.8, 2.2, 2.4)); key = bpy.context.object; key.data.size = 1.2; key.data.energy = 40; key.data.color = (1., .8, .6)
-key.rotation_euler = (math.radians(-40), math.radians(35), 0); key.visible_camera = False
+key.rotation_euler = (math.radians(-40), math.radians(35), 0); key.visible_camera = False; key.visible_glossy = False
 
 # ramka qirrasidagi oltin yaltiroq (emissiv ingichka silindr, ramka ustki tashqi qirrasida sirpanadi)
 glintM = bpy.data.materials.new('glint'); glintM.use_nodes = True; gn = glintM.node_tree.nodes; gn.clear()
@@ -75,6 +75,7 @@ em = gn.new('ShaderNodeEmission'); em.inputs[0].default_value = (1., .62, .25, 1
 out = gn.new('ShaderNodeOutputMaterial'); glintM.node_tree.links.new(em.outputs[0], out.inputs[0])
 bpy.ops.mesh.primitive_cylinder_add(radius=.0016, depth=.38, location=(0, PH / 2 + FW, PT / 2), rotation=(0, math.radians(90), 0)); glint = bpy.context.object
 glint.data.materials.append(glintM); glint.parent = panel
+glint2 = glint.copy(); glint2.data = glint.data.copy(); bpy.context.collection.objects.link(glint2); glint2.parent = panel; glint2.scale = (.6, .6, .5)
 bpy.ops.object.shade_smooth()
 strip.data.energy = 0; strip.hide_render = True
 # yorug'lik tarqalishi (glow) kompozitorda
@@ -91,24 +92,32 @@ cam.data.dof.focus_object = tgt
 def ease(x): x = min(1, max(0, x)); return 4 * x ** 3 if x < .5 else 1 - (-2 * x + 2) ** 3 / 2
 def lerp(a, b, k): return a + (b - a) * k
 def at(f):
-    t = (f - 1) / 30; k = ease((t - 2.4) / 2.6)
-    panel.rotation_euler = (math.radians(lerp(-72, 0, k)), math.radians(lerp(28, -16 + 3 * math.sin(t * .6), k)), math.radians(lerp(10, 0, k)))
-    # yaqin: chap-yuqori burchak; uzoq: butun panel
-    bpy.context.view_layer.update()
-    M = panel.matrix_world
-    near_cam = M @ Vector((float(arg('--kx', -.95)) + t * .03, PH / 2 + float(arg('--ky', .35)), float(arg('--kz', .8))))   # burchak ustida, yuzaga past (sirpanuvchi) burchak
-    near_tgt = M @ Vector((-PW / 2 + .25 + t * .05, PH / 2 - .35, 0))
-    far_cam = Vector((.0, .1, 5.3))
-    cam.location = near_cam.lerp(far_cam, k)
-    tgt.location = near_tgt.lerp(Vector((0, .15, 0)), k)
-    glint.location.x = lerp(-PW / 2 - .1, PW / 2 + .1, (t * .45) % 1)
-    strip.data.energy = lerp(40, 12, k); rim.data.energy = lerp(0, 450, k); key.data.energy = lerp(4, 25, k); soft.data.energy = lerp(25, 140, k)
-    ENV.inputs[1].default_value = lerp(.22, .2, k)
-    cam.data.dof.aperture_fstop = lerp(2.8, 5.6, k); cam.data.lens = lerp(40, 45, k)
+    t = (f - 1) / FPS
+    if t < 3.5:      # A: ramka burchagi yaqindan, sekin itarilish
+        u = t / 3.5
+        panel.rotation_euler = (math.radians(-72), math.radians(28), math.radians(10)); bpy.context.view_layer.update(); M = panel.matrix_world
+        cam.location = M @ Vector((-.95 + .12 * u, PH / 2 + .35 - .05 * u, .8 - .12 * u)); tgt.location = M @ Vector((-PW / 2 + .25 + .1 * u, PH / 2 - .35, 0))
+        glint.location = (lerp(-PW / 2 - .1, PW / 2 + .1, ease(u)), PH / 2 + FW, PT / 2); glint2.location = (9, 9, 9)
+        rimE, keyE, softE, envE, fs, ln = 0, 4, 25, .22, 2.8, 40
+    elif t < 7.0:    # B: hujayralar ustidan sirpanish, o'rta chiziqda oltin nur
+        u = (t - 3.5) / 3.5
+        panel.rotation_euler = (math.radians(-80), math.radians(-12), 0); bpy.context.view_layer.update(); M = panel.matrix_world
+        cam.location = M @ Vector((lerp(-.5, .3, u), lerp(-.75, -.4, u), .42)); tgt.location = M @ Vector((lerp(-.2, .55, u), .12, 0))
+        glint.location = (9, 9, 9); glint2.location = (lerp(-PW / 2, PW / 2, ease(u)), 0, PT / 2 - .002)
+        rimE, keyE, softE, envE, fs, ln = 0, 5, 30, .25, 2.4, 45
+    else:            # C+D: orqaga tortilish, panel tik, sekin aylanish
+        k = ease((t - 7.0) / 3.2); u = (t - 7.0) / 9.0
+        panel.rotation_euler = (math.radians(lerp(-25, 0, k)), math.radians(lerp(40, -14, k) + 18 * ease(max(0, (t - 10.5) / 5.5))), 0)
+        bpy.context.view_layer.update(); M = panel.matrix_world
+        cam.location = (M @ Vector((-.7, PH / 2 + .2, .9))).lerp(Vector((0, .05, 5.4 - .3 * u)), k); tgt.location = (M @ Vector((-.2, PH / 2 - .4, 0))).lerp(Vector((0, .1, 0)), k)
+        glint.location = (lerp(-PW / 2 - .1, PW / 2 + .1, ((t - 7) * .4) % 1), PH / 2 + FW, PT / 2); glint2.location = (9, 9, 9)
+        rimE, keyE, softE, envE, fs, ln = lerp(0, 450, k), lerp(4, 22, k), lerp(25, 130, k), .2, lerp(2.8, 5.6, k), lerp(40, 45, k)
+    rim.data.energy, key.data.energy, soft.data.energy, ENV.inputs[1].default_value = rimE, keyE, softE, envE
+    cam.data.dof.aperture_fstop, cam.data.lens = fs, ln
 
 for f in range(sc.frame_start, sc.frame_end + 1):
     at(f)
-    for o in (panel, cam, tgt, glint, rim, key): o.keyframe_insert('location', frame=f); o.keyframe_insert('rotation_euler', frame=f)
+    for o in (panel, cam, tgt, glint, glint2, rim, key): o.keyframe_insert('location', frame=f); o.keyframe_insert('rotation_euler', frame=f)
     for dta, p in ((strip.data, 'energy'), (rim.data, 'energy'), (key.data, 'energy'), (soft.data, 'energy'), (cam.data.dof, 'aperture_fstop'), (cam.data, 'lens'), (ENV.inputs[1], 'default_value')):
         dta.keyframe_insert(p, frame=f)
 
