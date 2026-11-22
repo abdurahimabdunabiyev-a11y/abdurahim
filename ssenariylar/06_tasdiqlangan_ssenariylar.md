@@ -45,3 +45,18 @@
 > Xaridor bo'lsangiz, birinchi narxni o'zingiz ayting.
 > Men shu hiylalarni har kuni Instagram'da ishlataman. Bu sahifada esa ularni sizga ochiq aytib boraman. Obuna bo'lib qo'ying.
 > Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
+
+## Yegan og'iz uyalar (tasdiqlandi, 22-noyabr)
+
+**Sahna:** bozor; sotuvchi uzatadi, Abdurahim tatib ko'radi. Referens: https://www.instagram.com/reel/DeHvRO5RDei/ (Abbos). ~45 s.
+
+> (sotuvchi) Ukajon, bir yeb ko'ring.
+> (Abdurahim) Shirin ekan.
+> (kameraga) Hozir men marketing qurboni bo'ldim. Qanday qilib, tushuntiraman.
+> Bizda eski bir gap bor: yegan og'iz uyalar. Tatib ko'rgan odamga olmasdan ketish noqulay bo'ladi. Sotuvchi buni yaxshi biladi.
+> Digital marketingda ham bu eng ko'p ishlatiladigan usullardan biri.
+> Zapusklarda 3–5 kunlik bepul vebinar o'tkaziladi. Instagram'da odatda pulga sotiladigan bilimlar tekinga beriladi. Yoki "izohga plyus yozing, bepul qo'llanma yuboraman" deyishadi. Buni lid magnit deyishadi: siz yozasiz, PDF keladi, keyin sotuv menejeri bog'lanadi.
+> Mexanizmi bitta: avval qiymat beriladi, odamda qarzdorlik hissi paydo bo'ladi, keyin taklif qilinadi. Va odam ko'pincha rozi bo'ladi.
+> Ya'ni yegan og'iz uyalar.
+> Men bu sahifada shunday mexanizmlarni ochib beraman. Obuna bo'lib qo'ying.
+> Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
