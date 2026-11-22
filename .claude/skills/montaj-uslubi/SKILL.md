@@ -10,6 +10,8 @@ description: Foydalanuvchining shaxsiy video montaj uslubi (Instagram reels, o'z
 > **SHAXSIY BREND yo'nalishi (2026-11-22) — Premium Solar'dan ALOHIDA:** Abdurahimning o'z sahifasi (@abdurahim.abdunabiyev, rukn "Ko'rinmas marketing").
 > Bu yerda **real syomka, gapiruvchi spiker** ishlatiladi (illyustratsiya qoidasi faqat Premium Solar uchun).
 > Uslub manbai: `references/referenslar_shaxsiy_brend.md` (S1–S11: Jasur, Sardor, Fazliddin, Nosir, igor_linde, Abbos) — o'lchangan raqamlar, format banki, syomka standartlari.
+> **MAJBURIY IMZO (har bir videoning oxirgi gapi, istisnosiz, so'zma-so'z):** "Shuni unutmang, marketingsiz hatto dori ham olmaysiz." Ssenariy va montajda doim tekshir.
+> Pozitsiya: Abdurahim — **digital marketing va shaxsiy brend** mutaxassisi (umumiy "marketolog" emas). Hook/misol hayotdan, xulosa doim Instagram/reklama/shaxsiy brendga bog'lanadi.
 > Asosiy: 35–55 s, salomsiz hook, 140–160 so'z/min, har 2–4 s vizual o'zgarish (kesish yoki grafika), low-key yorug'lik, isbot ekranda, izohga kalit so'z CTA.
 
 # Montaj uslubi — doimiy qoidalar
