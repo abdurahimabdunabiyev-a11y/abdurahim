@@ -12,7 +12,7 @@ sc.cycles.use_denoising = True
 try: sc.cycles.denoiser = 'OPENIMAGEDENOISE'
 except Exception: pass
 sc.render.resolution_x, sc.render.resolution_y = 1080, 1920; sc.render.resolution_percentage = int(arg('--foiz', 100))
-FPS = 25; sc.render.fps = FPS; sc.frame_start, sc.frame_end = 1, int(arg('--oxiri', 400))
+FPS = 25; sc.render.fps = FPS; sc.frame_start, sc.frame_end = 1, int(arg('--oxiri', 250))
 sc.view_settings.view_transform = 'AgX'; sc.view_settings.look = 'AgX - Punchy'
 sc.cycles.max_bounces = 6; sc.cycles.caustics_reflective = False; sc.cycles.caustics_refractive = False
 w = bpy.data.worlds.new('W'); sc.world = w; w.use_nodes = True; wn = w.node_tree.nodes; wl = w.node_tree.links
@@ -86,34 +86,62 @@ ct.links.new(rl.outputs['Image'], gl.inputs['Image']); ct.links.new(gl.outputs['
 bpy.ops.object.camera_add(); cam = bpy.context.object; sc.camera = cam; cam.data.lens = 50
 cam.data.dof.use_dof = True; cam.data.dof.aperture_fstop = 1.8
 bpy.ops.object.empty_add(location=(0, 0, 0)); tgt = bpy.context.object
-tc = cam.constraints.new('TRACK_TO'); tc.target = tgt; tc.track_axis = 'TRACK_NEGATIVE_Z'; tc.up_axis = 'UP_Y'
 cam.data.dof.focus_object = tgt
 
 def ease(x): x = min(1, max(0, x)); return 4 * x ** 3 if x < .5 else 1 - (-2 * x + 2) ** 3 / 2
 def lerp(a, b, k): return a + (b - a) * k
+V = arg('--variant', 'oltin')
+if V == 'oq':        # yorug' showroom: och kulrang studiya, neytral oq yorug'lik
+    bgc.inputs[0].default_value = (.42, .44, .47, 1); ENV.inputs[1].default_value = 1.0
+    ramp.color_ramp.elements[1].color = (1, 1, 1, 1); ramp.color_ramp.elements[0].color = (.25, .26, .28, 1)
+    wall.data.materials[0].node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value = (.55, .56, .58, 1)
+    for L in (soft, key): L.data.color = (1, 1, 1)
+    glint.hide_render = glint2.hide_render = True; gl.threshold = 1.5
+elif V == 'quyosh':  # quyosh botishi: Nishita osmon (Y-yuqori sahnaga burilgan), yer, quyosh nuri
+    # qo'lda yasalgan quyosh botishi osmoni (dunyo Y — yuqori): ufqda to'q sariq, tepada to'q ko'k
+    wn.remove(mx); sp2 = wn.new('ShaderNodeSeparateXYZ'); wl.new(tcd.outputs['Generated'], sp2.inputs[0])
+    rr = wn.new('ShaderNodeValToRGB'); E = rr.color_ramp.elements
+    E[0].position, E[0].color = .44, (.05, .03, .02, 1); E[1].position, E[1].color = .95, (.02, .04, .12, 1)
+    for pos, col in ((.5, (1., .42, .12, 1)), (.53, (1., .6, .3, 1)), (.6, (.75, .42, .38, 1)), (.72, (.18, .2, .38, 1))):
+        e = E.new(pos); e.color = col
+    wl.new(sp2.outputs['Y'], rr.inputs[0])
+    sb = wn.new('ShaderNodeBackground'); sb.inputs[1].default_value = 1.4; wl.new(rr.outputs[0], sb.inputs[0]); wl.new(sb.outputs[0], wn['World Output'].inputs[0])
+    wall.hide_render = True
+    bpy.ops.mesh.primitive_plane_add(size=400, location=(0, -PH / 2 - .9, 0), rotation=(math.radians(-90), 0, 0)); grd = bpy.context.object
+    grd.data.materials.append(mat('yer', (.035, .04, .025), 0, .9)); grd.hide_render = True
+    sc.render.film_transparent = True; sc.render.image_settings.color_mode = 'RGBA'   # fon — haqiqiy quyosh botishi videosi (ffmpeg'da)
+    bpy.ops.object.light_add(type='SUN', location=(0, 5, -5)); sun = bpy.context.object; sun.data.energy = 3.5; sun.data.color = (1, .55, .28); sun.data.angle = math.radians(1.5)
+    sun.rotation_euler = (math.radians(-170), math.radians(-25), 0)
+    glint.hide_render = glint2.hide_render = True; gl.threshold = 1.2
+TT = float(arg('--davom', 10))
 def at(f):
     t = (f - 1) / FPS
-    if t < 3.5:      # A: ramka burchagi yaqindan, sekin itarilish
-        u = t / 3.5
-        panel.rotation_euler = (math.radians(-72), math.radians(28), math.radians(10)); bpy.context.view_layer.update(); M = panel.matrix_world
-        cam.location = M @ Vector((-.95 + .12 * u, PH / 2 + .35 - .05 * u, .8 - .12 * u)); tgt.location = M @ Vector((-PW / 2 + .25 + .1 * u, PH / 2 - .35, 0))
-        glint.location = (lerp(-PW / 2 - .1, PW / 2 + .1, ease(u)), PH / 2 + FW, PT / 2); glint2.location = (9, 9, 9)
-        rimE, keyE, softE, envE, fs, ln = 0, 4, 25, .22, 2.8, 40
-    elif t < 7.0:    # B: hujayralar ustidan sirpanish, o'rta chiziqda oltin nur
-        u = (t - 3.5) / 3.5
-        panel.rotation_euler = (math.radians(-80), math.radians(-12), 0); bpy.context.view_layer.update(); M = panel.matrix_world
-        cam.location = M @ Vector((lerp(-.5, .3, u), lerp(-.75, -.4, u), .42)); tgt.location = M @ Vector((lerp(-.2, .55, u), .12, 0))
-        glint.location = (9, 9, 9); glint2.location = (lerp(-PW / 2, PW / 2, ease(u)), 0, PT / 2 - .002)
-        rimE, keyE, softE, envE, fs, ln = 0, 5, 30, .25, 2.4, 45
-    else:            # C+D: orqaga tortilish, panel tik, sekin aylanish
-        k = ease((t - 7.0) / 3.2); u = (t - 7.0) / 9.0
-        panel.rotation_euler = (math.radians(lerp(-25, 0, k)), math.radians(lerp(40, -14, k) + 18 * ease(max(0, (t - 10.5) / 5.5))), 0)
+    if t < 3.0:      # A: logo va "RONMA SOLAR" yaqindan
+        u = t / 3.0
+        panel.rotation_euler = (math.radians(-12), math.radians(32), 0); bpy.context.view_layer.update(); M = panel.matrix_world
+        cam.location = M @ Vector((-.05 + .1 * u, .5, 1.0 - .18 * u)); tgt.location = M @ Vector((.12 + .05 * u, .52, 0))
+        glint.location = (lerp(-PW / 2 + .19, PW / 2 - .19, ease(u)), PH / 2 + FW, PT / 2); glint2.location = (9, 9, 9)
+        rimE, keyE, softE, envE, fs, ln = 0, 6, 30, .25, 2.8, 45
+    elif t < 6.0:    # B: texnik yozuvlar bo'ylab pastga sirpanish
+        u = (t - 3.0) / 3.0
+        panel.rotation_euler = (math.radians(-8), math.radians(-30), 0); bpy.context.view_layer.update(); M = panel.matrix_world
+        cam.location = M @ Vector((lerp(-.75, -.35, u), lerp(.32, -.02, u), .55)); tgt.location = M @ Vector((lerp(-.3, -.12, u), lerp(.28, -.06, u), 0))
+        glint.location = (9, 9, 9); glint2.location = (lerp(-PW / 2 + .12, PW / 2 - .12, ease(u)), 0, PT / 2 + .001)
+        rimE, keyE, softE, envE, fs, ln = 0, 7, 35, .28, 3.2, 45
+    else:            # C: kafolat nishonidan orqaga tortilib, butun panel, sekin burilish
+        k = ease((t - 6.0) / 2.4); u = (t - 6.0) / (TT - 6.0)
+        panel.rotation_euler = (math.radians(lerp(-6, 0, k)), math.radians(lerp(28, -12, k) + 14 * ease(max(0, (t - 8.0) / (TT - 8.0)))), 0)
         bpy.context.view_layer.update(); M = panel.matrix_world
-        cam.location = (M @ Vector((-.7, PH / 2 + .2, .9))).lerp(Vector((0, .05, 5.4 - .3 * u)), k); tgt.location = (M @ Vector((-.2, PH / 2 - .4, 0))).lerp(Vector((0, .1, 0)), k)
-        glint.location = (lerp(-PW / 2 - .1, PW / 2 + .1, ((t - 7) * .4) % 1), PH / 2 + FW, PT / 2); glint2.location = (9, 9, 9)
-        rimE, keyE, softE, envE, fs, ln = lerp(0, 450, k), lerp(4, 22, k), lerp(25, 130, k), .2, lerp(2.8, 5.6, k), lerp(40, 45, k)
+        cam.location = (M @ Vector((-.35, -.42, .7))).lerp(Vector((0, .05, 5.3 - .25 * u)), k); tgt.location = (M @ Vector((-.3, -.43, 0))).lerp(Vector((0, .1, 0)), k)
+        glint.location = (lerp(-PW / 2 + .19, PW / 2 - .19, ((t - 6) * .45) % 1), PH / 2 + FW, PT / 2); glint2.location = (9, 9, 9)
+        rimE, keyE, softE, envE, fs, ln = lerp(0, 450, k), lerp(6, 22, k), lerp(30, 130, k), .22, lerp(3.2, 6.3, k), 45
+    if V == 'oq': rimE, keyE, softE, envE = 0, keyE * 3, softE * 2.5, 1.0
+    if V == 'quyosh': rimE, keyE, softE, envE = 0, keyE * 1.6, softE * 1.3, envE
     rim.data.energy, key.data.energy, soft.data.energy, ENV.inputs[1].default_value = rimE, keyE, softE, envE
     cam.data.dof.aperture_fstop, cam.data.lens = fs, ln
+    fw = (tgt.location - cam.location).normalized(); zc = -fw; xc = Vector((0, 1, 0)).cross(zc).normalized(); yc = zc.cross(xc)
+    from mathutils import Matrix
+    cam.rotation_euler = Matrix((xc, yc, zc)).transposed().to_euler()   # dunyo Y — yuqori (matn to'g'ri turadi)
 
 for f in range(sc.frame_start, sc.frame_end + 1):
     at(f)
@@ -122,7 +150,7 @@ for f in range(sc.frame_start, sc.frame_end + 1):
         dta.keyframe_insert(p, frame=f)
 
 sc.render.filepath = os.path.join(D, arg('--out', 'kadr_####'))
-sc.render.image_settings.file_format = 'PNG'
+sc.render.image_settings.file_format = 'PNG'; sc.render.use_overwrite = False; sc.render.use_placeholder = True
 if '--anim' in argv: bpy.ops.render.render(animation=True)
 else:
     sc.frame_set(int(arg('--kadr', 30))); bpy.ops.render.render(write_still=True)

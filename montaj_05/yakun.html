@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'AN';src:url('anton.ttf')}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:transparent}
+.b{position:absolute;left:84px;overflow:hidden}
+.b>div{will-change:transform}
+.k{font-family:'Inter',sans-serif;font-weight:600;font-size:34px;letter-spacing:12px;color:rgba(242,241,239,.85);text-transform:uppercase}
+.h{font-family:'AN',sans-serif;font-size:150px;line-height:1.02;color:#F2F1EF;letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+.m{font-family:'AN',sans-serif;font-size:84px;line-height:1.05;color:#F2F1EF;letter-spacing:2px;white-space:nowrap}
+.g{color:#F6B52F}
+.line{position:absolute;left:84px;height:4px;background:#F6B52F;transform-origin:0 50%;transform:scaleX(0)}
+#logo{position:absolute;left:50%;top:760px;width:560px;margin-left:-280px;opacity:0}
+.end{position:absolute;left:0;width:1080px;text-align:center}
+.vig{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+</style></head><body>
+<div class="vig" style="opacity:.6"></div>
+<div id="dim" style="position:absolute;inset:0;background:#000;opacity:0"></div>
+<!-- yakun -->
+<img id="logo" src="logo.png">
+<div class="end" style="top:1180px"><div class="b" style="position:relative;left:0;display:inline-block"><div id="f1" class="m" style="font-size:64px">Ronma — <span class="g">ulgurji</span></div></div></div>
+<div class="end" style="top:1290px"><div class="b" style="position:relative;left:0;display:inline-block"><div id="f2" class="k" style="letter-spacing:8px">premiumsolar.uz</div></div></div>
+<script src="../mashq/node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+const tl = gsap.timeline({paused: true}); window.tl = tl; const FPS = 25, TOTAL = 11.2;
+gsap.set('.b>div', {yPercent: 110});
+const IN = {yPercent: 0, duration: .55, ease: 'power3.out'}, OUT = {yPercent: -110, duration: .4, ease: 'power3.in'};
+function show(ids, t0, t1, st = .12) { ids.forEach((id, i) => { tl.to(id, IN, t0 + i * st); if (t1) tl.to(id, OUT, t1 + i * .05); }); }
+gsap.set('#logo', {opacity: 0, scale: .9, filter: 'blur(8px)'});
+tl.to('#dim', {opacity: .72, duration: .8, ease: 'power2.inOut'}, 9.3);
+tl.to('#logo', {opacity: 1, scale: 1, filter: 'blur(0px)', duration: .8, ease: 'power2.out'}, 9.5);
+show(['#f1', '#f2'], 9.9, null, .2);
+tl.to('.vig', {opacity: 1, duration: .1}, 0);
+tl.set({}, {}, TOTAL);
+window.renderFrame = async i => { tl.seek(i / FPS, false); };
+</script></body></html>
