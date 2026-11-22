@@ -31,3 +31,17 @@
 > Xaridor bo'lsangiz, xullas, ko'zingiz ochiq bo'lsin.
 
 **Ekranda:** "BEPUL" katta, narx yorlig'iga aylanadi; "sinov darsi", "vebinar", "7 kun bepul"; krujka va "×2".
+
+## Bozorda sotuvchi nega avval qimmat aytadi (tasdiqlandi, 22-noyabr)
+
+**Lokatsiya:** bozor, turib kameraga qarab. ~50 s.
+
+> Bozorda savdolashib, "zo'r arzon oldim" deb chiqqanmisiz? Bilasizmi, aslida yutqazgansiz.
+> Qarang. Sotuvchi "50 ming" deydi. Siz "yo'q, 30" deysiz, u-bu deb 30 ga kelishasiz. Xursandsiz, to'g'rimi? Lekin sotuvchi "50" deganda, sizni 30 ga olib kelishini oldindan bilgan.
+> Buni marketingda langar effekti deyishadi. Ya'ni birinchi eshitgan narx miyangizga o'rnashib qoladi, keyin hamma narsani shunga solishtirasiz.
+> Misol deylik, telefon do'koniga kirdingiz. Sotuvchi avval 20 millionlik telefonni ko'rsatadi, keyin 12 millionligini. Va 12 million birdan "arzon" bo'lib qoladi. Vaholanki, 12 million ham kichkina pul emas-ku.
+> Mana shu narsa hamma joyda ishlaydi: restoranda, avtosalonda, hatto ishda oylik gaplashganda ham. Kim birinchi raqamni aytsa, o'sha yutadi.
+> Instagram'da ham xuddi shunday. Narxlarni ko'rsatayotganda birinchi bo'lib eng qimmat paketingizni qo'ying. Shunda qolganlari arzon ko'rinadi.
+> Xaridor bo'lsangiz, birinchi narxni o'zingiz ayting.
+> Men shu hiylalarni har kuni Instagram'da ishlataman. Bu sahifada esa ularni sizga ochiq aytib boraman. Obuna bo'lib qo'ying.
+> Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
