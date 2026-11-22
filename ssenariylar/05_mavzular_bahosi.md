@@ -1,5 +1,9 @@
 # Mavzular banki va baholash (2026-11-22)
 
+> **Yangilanish — foydalanuvchi qarori:** supermarket/do'kon mavzulari OLIB TASHLANDI (siyqasi chiqqan): kassadagi saqich, bolalar narsasi pastda, tokchalar/ko'z darajasi, non oxirida, sekin musiqa, "supermarketdagi 5 hiyla", bonus karta, Coca-Cola muzlatgichi, qadoq kichrayishi, eski narx (do'kon versiyasi), aksiya 2+1.
+> **Qolgan asosiy ro'yxat:** Bozorda avval qimmat narx, Yegan og'iz uyalar (bozor), Kofe eksperimenti, Viktorina (restoran narxlari), Obunachi soni, Bepul — eng qimmat strategiya, Kuniga 5 000, Oq xalat, Menyu sirlari, Bitta ovqat bilan mashhur, Kirish, 3 yildagi xatolar, Ikki xil video, Men bo'lsam, Taksi narxi, IKEA effekti, Faqat 3 ta qoldi (onlayn).
+> Quyidagi jadval tarix uchun qoldirildi.
+
 Baholash mezonlari (har biri ichida): **ommaviylik** (hamma ko'rganmi, ulashiladimi), **ekspert qavati** (kam odam biladigan kuchli fakt bormi), **biznes foydasi** (biznes egasi o'zida qo'llay oladimi — premium mijoz signali), **syomka osonligi**.
 Foyda belgilari: 🔥 qamrov/obunachi · 💼 premium mijoz/biznes egasi · 🤝 ishonch · 💬 izoh/lid.
 U = Abdurahimning g'oyasi, Y = Claude qo'shgan yangi mavzu.
