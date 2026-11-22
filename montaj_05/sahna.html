@@ -1,0 +1,96 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'Anton';src:url('anton.ttf')}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+canvas{position:absolute;inset:0}
+.t{position:absolute;left:90px;font-family:'Anton',sans-serif;color:#f2f1ef;letter-spacing:2px;opacity:0;text-transform:uppercase}
+.g{color:#2FB37A}
+#logo{position:absolute;right:60px;top:70px;width:240px;opacity:.95}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<img id="logo" src="logo.png">
+<div id="t1" class="t" style="top:1500px;font-size:84px">To'liq qora panel</div>
+<div id="t2" class="t" style="top:1430px;font-size:120px;line-height:1"><span class="g">Premium</span><br>Solar</div>
+<script type="module">
+import * as THREE from 'three';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
+import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+const W = 1080, H = 1920, FPS = 30;
+const R = new THREE.WebGLRenderer({antialias: true, preserveDrawingBuffer: true});
+R.setSize(W, H); R.setPixelRatio(1); R.toneMapping = THREE.ACESFilmicToneMapping; R.toneMappingExposure = 1.0;
+document.body.prepend(R.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x000000);
+const cam = new THREE.PerspectiveCamera(32, W / H, .01, 100);
+const pm = new THREE.PMREMGenerator(R); scene.environment = pm.fromScene(new RoomEnvironment(), .04).texture;
+
+// --- panel: to'liq qora modul (hujayralar teksturasi kodda) ---
+const PW = 1.13, PH = 2.28, PT = .035;
+const cv = document.createElement('canvas'); cv.width = 1024; cv.height = 2048; const c = cv.getContext('2d');
+c.fillStyle = '#050607'; c.fillRect(0, 0, 1024, 2048);
+const cols = 6, rows = 12, gx = 1024 / cols, gy = 2048 / rows;
+for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
+  c.fillStyle = '#08090b'; c.fillRect(i * gx + 3, j * gy + 3, gx - 6, gy - 6);
+  c.strokeStyle = 'rgba(70,75,85,.18)'; c.lineWidth = 1.2;
+  for (let k = 1; k < 16; k++) { c.beginPath(); c.moveTo(i * gx + 3, j * gy + k * gy / 16); c.lineTo(i * gx + gx - 3, j * gy + k * gy / 16); c.stroke(); }
+}
+const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8;
+const glass = new THREE.MeshPhysicalMaterial({map: tex, roughness: .22, metalness: .2, clearcoat: 1, clearcoatRoughness: .08, color: 0xffffff, envMapIntensity: .12});
+const frameM = new THREE.MeshStandardMaterial({color: 0x111111, roughness: .3, metalness: 1, envMapIntensity: .35});
+const panel = new THREE.Group();
+const face = new THREE.Mesh(new THREE.BoxGeometry(PW, PH, PT * .6), glass); panel.add(face);
+const fw = .03;
+[[PW + fw * 2, fw, 0, PH / 2 + fw / 2], [PW + fw * 2, fw, 0, -PH / 2 - fw / 2], [fw, PH, PW / 2 + fw / 2, 0], [fw, PH, -PW / 2 - fw / 2, 0]].forEach(([w, h, x, y]) => {
+  const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, PT), frameM); m.position.set(x, y, 0); panel.add(m);
+});
+scene.add(panel);
+
+// --- oltin nur: ramka bo'ylab yuguradigan yorug' chiziq (emissive) ---
+const streakM = new THREE.MeshBasicMaterial({color: 0xffb35a, transparent: true, opacity: 1});
+const streak = new THREE.Mesh(new THREE.BoxGeometry(.32, .006, .006), streakM);
+streak.position.set(0, PH / 2 + fw, PT / 2 + .002); panel.add(streak);
+const streak2 = new THREE.Object3D();
+
+// --- yorug'lik ---
+scene.add(new THREE.AmbientLight(0xffffff, .05));
+const rim = new THREE.SpotLight(0xffa04a, 60, 12, .5, .8); rim.position.set(-2, 1.2, -2.5); rim.target = panel; scene.add(rim);
+const key = new THREE.SpotLight(0xffc27a, 25, 10, .35, .9); key.position.set(2.6, 3.2, .6); key.target = panel; scene.add(key);
+const sweep = new THREE.Object3D();
+// panel orqasidagi iliq nur (halo)
+const haloC = document.createElement('canvas'); haloC.width = haloC.height = 256; const hc = haloC.getContext('2d');
+const gr = hc.createRadialGradient(128, 128, 0, 128, 128, 128); gr.addColorStop(0, 'rgba(255,150,60,.9)'); gr.addColorStop(.4, 'rgba(200,90,20,.35)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+hc.fillStyle = gr; hc.fillRect(0, 0, 256, 256);
+const halo = new THREE.Sprite(new THREE.SpriteMaterial({map: new THREE.CanvasTexture(haloC), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending}));
+halo.scale.set(3.2, 4.4, 1); halo.position.set(0, 0, -.6); scene.add(halo);
+
+const comp = new EffectComposer(R); comp.addPass(new RenderPass(scene, cam));
+comp.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), .7, .35, .82)); comp.addPass(new OutputPass());
+
+const ease = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const lerp = (a, b, k) => a + (b - a) * k;
+function frame(t) {
+  // 0–2.6 s: past burchakdan yaqin, nur ramka bo'ylab; 2.6–6 s: orqaga tortilib, panel tik turadi
+  const k = ease(Math.min(1, Math.max(0, (t - 2.4) / 2.4)));
+  panel.rotation.set(lerp(-1.2, 0, k), lerp(.5, -.28 + .05 * Math.sin(t * .6), k), lerp(.2, 0, k));
+  panel.updateMatrixWorld(true);
+  const corner = panel.localToWorld(new THREE.Vector3(-PW / 2 + .15 + t * .05, PH / 2 - .1, 0));
+  const nearPos = corner.clone().add(new THREE.Vector3(.35, .32, .55));
+  cam.position.lerpVectors(nearPos, new THREE.Vector3(0, .05, 6.2), k);
+  const tgt = corner.clone().add(new THREE.Vector3(.12, -.05, 0)).lerp(new THREE.Vector3(0, .25, 0), k); cam.lookAt(tgt);
+  const s = (t * .55) % 1; streak.position.x = lerp(-PW / 2, PW / 2, s);
+  streak2.position.y = lerp(PH / 2, -PH / 2, (t * .4) % 1);
+  const wp = new THREE.Vector3(); streak.getWorldPosition(wp); sweep.position.copy(wp).add(new THREE.Vector3(0, .05, .15));
+  halo.material.opacity = k; rim.intensity = 10 + 50 * k; key.intensity = lerp(2, 7, k);
+  streakM.opacity = 1 - .7 * k; glass.envMapIntensity = lerp(.015, .1, k); glass.clearcoat = lerp(.25, 1, k); frameM.envMapIntensity = lerp(.15, .35, k);
+  comp.render();
+  const tx = (el, a, b) => { const o = Math.min(1, Math.max(0, (t - a) / .5)) * (1 - Math.min(1, Math.max(0, (t - b) / .4)));
+    el.style.opacity = o; el.style.transform = `translateY(${(1 - o) * 30}px)`; };
+  tx(document.getElementById('t1'), .6, 2.4); tx(document.getElementById('t2'), 3.6, 99);
+}
+window.tl = {}; window.renderFrame = async i => frame(i / FPS);
+frame(0);
+</script></body></html>
