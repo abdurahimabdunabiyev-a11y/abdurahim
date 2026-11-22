@@ -18,7 +18,7 @@
 
 **Ekranda:** tepada 1–10 shkala; tushish tartibi 10, 2, 5, 8, 4, 4, 3, 3; 1-o'rin oxirigacha "?".
 
-## №3. Bepul — eng qimmat strategiya (tasdiqlandi, 1-variant)
+## №3. Bepul — eng qimmat strategiya (1-variant, HALI TASDIQLANMAGAN)
 
 **Format:** kameraga qarab, uyda/ofisda. ~45 s.
 
