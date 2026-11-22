@@ -2,8 +2,8 @@
 
 > **Yangilanish — foydalanuvchi qarori:** supermarket/do'kon mavzulari OLIB TASHLANDI (siyqasi chiqqan): kassadagi saqich, bolalar narsasi pastda, tokchalar/ko'z darajasi, non oxirida, sekin musiqa, "supermarketdagi 5 hiyla", bonus karta, Coca-Cola muzlatgichi, qadoq kichrayishi, eski narx (do'kon versiyasi), aksiya 2+1.
 > **Qolgan asosiy ro'yxat:** Bozorda avval qimmat narx, Yegan og'iz uyalar (bozor), Kofe eksperimenti, Viktorina (restoran narxlari), Obunachi soni, Bepul — eng qimmat strategiya, Kuniga 5 000, Oq xalat, Menyu sirlari, Bitta ovqat bilan mashhur, Kirish, 3 yildagi xatolar, Ikki xil video, Men bo'lsam, Taksi narxi, IKEA effekti, Faqat 3 ta qoldi (onlayn).
-> **Yakuniy tasdiqlangan ro'yxat (22-noyabr):** 1 Kirish, 2 Pul sarflatadigan hiylalar 1–10, 3 Bepul — eng qimmat strategiya, 4 Kuniga atigi 5 000 so'm, 5 Reklamada nega oq xalat, 6 Bozorda sotuvchi nega avval qimmat aytadi, 7 Yegan og'iz uyalar, 8 Qaysi narx ko'proq sotadi (viktorina), 9 Menyuning 3 ta siri, 10 Bitta ovqat bilan mashhur, 11 Bozor Buva keysi, 12 Faqat 3 ta qoldi, 13 IKEA effekti, 14 3 yildagi xatolarim, 15 Ikki xil video, 16 Men bo'lsam.
-> Olib tashlandi (foydalanuvchi): Obunachi soni, Bir xil kofe, Kim bilan ishlayman, Taksi narxi.
+> **Yakuniy tasdiqlangan ro'yxat (22-noyabr):** 1 Kirish, 2 Pul sarflatadigan hiylalar 1–10, 3 Bepul — eng qimmat strategiya (oxiriga qoldirilgan), 5 Reklamada nega oq xalat, 6 Bozorda sotuvchi nega avval qimmat aytadi, 7 Yegan og'iz uyalar, 8 Qaysi narx ko'proq sotadi (viktorina), 9 Menyuning 3 ta siri, 10 Bitta ovqat bilan mashhur, 11 Bozor Buva keysi, 12 Faqat 3 ta qoldi, 13 IKEA effekti, 14 3 yildagi xatolarim, 15 Ikki xil video, 16 Men bo'lsam.
+> Olib tashlandi (foydalanuvchi): Kuniga 5 000 so'm, Obunachi soni, Bir xil kofe, Kim bilan ishlayman, Taksi narxi.
 > Quyidagi jadval tarix uchun qoldirildi.
 
 Baholash mezonlari (har biri ichida): **ommaviylik** (hamma ko'rganmi, ulashiladimi), **ekspert qavati** (kam odam biladigan kuchli fakt bormi), **biznes foydasi** (biznes egasi o'zida qo'llay oladimi — premium mijoz signali), **syomka osonligi**.
