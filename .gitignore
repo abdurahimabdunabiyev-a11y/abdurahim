@@ -26,3 +26,7 @@ montaj_04/broll_panel_zavod/yuborish/
 montaj_05/node_modules/
 montaj_05/*.mp4
 montaj_05/sfx/
+montaj_05/blender/*.png
+!montaj_05/blender/hujayra.png
+montaj_05/blender/frames/
+montaj_05/blender/*.log
