@@ -28,6 +28,13 @@
       "sourceType": "github",
       "skillPath": "skills/video-editing/SKILL.md",
       "computedHash": "b1a66c7e9337e7030cfef7c5a8b2a519123e63c8fef710105118eab89641e505"
+    },
+    "video-storyboard": {
+      "source": "agentara/skills",
+      "commit": "950e1bfb11e1df67b46df19804ed85ada9012c33",
+      "sourceType": "github",
+      "skillPath": "skills/aigc/video-storyboard/SKILL.md",
+      "computedHash": "fec8985ccc2878b8ee0b897629b16c06f8dfa1a3d00cbb92b0dd491f408ddea1"
     }
   }
 }
