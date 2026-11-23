@@ -281,3 +281,17 @@ Hammasi `asboblar/` da. Venv: `~/montaj-venv` (Python 3.12: mediapipe, opencv, t
 
 ## Referens: Claude "Hiring editors" uslubi
 `references/referens_claude_hiring.md` — matn odam orqasida (niqob qatlamlari), harfma-harf katta italic so'z, PIP karta + halqa, nur chizig'i / gologramma o'tishlari, zich mayda SFX. Namuna kod: `montaj_04/demo/` (qatlam.html ?layer=back|front, kompozit.py, mix_demo.py).
+
+## 12. Mustafo pak qoidalari (2026-11-23) — foydalanuvchi oldingi ishlarimni YOQTIRMADI (musiqa, o'tish, B-roll, animatsiya, subtitr — hammasi)
+Manba: foydalanuvchi yuborgan "Mustafo montaj skill paki" (`mustafo-montaj-usuli`, `reels-zonali-montaj`, `shaxsiy-brend-video-edit`, `montaj-motion`, `viral-reels-scriptwriter` skilllari + `references/mustafo_promptlar/`). AE skriptlari bu Linux muhitida ishlamaydi — QOIDALAR va UZLUB bizning GSAP/ffmpeg pipelinemizga ko'chiriladi. Brend ranglari Premium Solar'niki qoladi.
+Mening oldingi xatolarim va to'g'risi:
+- Rangli pill/stamp/badge ko'p edi → **video ustidagi hamma matn OQ**, aksent ham oq (yoki bitta brend rangi juda kam). Drop shadow YO'Q — o'qilishi uchun pastdan yumshoq qoraytirish (0.55 @ 70%).
+- Har jumlaga grafika → **bitta so'z/ma'no bir vaqtda bitta joyda**; grafika faqat kerakli joyda, minimal, tekis (gradientsiz/soyasiz).
+- SFX subtitr va sarlavhaga ham qo'yilgan → **SFX faqat grafikaga** (pop −16…−20 dB, whoosh −12…−16 dB), zoomda tovush yo'q. Haqiqiy yozilgan SFX (`real-sfx` skilli), sintez emas.
+- Musiqa → −12 dB atrofida (≈ −21 LUFS), ovoz tagida ducking, yakuniy −14 LUFS. Drop — asosiy momentga.
+- Zoom ko'p edi → zoom zarbasi FAQAT ta'kid so'zda: 100→109–111%, 0.3 s kirish, 0.35 s chiqish.
+- LUT bilan rang berdim → **kamera videosi o'z rangida**; so'ralsa ham avval bitta kadrda asl/yangi solishtirib tasdiq ol (Mustafo iliq "C" filtri: `references/mustafo_promptlar/06-rang-filtri.md`).
+- Subtitr: so'zma-so'z sariq yonuvchi, katta, outline → **oddiy oq, ~60 px, 2–4 so'zli chunk, y≈1260** (talking-head), ko'z ≈ y 810, hook matni ≈ y 420. Safe zona: x 150–930, y 230–1595 (matn eni ≤ 780).
+- Animatsiya: kirish pop 80→106→100% (0.2–0.34 s), matn pastdan ~36 px ko'tarilib 0.2 s fade; chiqish 0.2–0.3 s fade.
+- Kesish: gap boshidan ~0.05 s, oxiridan ~0.08 s qoldir; ichki ≥0.25 s pauza → ~0.12 s; Whisper vaqti ~0.4 s oldinda — RMS (25 ms) bilan aniqla.
+- **Ish tartibi:** avval 8–10 s sinov / 3–4 kadr ko'rsat → "yaxshi" desa to'liq render. Pullik generatsiya faqat ruxsat bilan.
