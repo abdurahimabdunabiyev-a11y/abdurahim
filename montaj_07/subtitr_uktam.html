@@ -1,0 +1,50 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'GS';src:url('file:///root/.fonts/montaj/GeneralSansBold.ttf');font-weight:700}
+@font-face{font-family:'GS';src:url('file:///root/.fonts/montaj/GeneralSansMedium.ttf');font-weight:500}
+@font-face{font-family:'GS';src:url('file:///root/.fonts/montaj/GeneralSansSemiBoldItalic.ttf');font-weight:600;font-style:italic}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:transparent}
+.blk{position:absolute;left:0;width:1080px;display:flex;justify-content:center;opacity:0}
+.in{display:flex;flex-direction:column;align-items:flex-start}
+.h{font-family:'GS';font-weight:700;font-size:124px;line-height:1;color:#fff;letter-spacing:-2px;white-space:nowrap;text-shadow:0 3px 18px rgba(0,0,0,.35)}
+.s{font-family:'GS';font-weight:500;font-size:50px;line-height:1.15;color:#fff;white-space:nowrap;margin-top:8px;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.s span,.h span{display:inline-block;margin-right:.26em}
+.i{font-style:italic;font-weight:600}
+.pill{font-family:'GS';font-weight:500;font-size:50px;color:#141414;background:#fff;border-radius:22px;padding:12px 30px;margin:8px 0;box-shadow:0 6px 24px rgba(0,0,0,.25);opacity:0}
+</style></head><body>
+<div id="root"></div>
+<script src="../mashq/node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+const tl = gsap.timeline({paused: true}); window.tl = tl; const FPS = 30, TOTAL = 9.1333;
+const R = document.getElementById('root');
+// so'z paydo bo'lishi: xiradan aniq, pastdan biroz ko'tarilib (referensdagidek)
+function reveal(el, t) { gsap.set(el, {opacity: 0, filter: 'blur(10px)', y: 10}); tl.to(el, {opacity: 1, filter: 'blur(0px)', y: 0, duration: .22, ease: 'power2.out'}, t); }
+// blok: heading [matn, vaqt], sub: [[so'z, vaqt, italic?], ...]
+function block(top, t0, t1, head, sub) {
+  const b = document.createElement('div'); b.className = 'blk'; b.style.top = top + 'px'; R.appendChild(b);
+  const inn = document.createElement('div'); inn.className = 'in'; b.appendChild(inn);
+  tl.set(b, {opacity: 1}, t0); tl.to(b, {opacity: 0, filter: 'blur(6px)', duration: .18}, t1 - .18);
+  if (head) { const h = document.createElement('div'); h.className = 'h'; h.textContent = head[0]; inn.appendChild(h); reveal(h, head[1]); }
+  if (sub && sub.length) {
+    const s = document.createElement('div'); s.className = 's'; inn.appendChild(s);
+    sub.forEach(([w, t, it]) => { const sp = document.createElement('span'); sp.textContent = w; if (it) sp.className = 'i'; s.appendChild(sp); reveal(sp, t); });
+  }
+  return inn;
+}
+// talk vaqtlari (montaj_04/sozlar.json)
+block(930, 0.00, 1.06, ['Birinchisi', 0.02], []);
+block(930, 1.06, 2.36, ['Hammasi', 1.06], [['omborda', 1.53, 1], ['bor', 2.02, 1]]);
+// ro'yxat — oq kapsulalar (referensdagi "komforti uchun / xavfsizligi uchun")
+const L = block(905, 2.39, 4.82, null, []);
+[['LONGi', 2.39], ['Jinko', 3.08], ['ERA', 3.68], ['Ronma', 4.00]].forEach(([n, t]) => {
+  const p = document.createElement('div'); p.className = 'pill'; p.textContent = n; L.appendChild(p);
+  gsap.set(p, {opacity: 0, scale: .85, filter: 'blur(6px)'}); tl.to(p, {opacity: 1, scale: 1, filter: 'blur(0px)', duration: .22, ease: 'back.out(1.8)'}, t);
+});
+const sp = document.createElement('div'); sp.className = 's'; sp.textContent = 'panellari'; sp.style.marginTop = '14px'; L.appendChild(sp); reveal(sp, 4.30);
+block(930, 4.84, 6.44, ['Deye', 5.28], [['hamda', 4.84], ['invertorlari', 5.65, 1]]);
+block(930, 6.46, 8.25, ['500 ta?', 7.59], [['10', 6.46], ['ta', 6.65], ['kerakmi,', 6.80], ['ya', 7.39], ['500', 7.59, 1], ['tami?', 7.73, 1]]);
+block(930, 8.27, TOTAL + .2, ['Hammasi bor!', 8.27], []);
+tl.set({}, {}, TOTAL);
+window.renderFrame = async i => { tl.seek(i / FPS, false); };
+</script></body></html>
