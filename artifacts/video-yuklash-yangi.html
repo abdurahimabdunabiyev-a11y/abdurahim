@@ -69,7 +69,7 @@ li { background: var(--surface); border: 1px solid var(--line); border-radius: 1
       <div class="stxt"><span id="sName">—</span><span id="sPct">0%</span></div>
       <div class="bar"><i id="sBar"></i></div>
       <div class="stxt"><span id="sDetail">—</span><span id="sAll"></span></div>
-      <p class="warn">Yuklash tugaguncha sahifani yopmang va ekranni o'chirmang.</p>
+      <p class="warn">Chiqib ketsangiz ham yo'qolmaydi: sahifaga qaytsangiz, to'xtagan joyidan o'zi davom etadi.</p>
     </div>
   </section>
 
@@ -105,17 +105,39 @@ function toBase64(blob) {
   });
 }
 
+// --- Tanlangan videolarni telefon xotirasida (IndexedDB) saqlash: sahifaga qaytganda qayta tanlamasdan davom etadi ---
+const IDB = (() => {
+  let p = null;
+  const open = () => p || (p = new Promise((res, rej) => {
+    const r = indexedDB.open('montaj-yuklash', 1);
+    r.onupgradeneeded = () => r.result.createObjectStore('files');
+    r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error);
+  }));
+  const tx = async (mode, fn) => { const d = await open(); return new Promise((res, rej) => { const t = d.transaction('files', mode); const out = fn(t.objectStore('files')); t.oncomplete = () => res(out && out.result); t.onerror = () => rej(t.error); t.onabort = () => rej(t.error); }); };
+  return {
+    put: (k, v) => tx('readwrite', (s) => s.put(v, k)).catch(() => false),
+    get: (k) => tx('readonly', (s) => s.get(k)).catch(() => null),
+    del: (k) => tx('readwrite', (s) => s.delete(k)).catch(() => null),
+  };
+})();
+const blobs = new Map();
+const R = (id) => db.collection('uploads').doc(id);   // snapshot hujjatida ref yo'q — havolani id orqali olamiz   // shu sessiyada tanlangan fayllar (xotiraga sig'masa ham ishlaydi)
+
+const online = () => new Promise((r) => { if (navigator.onLine !== false) return r(); addEventListener('online', () => r(), { once: true }); });
+const visible = () => new Promise((r) => { if (document.visibilityState === 'visible') return r(); document.addEventListener('visibilitychange', function f() { if (document.visibilityState === 'visible') { document.removeEventListener('visibilitychange', f); r(); } }); });
+
 async function uploadPart(blob) {
-  for (let attempt = 0; attempt < 4; attempt++) {
+  // Vaqtinchalik xatolarda TO'XTAMAYDI: internet va sahifa qaytishini kutib, qayta urinadi.
+  for (let attempt = 0; ; attempt++) {
+    await online(); await visible();
     try { return await assets.upload(new Blob([await toBase64(blob)], { type: 'text/plain' }), { type: 'text/plain' }); }
     catch (e) {
       const c = e && e.code;
-      if (c === 'store_unavailable' || c === 'upstream_error') { await sleep(2000 * (attempt + 1)); continue; }
-      if (c === 'rate_limited') { await sleep(6000 * (attempt + 1)); continue; }
-      throw e;
+      if (c === 'quota_or_state' || c === 'not_granted' || c === 'read_error') throw e;
+      $('sDetail').textContent = 'Aloqa uzildi — kutilmoqda, o\'zi davom etadi…';
+      await sleep(Math.min(30000, (c === 'rate_limited' ? 6000 : 2000) * (attempt + 1)));
     }
   }
-  throw { code: 'upstream_error', message: 'Bir necha urinishdan keyin ham yuklanmadi' };
 }
 
 async function refreshUsage() {
@@ -125,15 +147,23 @@ async function refreshUsage() {
   } catch (_) {}
 }
 
-async function sendFile(file, idx, total) {
+// Yangi videoni navbatga qo'yadi: hujjat + xotiraga nusxa. Yuklashning o'zi pump() da.
+async function enqueue(file) {
   const ref = db.collection('uploads').doc();
-  const meta = { name: file.name || 'video.mp4', size: file.size, mime: file.type || '', lastModified: file.lastModified || 0,
-                 createdAt: new Date().toISOString(), status: 'uploading', uploaded: 0, encoding: 'base64', chunks: [] };
-  await ref.set(meta);
-  current = { ref, chunks: meta.chunks };
-  $('sName').textContent = meta.name;
+  await ref.set({ name: file.name || 'video.mp4', size: file.size, mime: file.type || '', lastModified: file.lastModified || 0,
+                  createdAt: new Date().toISOString(), status: 'uploading', uploaded: 0, encoding: 'base64', chunks: [] });
+  blobs.set(ref.id, file);
+  await IDB.put(ref.id, file);
+}
+
+// Bitta videoni yuklaydi — allaqachon yuklangan bo'laklardan keyin DAVOM ETADI.
+async function sendFile(ref, v, file, idx, total) {
+  current = { ref, chunks: v.chunks || [] };
+  $('sName').textContent = v.name;
   $('sAll').textContent = total > 1 ? `${idx + 1} / ${total} video` : '';
-  let pos = 0; const chunks = [];
+  const chunks = [...(v.chunks || [])];
+  let pos = chunks.length ? chunks[chunks.length - 1].start + chunks[chunks.length - 1].size : 0;
+  { const pct = Math.round((pos / file.size) * 100); $('sBar').style.width = pct + '%'; $('sPct').textContent = pct + '%'; }
   while (pos < file.size) {
     const end = Math.min(pos + CHUNK, file.size);
     $('sDetail').textContent = `${chunks.length + 1}-bo'lak · ${fmt(pos)} / ${fmt(file.size)}`;
@@ -145,33 +175,61 @@ async function sendFile(file, idx, total) {
     await ref.update({ chunks, uploaded: pos });
   }
   await ref.update({ status: 'done', uploaded: file.size, finishedAt: new Date().toISOString() });
+  blobs.delete(ref.id); IDB.del(ref.id);
   refreshUsage();
 }
 
-async function handle(files) {
-  if (!files.length || busy) return;
-  busy = true; say('', ''); $('pickBtn').disabled = true; $('drop').classList.add('busy'); $('status').hidden = false;
+let pendingDocs = [];   // tugallanmagan hujjatlar (onSnapshot yangilaydi)
+
+// Navbatdagi hamma tugallanmagan videolarni ketma-ket yuklaydi. Fayli topilmaganini qayta tanlashni so'raydi.
+async function pump() {
+  if (busy) return;
+  busy = true; say('', '');
   try { wake = await navigator.wakeLock?.request('screen'); } catch (_) {}
-  let ok = 0;
+  let ok = 0, missing = [];
   try {
-    for (let i = 0; i < files.length; i++) {
-      $('sBar').style.width = '0%'; $('sPct').textContent = '0%';
-      await sendFile(files[i], i, files.length); ok++;
+    for (;;) {
+      const todo = pendingDocs.filter((d) => !missing.includes(d.id));
+      if (!todo.length) break;
+      const d = todo[0], v = d.data();
+      let file = blobs.get(d.id) || await IDB.get(d.id);
+      if (!file || file.size !== v.size) { missing.push(d.id); continue; }
+      blobs.set(d.id, file);
+      $('drop').classList.add('busy'); $('status').hidden = false;
+      await sendFile(R(d.id), v, file, ok, ok + todo.length); ok++;
+      await sleep(300);   // onSnapshot pendingDocs'ni yangilashi uchun
     }
-    say(ok > 1 ? `${ok} ta video yuklandi. Claude'ga "yukladim" deb yozing.` : `Video yuklandi. Claude'ga "yukladim" deb yozing.`, 'ok');
+    if (ok) say(ok > 1 ? `${ok} ta video yuklandi. Claude'ga "tayyor" deb yozing.` : `Video yuklandi. Claude'ga "tayyor" deb yozing.`, 'ok');
+    if (missing.length) {
+      const names = pendingDocs.filter((d) => missing.includes(d.id)).map((d) => d.data().name).join(', ');
+      say(`Chala qolgan: ${names}. Davom ettirish uchun shu videoni qayta tanlang — boshidan emas, to'xtagan joyidan davom etadi.`, 'err');
+    }
   } catch (e) {
     const c = e && e.code;
-    // Yarim qolgan yuklamani belgilaymiz (bo'sh bo'lsa — butunlay o'chiramiz).
-    try { if (current) { if (!current.chunks.length) await current.ref.delete(); else await current.ref.update({ status: 'failed' }); } } catch (_) {}
-    const text = c === 'quota_or_state' ? "Joy tugadi. Pastdagi eski videolarni o'chiring yoki Claude'dan tozalashni so'rang, keyin qayta urinib ko'ring."
+    try { if (current) await current.ref.update({ status: 'failed' }); } catch (_) {}
+    const text = c === 'quota_or_state' ? "Joy tugadi. Claude'dan yangi sahifa ochishni so'rang."
       : c === 'not_granted' ? "Yuklashga ruxsat berilmadi. Sahifani claude.ai'ga o'z akkauntingiz bilan kirgan holda oching."
-      : `Yuklash to'xtadi (${c || 'xato'}). Internetni tekshirib, videoni qayta tanlang.`;
+      : `Yuklash to'xtadi (${c || 'xato'}). Videoni qayta tanlang — to'xtagan joyidan davom etadi.`;
     say(text, 'err');
   } finally {
-    busy = false; $('pickBtn').disabled = false; $('drop').classList.remove('busy'); $('status').hidden = true;
+    busy = false; $('drop').classList.remove('busy'); $('status').hidden = true;
     try { await wake?.release(); } catch (_) {}
-    $('file').value = '';
   }
+}
+
+async function handle(files) {
+  if (!files.length) return;
+  $('pickBtn').disabled = true;
+  try {
+    for (const f of files) {
+      // Shu video avval chala qolgan bo'lsa — yangisini ochmay, o'shani davom ettiramiz.
+      const old = pendingDocs.find((d) => { const v = d.data(); return v.name === (f.name || 'video.mp4') && v.size === f.size; });
+      if (old) { blobs.set(old.id, f); IDB.put(old.id, f); if (old.data().status === 'failed') await R(old.id).update({ status: 'uploading' }); }
+      else await enqueue(f);
+    }
+  } catch (e) { say('Navbatga qo\'shib bo\'lmadi: ' + ((e && e.code) || 'xato'), 'err'); }
+  $('pickBtn').disabled = false; $('file').value = '';
+  await sleep(400); pump();
 }
 
 function render(snap) {
@@ -193,7 +251,7 @@ function render(snap) {
     del.addEventListener('click', async () => {
       if (!del.classList.contains('sure')) { del.classList.add('sure'); del.textContent = 'Rostdan?'; setTimeout(() => { del.classList.remove('sure'); del.textContent = "O'chirish"; }, 4000); return; }
       del.disabled = true; del.textContent = "O'chirilmoqda…";
-      try { for (const c of v.chunks || []) { await assets.delete(c.id); } await d.ref.delete(); refreshUsage(); }
+      try { for (const c of v.chunks || []) { await assets.delete(c.id); } await R(d.id).delete(); blobs.delete(d.id); IDB.del(d.id); refreshUsage(); }
       catch (e) { say("O'chirib bo'lmadi: " + ((e && e.code) || 'xato'), 'err'); del.disabled = false; del.textContent = "O'chirish"; }
     });
     li.append(nm, pill, meta, del); ul.append(li);
@@ -213,8 +271,20 @@ $('file').addEventListener('change', (e) => handle([...e.target.files]));
   $('pickBtn').disabled = false;
   $('hint').textContent = 'Galereyadan bir yoki bir nechta videoni tanlang. Hajm cheklovi yo\'q.';
   const timer = setTimeout(() => { if ($('list').querySelector('.empty')) $('usage').textContent = 'Ro\'yxat hali yuklanmadi, internetni tekshiring.'; }, 10000);
-  db.collection('uploads').orderBy('createdAt', 'desc').onSnapshot((s) => { clearTimeout(timer); render(s); },
-    () => { clearTimeout(timer); $('usage').textContent = 'Ro\'yxatni o\'qib bo\'lmadi.'; });
+  let first = true;
+  db.collection('uploads').orderBy('createdAt', 'asc').onSnapshot((s) => {
+    clearTimeout(timer);
+    pendingDocs = s.docs.filter((d) => d.data().status !== 'done');
+    render({ empty: s.empty, docs: [...s.docs].reverse() });
+    if (first) { first = false; if (pendingDocs.length) pump(); }   // sahifa ochilganda chala qolganlarni o'zi davom ettiradi
+  }, () => { clearTimeout(timer); $('usage').textContent = 'Ro\'yxatni o\'qib bo\'lmadi.'; });
+  // Sahifaga qaytganda yoki internet qaytganda: ekran qulfini yangilash va navbatni davom ettirish
+  document.addEventListener('visibilitychange', async () => {
+    if (document.visibilityState !== 'visible') return;
+    if (busy) { try { wake = await navigator.wakeLock?.request('screen'); } catch (_) {} }
+    else if (pendingDocs.length) pump();
+  });
+  addEventListener('online', () => { if (!busy && pendingDocs.length) pump(); });
   refreshUsage();
 })();
 </script>
