@@ -126,6 +126,15 @@ const R = (id) => db.collection('uploads').doc(id);   // snapshot hujjatida ref 
 const online = () => new Promise((r) => { if (navigator.onLine !== false) return r(); addEventListener('online', () => r(), { once: true }); });
 const visible = () => new Promise((r) => { if (document.visibilityState === 'visible') return r(); document.addEventListener('visibilitychange', function f() { if (document.visibilityState === 'visible') { document.removeEventListener('visibilitychange', f); r(); } }); });
 
+// Bo'lak ro'yxatini yozish ham uzilishda to'xtamaydi (aks holda bo'lak yuklanadi-yu, ro'yxatga tushmay qoladi)
+async function upd(ref, data) {
+  for (let attempt = 0; ; attempt++) {
+    await online(); await visible();
+    try { return await ref.update(data); }
+    catch (e) { const c = e && e.code; if (c === 'not_found' || c === 'not_granted') throw e; await sleep(Math.min(20000, 1500 * (attempt + 1))); }
+  }
+}
+
 async function uploadPart(blob) {
   // Vaqtinchalik xatolarda TO'XTAMAYDI: internet va sahifa qaytishini kutib, qayta urinadi.
   for (let attempt = 0; ; attempt++) {
@@ -172,9 +181,9 @@ async function sendFile(ref, v, file, idx, total) {
     pos = end;
     const pct = Math.round((pos / file.size) * 100);
     $('sBar').style.width = pct + '%'; $('sPct').textContent = pct + '%';
-    await ref.update({ chunks, uploaded: pos });
+    await upd(ref, { chunks, uploaded: pos });
   }
-  await ref.update({ status: 'done', uploaded: file.size, finishedAt: new Date().toISOString() });
+  await upd(ref, { status: 'done', uploaded: file.size, finishedAt: new Date().toISOString() });
   blobs.delete(ref.id); IDB.del(ref.id);
   refreshUsage();
 }
