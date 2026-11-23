@@ -33,3 +33,4 @@ montaj_05/blender/*.log
 montaj_05/*.mov
 montaj_05/blender/frames_*/
 montaj_05/blender/*.done
+montaj_06_ozvuchka/**/*.wav
