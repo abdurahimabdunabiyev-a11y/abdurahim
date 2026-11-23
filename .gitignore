@@ -43,3 +43,6 @@ montaj_08_tanlov/*.mp4
 montaj_08_tanlov/sfx/
 montaj_07/*.mp4
 !montaj_07/Sinov_*.mp4
+montaj_09/kadr/
+montaj_09/*.wav
+montaj_09/video.mp4
