@@ -297,3 +297,5 @@ Mening oldingi xatolarim va to'g'risi:
 - **Ish tartibi:** avval 8–10 s sinov / 3–4 kadr ko'rsat → "yaxshi" desa to'liq render. Pullik generatsiya faqat ruxsat bilan.
 
 ## 13. ASOSIY USLUB (2026-11-23): `references/referens_toliq_5ta.md` — foydalanuvchiga to'liq yoqqan 5 ta reelsning umumiy qoidalari. Har montajda AVVAL shuni o'qi.
+
+## Yuklash sahifasi (2026-11-23): eski 7 ta sahifa O'CHIRILDI. Hozirgi: https://claude.ai/artifact/YNkx38i4eDs9NyLgTufbVj (artifacts/video-yuklash-yangi.html, 1 GB). To'lsa — yangi nusxa yaratiladi.
