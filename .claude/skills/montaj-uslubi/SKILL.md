@@ -295,3 +295,5 @@ Mening oldingi xatolarim va to'g'risi:
 - Animatsiya: kirish pop 80→106→100% (0.2–0.34 s), matn pastdan ~36 px ko'tarilib 0.2 s fade; chiqish 0.2–0.3 s fade.
 - Kesish: gap boshidan ~0.05 s, oxiridan ~0.08 s qoldir; ichki ≥0.25 s pauza → ~0.12 s; Whisper vaqti ~0.4 s oldinda — RMS (25 ms) bilan aniqla.
 - **Ish tartibi:** avval 8–10 s sinov / 3–4 kadr ko'rsat → "yaxshi" desa to'liq render. Pullik generatsiya faqat ruxsat bilan.
+
+## 13. ASOSIY USLUB (2026-11-23): `references/referens_toliq_5ta.md` — foydalanuvchiga to'liq yoqqan 5 ta reelsning umumiy qoidalari. Har montajda AVVAL shuni o'qi.
