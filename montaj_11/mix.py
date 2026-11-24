@@ -2,7 +2,7 @@ import subprocess, os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 T = '../montaj_08_tanlov/sfx/'; TOTAL = 35.5
 # (fayl, vaqt s, dB) — faqat grafika paydo bo'lganda (Akmal: yumshoq bubble pop), doska yozuvida klaviatura, kesimlar jim
-S = [(T+'m2356.mp3', t, -24) for t in (2.70, 8.30, 9.45, 16.70, 17.40, 17.88, 20.62, 21.38, 22.46, 23.78, 25.70, 28.05, 29.56, 30.18, 30.84)]
+S = [('pop-2359.mp3', t, -24) for t in (2.70, 8.30, 9.45, 16.70, 17.40, 17.88, 20.62, 21.38, 22.46, 23.78, 25.70, 28.05, 29.56, 30.18, 30.84)]
 S += [(T+'click-1133.mp3', 15.96 + i * .07, -30) for i in range(7)]
 S += [(T+'m1489.mp3', 20.45, -22), (T+'m1491.mp3', 15.90, -24), (T+'m1491.mp3', 24.98, -24)]
 ins, fl = [], []
