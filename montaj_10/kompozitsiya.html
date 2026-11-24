@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'GS';src:url('file:///root/.fonts/montaj/GeneralSansBold.ttf');font-weight:700}
+@font-face{font-family:'GS';src:url('file:///root/.fonts/montaj/GeneralSansMedium.ttf');font-weight:500}
+@font-face{font-family:'GS';src:url('file:///root/.fonts/montaj/GeneralSansBoldItalic.ttf');font-weight:700;font-style:italic}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+#bg{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#shade{position:absolute;left:0;top:960px;width:1080px;height:960px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.45) 60%,rgba(0,0,0,.5))}
+.cap{position:absolute;left:90px;width:900px;text-align:center;font-family:'GS';font-weight:500;font-size:50px;color:#fff;line-height:1.22;text-shadow:0 2px 14px rgba(0,0,0,.5);opacity:0}
+.cap span{display:inline-block;margin:0 .12em}
+.cap b{font-weight:700;font-style:italic}
+.big{display:block;font-weight:700;font-size:104px;line-height:1.02;letter-spacing:-1px;margin-top:4px}
+.bigi{display:block;font-weight:700;font-style:italic;font-size:92px;line-height:1.05}
+#lab{position:absolute;left:0;width:1080px;top:262px;display:flex;justify-content:center;opacity:0}
+#lab div{background:#1E8A5A;color:#fff;font-family:'GS';font-weight:700;font-size:54px;letter-spacing:.5px;padding:14px 34px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);white-space:nowrap}
+</style></head><body>
+<img id="bg"><div id="shade"></div>
+<div id="lab"><div>XITOYGA SAYOHAT YUTIB OLING</div></div>
+<div id="caps"></div>
+<script src="../mashq/node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+const tl = gsap.timeline({paused: true}); window.tl = tl; const FPS = 30, TOTAL = 12.94, N = 388;
+function rv(el, t) { gsap.set(el, {opacity: 0, filter: 'blur(10px)', y: 8}); tl.to(el, {opacity: 1, filter: 'blur(0px)', y: 0, duration: .22, ease: 'power2.out'}, t); }
+// so'zlar: [matn, vaqt, qalin-qiya?] ; '|' — yangi qator ; big — katta qator [matn, vaqt, 'big'|'bigi']
+function cap(top, t0, t1, words, big) {
+  const c = document.createElement('div'); c.className = 'cap'; c.style.top = top + 'px'; document.getElementById('caps').appendChild(c);
+  words.forEach((w) => {
+    if (w === '|') { c.appendChild(document.createElement('br')); return; }
+    const s = document.createElement('span'); s.innerHTML = w[2] ? `<b>${w[0]}</b>` : w[0]; c.appendChild(s); rv(s, w[1]);
+  });
+  if (big) { const d = document.createElement('div'); d.className = big[2]; d.textContent = big[0]; c.appendChild(d); rv(d, big[1]); }
+  tl.set(c, {opacity: 1}, t0); tl.to(c, {opacity: 0, filter: 'blur(6px)', duration: .14}, t1 - .14);
+}
+// hook yorlig'i (Uktam uslubi — yashil plashka)
+gsap.set('#lab', {opacity: 0, scale: .85, filter: 'blur(8px)'});
+tl.to('#lab', {opacity: 1, scale: 1, filter: 'blur(0px)', duration: .3, ease: 'back.out(1.7)'}, 0.08);
+tl.to('#lab', {opacity: 0, y: -14, duration: .2}, 4.85);
+// subtitr (matn tuzatilgan, vaqtlar nutqdan)
+cap(1150, 0.0, 1.64, [['Aka-ukalar,', 0.02], ['muhim', 0.64]], ["E'LONIMIZ BOR", 0.94, 'big']);
+cap(1150, 1.66, 4.98, [['Dekabr', 1.66], ['oyi', 2.14], ['oxirida', 2.34], ['Xitoyga', 2.68, 1], ['sayohatni', 3.08], '|', ['yutib', 3.66], ['olish', 3.98], ['imkoniyati', 4.28], ['bor.', 4.76]]);
+cap(1150, 5.00, 5.92, [], ['Qanday qilib deysizmi?', 5.0, 'bigi']);
+cap(1150, 5.94, 7.98, [['Ortimda', 5.94], ['turgan', 6.54], '|', ['Premium', 6.78, 1], ['Solar', 7.06, 1], ['kompaniyasidan', 7.32]]);
+cap(1150, 8.00, 9.84, [['quyosh', 8.0], ['paneli', 8.3], ['mahsulotlarini', 8.5]], ['xarid qilasiz', 9.2, 'big']);
+cap(1150, 9.86, TOTAL + .3, [['va', 9.86], ['sayohatni', 10.22], ['yutib', 10.76, 1], ['olish', 11.06, 1], '|', ['imkoniyati', 11.3], ['sizda', 11.84], ['mavjud', 12.16], ["bo'ladi.", 12.54]]);
+tl.set({}, {}, TOTAL);
+const bg = document.getElementById('bg');
+window.renderFrame = async i => { const src = `kadr/b_${String(Math.min(N, i + 1)).padStart(4, '0')}.jpg`; if (bg.getAttribute('src') !== src) { bg.setAttribute('src', src); await bg.decode().catch(() => {}); } tl.seek(i / FPS, false); };
+</script></body></html>
