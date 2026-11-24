@@ -1,0 +1,132 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+/* Akmal Abdullayev reelsi (DSIHRamjbIM) grammatikasi 1:1 — ikki qatorli kichik subtitr, shisha doira → shisha karta, kulrang doska */
+@font-face{font-family:'GS';src:url('file:///root/.fonts/montaj/GeneralSansBold.ttf');font-weight:700}
+@font-face{font-family:'GS';src:url('file:///root/.fonts/montaj/GeneralSansSemiBold.ttf');font-weight:600}
+@font-face{font-family:'GS';src:url('file:///root/.fonts/montaj/GeneralSansMedium.ttf');font-weight:500}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+.ab{position:absolute}
+#bg{position:absolute;left:0;top:0;width:1080px;height:1920px}
+/* subtitr */
+.cap{position:absolute;left:60px;width:960px;text-align:center;font-family:'GS';color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.7),0 0 3px rgba(0,0,0,.35);opacity:0}
+.l1{font-weight:500;font-size:46px;line-height:1.2}
+.l2{font-weight:700;font-size:50px;line-height:1.2}
+.l3{font-weight:700;font-size:92px;line-height:1.05;letter-spacing:.5px}
+.cap span{display:inline-block;margin:0 .11em}
+.red{color:#FF5A4E}
+/* shisha */
+.glass{position:absolute;overflow:hidden;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(20px) saturate(1.25);backdrop-filter:blur(20px) saturate(1.25);border:2px solid rgba(255,255,255,.55);box-shadow:0 14px 40px rgba(0,0,0,.28);opacity:0}
+.ic{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.ic svg{width:46%;height:46%}
+.chip{position:absolute;background:#fff;color:#111;font-family:'GS';font-weight:700;border-radius:999px;padding:6px 22px;font-size:40px;box-shadow:0 6px 18px rgba(0,0,0,.25);white-space:nowrap;opacity:0}
+.cardimg{position:absolute;left:14px;right:14px;top:14px;bottom:96px;border-radius:30px;background-size:cover;background-position:center;opacity:0}
+.cardname{position:absolute;left:0;right:0;bottom:22px;text-align:center;font-family:'GS';font-weight:600;font-size:40px;color:#fff;line-height:1.05;opacity:0}
+/* doska */
+#board{position:absolute;inset:0;background:#E3E3E3;opacity:0}
+#typed{position:absolute;left:0;width:1080px;text-align:center;top:900px;font-family:'GS';font-weight:500;font-size:62px;color:#2B2B2B}
+#cur{display:inline-block;width:4px;height:62px;background:#2B2B2B;vertical-align:-10px;margin-left:3px}
+.nm{position:absolute;width:280px;height:330px;background:#F3F3F3;border-radius:40px;box-shadow:0 34px 60px rgba(0,0,0,.12),0 3px 8px rgba(0,0,0,.06);opacity:0}
+.nm .b{position:absolute;left:0;right:0;top:110px;text-align:center;font-family:'GS';font-weight:700;font-size:64px;color:#1d1d1d}
+.nm .s{position:absolute;left:0;right:0;bottom:36px;text-align:center;font-family:'GS';font-weight:500;font-size:30px;color:#777}
+.tag{position:absolute;font-family:'GS';font-weight:500;font-size:28px;color:#fff;background:#B8B8B8;border-radius:999px;padding:6px 18px;opacity:0}
+.num{position:absolute;font-family:'GS';font-weight:700;color:#222;opacity:0}
+.bcap{position:absolute;left:0;width:1080px;text-align:center;font-family:'GS';font-weight:500;font-size:46px;color:#333;opacity:0}
+.bcap span{display:inline-block;margin:0 .11em}
+</style></head><body>
+<img id="bg">
+<!-- SVG ikonkalar (oq siluet) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-plane" viewBox="0 0 64 64"><path fill="#fff" d="M60 30c0-2-2-3-4-3H40L26 6h-6l7 21H14l-5-6H4l3 11-3 11h5l5-6h13l-7 21h6l14-21h16c2 0 4-1 4-3z"/></symbol>
+    <symbol id="i-panel" viewBox="0 0 64 64"><path fill="#fff" d="M10 12h44l6 30H4zM14 16l-1 7h10l1-7zm13 0-1 7h12l-1-7zm14 0 1 7h10l-1-7zM12 27l-1 9h11l1-9zm14 0-1 9h14l-1-9zm16 0 1 9h11l-1-9zM29 44h6v8h8v4H21v-4h8z"/></symbol>
+    <symbol id="i-city" viewBox="0 0 64 64"><path fill="#fff" d="M8 58V30h12V58zm16 0V8h16v50zm20 0V22h12v36zM28 14v6h3v-6zm5 0v6h3v-6zm-5 10v6h3v-6zm5 0v6h3v-6zm-5 10v6h3v-6zm5 0v6h3v-6z"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 64 64"><path fill="#fff" d="M4 14h6v20h50v18h-6v-6H10v6H4zm12 6a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm10 2h22c5 0 10 4 10 10H26z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path fill="#fff" d="M32 6 4 30h8v26h16V40h8v16h16V30h8z"/></symbol>
+    <symbol id="i-food" viewBox="0 0 64 64"><path fill="#fff" d="M14 4h4v18h4V4h4v18h4V4h4v22c0 5-4 8-8 9v25h-6V35c-4-1-8-4-8-9zM46 4c6 0 10 8 10 20s-4 14-8 14v22h-6V6c1-1 2-2 4-2z"/></symbol>
+  </defs>
+</svg>
+<!-- doska -->
+<div id="board">
+  <div id="typed"><span id="tx"></span><span id="cur"></span></div>
+  <div class="nm" id="n0" style="left:80px;top:760px"><div class="b">LONGi</div><div class="s">zavod</div></div>
+  <div class="nm" id="n1" style="left:400px;top:760px"><div class="b">Deye</div><div class="s">zavod</div></div>
+  <div class="nm" id="n2" style="left:720px;top:760px"><div class="b">ERA</div><div class="s">zavod</div></div>
+  <svg id="curve" class="ab" style="left:0;top:0" width="1080" height="1920"><path id="cp" d="M120 1180 C 360 1180, 420 1000, 560 900 S 820 700, 960 640" fill="none" stroke="#4E6E8E" stroke-width="7" stroke-linecap="round"/></svg>
+  <div class="tag" id="tg0" style="left:150px;top:1215px">panellar</div>
+  <div class="tag" id="tg1" style="left:330px;top:1215px">invertorlar</div>
+  <div class="num" id="nu0" style="left:110px;top:1240px;font-size:80px">0</div>
+  <div class="num" id="nu1" style="left:860px;top:520px;font-size:96px">100</div>
+  <div class="tag" id="tg2" style="left:780px;top:450px;background:#1E8A5A">malaka ↑</div>
+  <div class="bcap" id="bc1" style="top:1420px"></div>
+  <div class="bcap" id="bc2" style="top:1480px"></div>
+</div>
+<!-- shisha elementlar -->
+<div class="glass" id="gPlane" style="left:465px;top:1215px;width:150px;height:150px;border-radius:75px"><div class="ic"><svg><use href="#i-plane"/></svg></div></div>
+<div class="glass" id="gPanel" style="left:465px;top:1215px;width:150px;height:150px;border-radius:75px"><div class="ic" id="gPanelIc"><svg><use href="#i-panel"/></svg></div><div class="cardimg" id="gPanelImg" style="background-image:url(ronma_card.jpg)"></div><div class="cardname" id="gPanelNm">Quyosh<br>paneli</div></div>
+<div class="chip" id="chPS" style="left:410px;top:1170px">Premium Solar</div>
+<div class="glass" id="gCity" style="left:465px;top:1215px;width:150px;height:150px;border-radius:75px"><div class="ic" id="gCityIc"><svg><use href="#i-city"/></svg></div><div class="cardimg" id="gCityImg" style="background-image:url(shahar.jpg)"></div><div class="cardname" id="gCityNm">Xitoy<br>shaharlari</div></div>
+<div class="glass" id="s0" style="left:150px;top:1230px;width:170px;height:170px;border-radius:85px"><div class="ic"><svg><use href="#i-plane"/></svg></div></div>
+<div class="glass" id="s1" style="left:350px;top:1230px;width:170px;height:170px;border-radius:85px"><div class="ic"><svg><use href="#i-bed"/></svg></div></div>
+<div class="glass" id="s2" style="left:550px;top:1230px;width:170px;height:170px;border-radius:85px"><div class="ic"><svg><use href="#i-home"/></svg></div></div>
+<div class="glass" id="s3" style="left:750px;top:1230px;width:170px;height:170px;border-radius:85px"><div class="ic"><svg><use href="#i-food"/></svg></div></div>
+<div id="caps"></div>
+<script src="../mashq/node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+const tl = gsap.timeline({paused: true}); window.tl = tl; const FPS = 30, TOTAL = 35.5, N = 1065;
+const $ = (s) => document.querySelector(s);
+function rv(el, t, d = .2) { gsap.set(el, {opacity: 0, filter: 'blur(9px)', y: 6}); tl.to(el, {opacity: 1, filter: 'blur(0px)', y: 0, duration: d, ease: 'power2.out'}, t); }
+// qatorlar: [[klass, [[so'z, vaqt, 'red'?], ...]], ...]
+function cap(top, t0, t1, lines) {
+  const c = document.createElement('div'); c.className = 'cap'; c.style.top = top + 'px'; $('#caps').appendChild(c);
+  lines.forEach(([cls, words]) => { const l = document.createElement('div'); l.className = cls; c.appendChild(l);
+    words.forEach(([w, t, r]) => { const s = document.createElement('span'); s.textContent = w; if (r) s.className = 'red'; l.appendChild(s); rv(s, t); }); });
+  tl.set(c, {opacity: 1}, t0); tl.to(c, {opacity: 0, filter: 'blur(6px)', duration: .12}, t1 - .12);
+}
+function pop(el, t) { gsap.set(el, {opacity: 0, scale: .55, filter: 'blur(10px)'}); tl.to(el, {opacity: 1, scale: 1, filter: 'blur(0px)', duration: .32, ease: 'back.out(1.7)'}, t); }
+function out(el, t) { tl.to(el, {opacity: 0, scale: .9, filter: 'blur(8px)', duration: .2}, t); }
+// doira -> karta (Akmal "Akmal Abdullayev" kartasi kabi)
+function morph(id, t, W, H, X, Y) {
+  tl.to(id, {width: W, height: H, left: X, top: Y, borderRadius: 44, duration: .45, ease: 'power3.inOut'}, t);
+  tl.to(id + 'Ic', {opacity: 0, duration: .15}, t); tl.to(id + 'Img', {opacity: 1, duration: .3}, t + .2); tl.to(id + 'Nm', {opacity: 1, duration: .25}, t + .3);
+}
+const CY = 1060;   // subtitr markazi (ko'krak)
+// --- 1. Kirish
+cap(CY, 0.00, 1.64, [['l1', [['Aka-ukalar,', 0.02]]], ['l2', [['muhim', 0.64], ["e'lonimiz", 0.94], ['bor', 1.36]]]]);
+cap(CY, 1.66, 4.98, [['l1', [['Dekabr', 1.66], ['oyi', 2.14], ['oxirida', 2.34]]], ['l2', [['Xitoyga', 2.68], ['sayohatni', 3.08], ['yutib', 3.66], ['olish', 3.98]]], ['l1', [['imkoniyati', 4.28], ['bor', 4.76]]]]);
+pop('#gPlane', 2.70); out('#gPlane', 4.80);
+cap(CY, 5.00, 5.92, [['l1', [['Qanday', 5.0], ['qilib', 5.2]]], ['l2', [['deysizmi?', 5.45]]]]);
+cap(CY, 5.94, 7.98, [['l1', [['Ortimda', 5.94], ['turgan', 6.54]]], ['l2', [['Premium', 6.78], ['Solar', 7.06], ['kompaniyasidan', 7.32]]]]);
+// --- 2. Mahsulot
+cap(CY, 8.00, 9.84, [['l1', [['quyosh', 8.0], ['paneli', 8.3], ['mahsulotlarini', 8.5]]], ['l2', [['xarid', 9.2], ['qilasiz', 9.4]]]]);
+pop('#gPanel', 8.30); morph('#gPanel', 8.85, 340, 390, 370, 1195); pop('#chPS', 9.45); out('#gPanel', 9.78); out('#chPS', 9.78);
+cap(CY, 9.86, 12.92, [['l1', [['va', 9.86], ['sayohatni', 10.22]]], ['l2', [['yutib', 10.76], ['olish', 11.06], ['imkoniyati', 11.3]]], ['l1', [['sizda', 11.84], ['mavjud', 12.16], ["bo'ladi", 12.54]]]]);
+cap(CY - 40, 12.94, 15.92, [['l1', [['Bu', 12.94], ['sayohatimiz', 13.22], ['Premium', 13.8], ['Solar', 14.08], ['tomonidan', 14.38]]], ['l3', [['100%', 14.88], ['QOPLANADI', 15.2]]]]);
+// --- 3. Doska (15.94–25.0)
+tl.set('#board', {opacity: 1}, 15.94); tl.set('#board', {opacity: 0}, 25.0);
+const T1 = 'Xitoyga'; for (let i = 0; i <= T1.length; i++) tl.set('#tx', {textContent: T1.slice(0, i)}, 15.96 + i * .07);
+tl.to('#cur', {opacity: 0, duration: .01, repeat: 13, yoyo: true, repeatDelay: .25}, 16.5);
+tl.to('#typed', {top: 560, duration: .45, ease: 'power3.inOut'}, 16.55);
+[['#n0', 16.7], ['#n1', 17.4], ['#n2', 17.88]].forEach(([id, t]) => { gsap.set(id, {opacity: 0, scale: .05, transformOrigin: '50% 50%'}); tl.to(id, {opacity: 1, scale: 1, duration: .5, ease: 'back.out(1.4)'}, t); });
+const bc = (id, words) => { const e = $(id); words.forEach(([w, t]) => { const s = document.createElement('span'); s.textContent = w; e.appendChild(s); rv(s, t); }); tl.set(e, {opacity: 1}, words[0][1]); };
+bc('#bc1', [['kompaniyalari', 18.22], ['zavodiga', 19.06]]); bc('#bc2', [['tashrif', 19.56], ['buyurasiz', 20.04]]);
+tl.to(['#n0', '#n1', '#n2', '#typed'], {x: -1100, filter: 'blur(6px)', duration: .55, ease: 'power3.in', stagger: .04}, 20.5);
+tl.to(['#bc1', '#bc2'], {opacity: 0, duration: .2}, 20.5);
+const cp = $('#cp'); const L = cp.getTotalLength(); gsap.set(cp, {strokeDasharray: L, strokeDashoffset: L});
+tl.to(cp, {strokeDashoffset: 0, duration: 3.2, ease: 'power2.inOut'}, 20.7);
+pop('#tg0', 20.62); pop('#tg1', 21.38); pop('#nu0', 22.08); pop('#nu1', 22.46); pop('#tg2', 23.78);
+const b3 = document.createElement('div'); b3.className = 'bcap'; b3.style.top = '1420px'; $('#board').appendChild(b3);
+[['noldan', 22.08], ['yuzgacha', 22.46], ['tayyorlanishini', 22.84], ["ko'rib", 23.4]].forEach(([w, t]) => { const s = document.createElement('span'); s.textContent = w; b3.appendChild(s); rv(s, t); }); tl.set(b3, {opacity: 1}, 22.08);
+const b4 = document.createElement('div'); b4.className = 'bcap'; b4.style.cssText = 'top:1480px;font-weight:700'; $('#board').appendChild(b4);
+[['malakangizni', 23.78], ['oshirasiz', 24.54]].forEach(([w, t]) => { const s = document.createElement('span'); s.textContent = w; b4.appendChild(s); rv(s, t); }); tl.set(b4, {opacity: 1}, 23.78);
+// --- 4. Shaharlar
+cap(CY, 25.02, 27.98, [['l1', [['Undan', 25.02], ['tashqari,', 25.22], ['Xitoyning', 25.64]]], ['l2', [['yirik', 26.14], ['shaharlariga', 26.66], ['sayohat', 27.2], ['qilasiz', 27.66]]]]);
+pop('#gCity', 25.70); morph('#gCity', 26.2, 340, 390, 370, 1195); out('#gCity', 27.9);
+// --- 5. Xizmatlar
+cap(CY - 60, 28.02, 31.9, [['l1', [['Aviachipta,', 28.02], ['mehmonxona,', 29.56]]], ['l2', [['turar', 30.18], ['joy,', 30.4], ['yeyish-ichish', 30.84]]]]);
+[['#s0', 28.05], ['#s1', 29.56], ['#s2', 30.18], ['#s3', 30.84]].forEach(([id, t]) => pop(id, t)); tl.to(['#s0', '#s1', '#s2', '#s3'], {opacity: 0, scale: .9, filter: 'blur(8px)', duration: .2, stagger: .03}, 31.75);
+cap(CY - 40, 31.92, TOTAL + .3, [['l1', [['hammasi', 31.92], ['Premium', 32.38], ['Solar', 32.74], ['tomonidan', 33.04]]], ['l3', [['100%', 33.54], ['QOPLANADI', 33.94]]]]);
+tl.set({}, {}, TOTAL);
+const bg = $('#bg');
+window.renderFrame = async i => { const src = `kadr/b_${String(Math.min(N, i + 1)).padStart(4, '0')}.jpg`; if (bg.getAttribute('src') !== src) { bg.setAttribute('src', src); await bg.decode().catch(() => {}); } tl.seek(i / FPS, false); };
+</script></body></html>
