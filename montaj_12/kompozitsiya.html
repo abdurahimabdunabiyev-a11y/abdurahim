@@ -1,0 +1,88 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+/* Premium uy-joy uslubi: Hanken Grotesk (matn) + Instrument Serif Italic (urg'u). Oq + shampan (#E9D8B4). Subtitr joyi sahnaga qarab o'zgaradi. */
+@font-face{font-family:'HG';src:url('file:///root/.fonts/montaj/HankenGroteskRegular.ttf');font-weight:400}
+@font-face{font-family:'HG';src:url('file:///root/.fonts/montaj/HankenGroteskMedium.ttf');font-weight:500}
+@font-face{font-family:'HG';src:url('file:///root/.fonts/montaj/HankenGroteskSemiBold.ttf');font-weight:600}
+@font-face{font-family:'HG';src:url('file:///root/.fonts/montaj/HankenGroteskBold.ttf');font-weight:700}
+@font-face{font-family:'IS';src:url('file:///root/.fonts/montaj/InstrumentSerifRegularItalic.ttf');font-style:italic}
+@font-face{font-family:'ISR';src:url('file:///root/.fonts/montaj/InstrumentSerifRegular.ttf')}
+:root{--ch:#E9D8B4}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+#bg{position:absolute;inset:0;width:1080px;height:1920px}
+#grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.12) 30%,rgba(0,0,0,0) 45%,rgba(0,0,0,.3) 62%,rgba(0,0,0,.62) 100%)}
+.ab{position:absolute}
+.blk{position:absolute;left:90px;width:900px;opacity:0;text-shadow:0 2px 22px rgba(0,0,0,.6),0 0 2px rgba(0,0,0,.25)}
+.c{text-align:center}.l{text-align:left}
+.sm{font-family:'HG';font-weight:500;font-size:44px;color:#fff;letter-spacing:.2px;line-height:1.2}
+.md{font-family:'HG';font-weight:600;font-size:56px;color:#fff;letter-spacing:-.5px;line-height:1.12}
+.sr{font-family:'IS';font-style:italic;font-weight:400;color:var(--ch);letter-spacing:-.5px;line-height:.95}
+.w{display:inline-block;margin:0 .1em}
+.kick{font-family:'HG';font-weight:600;font-size:26px;letter-spacing:7px;color:rgba(255,255,255,.75);text-transform:uppercase}
+.rule{height:2px;background:var(--ch);transform-origin:0 50%;transform:scaleX(0)}
+/* raqam bloki */
+.num{font-family:'ISR';color:#fff;line-height:.9;letter-spacing:-3px}
+/* narx kartasi */
+#card{position:absolute;left:110px;top:560px;width:860px;height:760px;border-radius:36px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.28);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0}
+.row{position:absolute;left:64px;right:64px;display:flex;justify-content:space-between;align-items:baseline}
+.yr{font-family:'HG';font-weight:600;font-size:34px;letter-spacing:6px;color:rgba(255,255,255,.7)}
+.pr{font-family:'ISR';font-size:120px;color:#fff;letter-spacing:-3px}
+.pr small{font-family:'HG';font-weight:500;font-size:34px;letter-spacing:1px;color:rgba(255,255,255,.75);margin-left:10px}
+.bar{position:absolute;left:64px;height:14px;border-radius:7px;transform-origin:0 50%;transform:scaleX(0)}
+</style></head><body>
+<img id="bg"><div id="grad"></div>
+<div id="L"></div>
+<!-- narx kartasi -->
+<div id="card">
+  <div class="row" style="top:70px"><span class="kick">Namangan · uy narxi</span></div>
+  <div class="row" style="top:170px" id="r1"><span class="yr">2016</span><span class="pr">150–200<small>mln</small></span></div>
+  <div class="bar" id="b1" style="top:330px;width:190px;background:rgba(255,255,255,.55)"></div>
+  <div class="row" style="top:420px" id="r2"><span class="yr">2026</span><span class="pr" style="color:var(--ch)">600–800<small>mln</small></span></div>
+  <div class="bar" id="b2" style="top:580px;width:732px;background:var(--ch)"></div>
+  <div class="row" style="top:640px" id="r3"><span class="kick" style="letter-spacing:4px">≈ 4 barobar</span></div>
+</div>
+<script src="../mashq/node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+const tl = gsap.timeline({paused: true}); window.tl = tl; const FPS = 30, TOTAL = 23.95, N = 718;
+const $ = (s) => document.querySelector(s);
+const E = 'power3.out';
+// so'z kirishi: pastdan 18px, xiralikdan aniq, 0.38 s — silliq, "plavni"
+function inW(el, t, d = .38) { gsap.set(el, {opacity: 0, y: 18, filter: 'blur(8px)'}); tl.to(el, {opacity: 1, y: 0, filter: 'blur(0px)', duration: d, ease: E}, t); }
+// blok: top, align, t0, t1, qatorlar [[klass, [[so'z, t], ...], style?]]
+function blk(top, al, t0, t1, rows, left = 90) {
+  const b = document.createElement('div'); b.className = 'blk ' + al; b.style.top = top + 'px'; b.style.left = left + 'px'; $('#L').appendChild(b);
+  rows.forEach(([cls, words, st]) => {
+    const r = document.createElement('div'); r.className = cls; if (st) r.style.cssText = st; b.appendChild(r);
+    words.forEach(([w, t]) => { const s = document.createElement('span'); s.className = 'w'; s.textContent = w; r.appendChild(s); inW(s, t); });
+  });
+  tl.set(b, {opacity: 1}, t0);
+  tl.to(b, {opacity: 0, y: -10, filter: 'blur(6px)', duration: .28, ease: 'power2.in'}, t1 - .28);
+  return b;
+}
+// 1. HOOK — yuqori uchdan birda, katta serif
+blk(260, 'c', 0.00, 2.92, [['kick', [['2027-yil', 0.02]]], ['sr', [['Uylar', 1.06], ['narxi', 1.44]], 'font-size:150px;margin-top:18px;color:#fff'], ['md', [['keskin', 1.7], ['oshib', 2.06], ['ketadimi?', 2.3]], 'margin-top:6px']]);
+// 2. Namanganliklar — pastda, ikki qator
+blk(1320, 'c', 2.95, 7.58, [['sm', [['Namanganliklar,', 3.24], ['sizlar', 3.9], ['uchun', 4.26]]], ['md', [['ajoyib', 4.52], ['bir', 4.86]]], ['sr', [['statistika', 5.44]], 'font-size:110px'], ['sm', [['birgalikda', 6.34], ["ko'rib", 7.04], ['chiqamiz', 7.32]]]]);
+// 3. Oxirgi 10 yil — chapga tekislangan, o'rtada
+blk(1180, 'l', 7.62, 10.78, [['kick', [['Oxirgi', 7.64]]], ['num', [['10', 8.28]], 'font-size:220px'], ['md', [['yilda', 8.42], ['uylar', 8.92], ['narxi', 10.2]]]], 110);
+// 4. 3–4 barobar — B-roll ustida, markazda katta raqam
+blk(640, 'c', 10.80, 12.88, [['kick', [['taxminan', 11.34]]], ['num', [['3–4×', 12.24]], 'font-size:300px'], ['md', [['barobar', 12.6]]]]);
+// 5. markazlarda 5× — kran ustida
+blk(640, 'c', 12.90, 15.58, [['sm', [['hatto', 13.68], ['markazlarda', 13.98]]], ['num', [['5×', 14.82]], 'font-size:340px;color:var(--ch)'], ['md', [['gacha', 15.0]]]]);
+blk(1330, 'c', 15.60, 16.24, [['sr', [['oshgan', 15.62]], 'font-size:130px']]);
+// 6. 2016-yilda — keng kadr, pastda
+blk(1360, 'c', 16.25, 17.48, [['sm', [["Ya'ni", 16.3]]], ['md', [['2016-yilda', 16.46]]]]);
+// 7. Narx kartasi (17.5–20.8)
+gsap.set('#card', {opacity: 0, y: 40, scale: .97});
+tl.to('#card', {opacity: 1, y: 0, scale: 1, duration: .55, ease: E}, 17.55);
+inW('#r1', 18.18, .45); tl.to('#b1', {scaleX: 1, duration: .6, ease: E}, 18.6);
+inW('#r2', 19.7, .45); tl.to('#b2', {scaleX: 1, duration: 1.0, ease: 'power2.inOut'}, 19.9); inW('#r3', 20.3);
+tl.to('#card', {opacity: 0, y: -20, filter: 'blur(8px)', duration: .3, ease: 'power2.in'}, 20.5);
+// 8. hozir 600–800 — yaqin kadr, subtitr pastda
+blk(1300, 'c', 20.80, TOTAL + .3, [['sm', [['hozirda', 20.82]]], ['sr', [['600–800', 20.95]], 'font-size:150px'], ['md', [['million', 21.96], ["so'mgacha", 22.44]]], ['sm', [['sotilmoqda', 22.8]]]]);
+tl.set({}, {}, TOTAL);
+const bg = $('#bg');
+window.renderFrame = async i => { const src = `kadr/b_${String(Math.min(N, i + 1)).padStart(4, '0')}.jpg`; if (bg.getAttribute('src') !== src) { bg.setAttribute('src', src); await bg.decode().catch(() => {}); } tl.seek(i / FPS, false); };
+</script></body></html>
