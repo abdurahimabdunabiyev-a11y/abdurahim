@@ -75,3 +75,20 @@
 > Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
 
 **Ekranda:** "15:00" navbat vaqti; bo'sh rasta va "?"; "Shuncha odam bekorga turmagan"; "PODA EFFEKTI" sariq. Qo'y misoli ishlatilmaydi (qo'pol).
+
+## 3 ta taklif, maqsad bittasini sotish (tasdiqlandi, 28-noyabr; rejada 5-video, 10-dekabr)
+
+**Lokatsiya:** kameraga qarab, stol oldida; popkorn va kurs tariflari grafikada. ~50 s. Manba: Sarvar akaning ProSales treningi, "Popcorn sotish uslubi".
+
+> Kinoda nega doim o'rtacha popkornni olasiz? Chunki sizni aynan o'shani olishga majbur qilishgan.
+> Qarang. Kichigi 50 gramm, 1 dollar. O'rtachasi 120 gramm, 2 dollar. Kattasi 250 gramm, 7 dollar.
+> Kattasini ko'rasiz: "Voy, qimmat-ku." 7 dollarning oldida esa 2 dollar juda arzon ko'rinadi.
+> Kichigiga qaraysiz: 1 dollar bilan 2 dollarning orasida narx farqi kam, lekin gramm farqi katta.
+> Shunda o'rtachasini olasiz va "arzon ham, eng zo'ri ham menda" deb kayf qilasiz. Aslida sotuvchi yutdi. Chunki yonidagi ikkita taklif aynan shuni sotish uchun turgan edi.
+> Bu usulni dunyodagi eng katta kompaniyalar hali ham ishlatadi. Instagramdagi kurslarni ko'ring: Standart, VIP, Premium. Hamma VIP ni oladi.
+> Endi yechim. Mijozga 1–2 ta taklif bersangiz, u "olaymi, olmaymi?" deb o'ylaydi. Juda ko'p taklif bersangiz, miyasi qaysi birini olishni bilmay qiynaladi va oxiri hech narsa olmaydi.
+> Shuning uchun shunday qiling: tanlovni mijozning o'ziga qo'yib bering, lekin u nimani tanlashini siz hal qiling.
+> Izohga yozing: siz ham o'rtachasini olasizmi?
+> Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
+
+**Ekranda:** 3 ta popkorn (gramm va narx); 7 $ ustida "QIMMAT"; 1 $ va 2 $ farqi strelka bilan; "YUTDIM 😎" → "SOTUVCHI YUTDI"; kurs tariflari, VIP yashil; yechim: 1–2 taklif "olaymi?", 10 taklif 😵, 3 taklif "✅ tanlov sizniki, qaror meniki".
