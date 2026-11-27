@@ -60,3 +60,18 @@
 > Ya'ni yegan og'iz uyalar.
 > Men bu sahifada shunday mexanizmlarni ochib beraman. Obuna bo'lib qo'ying.
 > Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
+
+## Poda effekti (tasdiqlandi, 28-noyabr; rejada 4-video, 8-dekabr)
+
+**Lokatsiya:** bozor, gavjum rasta va yonida bo'sh rasta. ~45 s.
+
+> (navbatda turib, kameraga) Bozorga borganimizda nega odam gavjum qatordan, vaqtimizni yo'qotib, ochirit bo'lsa ham narsa olamiz?
+> (bo'sh rastani ko'rsatadi) Yonimizda xuddi shu mahsulot bor, narxi ham deyarli bir xil, u yerda hech kim yo'q. Lekin baribir navbatda turamiz.
+> Chunki miyamiz shunday o'ylaydi: "Shuncha odam bekorga turmagan. Demak, bu yerdagisi yaxshiroq."
+> Buni marketingda poda effekti deyishadi. Ya'ni odam bilmagan narsasida o'ziga emas, ko'pchilikka ergashadi.
+> (navbatdan chiqib, kameraga yaqin) Instagramda ham xuddi shunday. Izohi ko'p videoni oxirigacha ko'ramiz, sharhi ko'p mahsulotni olamiz.
+> Biznesingiz bo'lsa, mijozlaringizni yashirmang. Sharhlarini, videolarini ko'rsating. Odamlar sizni emas, sizdan olganlarni ko'rib keladi.
+> Izohga yozing: siz gavjum rastani tanlaysizmi yoki bo'shini?
+> Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
+
+**Ekranda:** "15:00" navbat vaqti; bo'sh rasta va "?"; "Shuncha odam bekorga turmagan"; "PODA EFFEKTI" sariq. Qo'y misoli ishlatilmaydi (qo'pol).
