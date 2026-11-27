@@ -92,3 +92,19 @@
 > Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
 
 **Ekranda:** 3 ta popkorn (gramm va narx); 7 $ ustida "QIMMAT"; 1 $ va 2 $ farqi strelka bilan; "YUTDIM 😎" → "SOTUVCHI YUTDI"; kurs tariflari, VIP yashil; yechim: 1–2 taklif "olaymi?", 10 taklif 😵, 3 taklif "✅ tanlov sizniki, qaror meniki".
+
+## "Sifatli mahsulot o'zini o'zi sotadi". Bu yolg'on (tasdiqlandi, 28-noyabr; rejada 6-video, 12-dekabr)
+
+**Lokatsiya:** tor ko'chadagi kichik somsaxona/ustaxona, keyin gavjum ko'cha. ~50 s.
+
+> Nega shahardagi eng mazali somsani hech kim bilmaydi?
+> (kichik somsaxona oldida) Chunki u mana shunday tor ko'chada turibdi. Somsasi zo'r, narxi arzon, lekin uni faqat qo'shnilari biladi.
+> Egasi esa hech narsa qilmaydi, chunki shunday deydi: "Sifatli mahsulot o'zini o'zi sotadi."
+> (gavjum ko'chada) Endi bu yoqqa qarang. Somsasi o'rtacha, lekin odami ko'p. Chunki uni hamma biladi: Instagrami bor, odamlar videosini ulashadi.
+> Ota-onamiz ham shunday deydi: "Yaxshi usta reklama qilmaydi, uni el biladi." To'g'ri, lekin el bilguncha usta qarib qoladi.
+> Coca-Cola'ni dunyoda hamma biladi. Shunga qaramay, har yili reklamaga milliardlab dollar sarflaydi. Agar sifat o'zini o'zi sotganda, ular bir so'm ham sarflamas edi.
+> Sifat yomon degani emas. Sifat mijozni ushlab qoladi, lekin uni olib kelmaydi. Olib kelish uchun marketing kerak.
+> Izohga yozing: rozimisiz yoki yo'qmi? Bahslashamiz.
+> Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
+
+**Ekranda:** "⭐⭐⭐⭐⭐, lekin 0 mijoz"; "⭐⭐⭐, lekin navbat bor"; shior ustidan qizil ✗; Coca-Cola va "milliardlab $"; "SIFAT = USHLAYDI, MARKETING = OLIB KELADI". Joy nomlari aytilmaydi.
