@@ -34,3 +34,7 @@ Oxiri har doim: "Shuni unutmang, marketingsiz hatto dori ham olmaysiz."
    - Hook: "Marketing pulini oqlamaydi." Unda nega eng boy kompaniyalar har oy unga millionlab sarflaydi?
    - Misollar: dehqon urug'ni qishda eksa; Apple; mobil operatorlar hamma joyda.
    - Xulosa: noto'g'ri qilingan marketing pulini oqlamaydi. Marketing bu investitsiya.
+9. **Bitta reklama, bitta gap** (hammasini bitta videoga tiqish xatosi)
+   - Hook: Mahsulotingizning 10 ta afzalligini bitta videoga tiqdingizmi? Tabriklayman, hech kim hech birini eslamaydi.
+   - Misollar: to'yda tanishtirish (10 ta fakt vs bitta); Volvo = xavfsizlik; maktabdan kelgan bola "bugun nima o'tdinglar?" deganda bitta narsani aytadi.
+   - Xulosa: 1 video = 1 fikr. 10 ta afzallik = 10 ta video.
