@@ -1,0 +1,133 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+/* Geist Sans — tekis, zamonaviy grotesk. Faqat oq + yumshoq kulrang, bitta aksent (iliq oltin #E8C98E) faqat raqamlarda. */
+@font-face{font-family:'G';src:url('fonts/geist-sans-latin-400-normal.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'G';src:url('fonts/geist-sans-latin-500-normal.woff2') format('woff2');font-weight:500}
+@font-face{font-family:'G';src:url('fonts/geist-sans-latin-600-normal.woff2') format('woff2');font-weight:600}
+@font-face{font-family:'G';src:url('fonts/geist-sans-latin-700-normal.woff2') format('woff2');font-weight:700}
+@font-face{font-family:'G';src:url('fonts/geist-sans-latin-800-normal.woff2') format('woff2');font-weight:800}
+:root{--au:#E8C98E}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:'G',sans-serif}
+#bg{position:absolute;inset:0;width:1080px;height:1920px}
+#shade{position:absolute;left:0;right:0;bottom:0;height:900px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.5) 55%,rgba(0,0,0,.62))}
+#topshade{position:absolute;left:0;right:0;top:0;height:640px;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,0));opacity:0}
+.ab{position:absolute}
+/* subtitr */
+.cap{position:absolute;left:80px;width:920px;text-align:center;font-weight:600;font-size:60px;line-height:1.14;letter-spacing:-.8px;color:#fff;opacity:0;
+     text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.cap span{display:inline-block;margin:0 .13em;opacity:.42}
+.cap span.on{opacity:1}
+/* katta grafika */
+.kick{font-weight:600;font-size:28px;letter-spacing:8px;color:rgba(255,255,255,.78);text-transform:uppercase}
+.hero{font-weight:800;color:#fff;letter-spacing:-4px;line-height:.92}
+.au{color:var(--au)}
+.g{position:absolute;left:0;width:1080px;text-align:center;opacity:0;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.chip{display:inline-block;font-weight:600;font-size:36px;color:#fff;padding:14px 30px;border-radius:999px;background:rgba(18,18,18,.42);
+      border:1.5px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+/* kartalar */
+.card{position:absolute;left:100px;width:880px;border-radius:40px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.22);
+      -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0}
+.row{position:absolute;left:64px;right:64px;display:flex;justify-content:space-between;align-items:baseline}
+.yr{font-weight:600;font-size:32px;letter-spacing:5px;color:rgba(255,255,255,.65)}
+.pr{font-weight:700;font-size:104px;color:#fff;letter-spacing:-3px}
+.pr small{font-weight:500;font-size:34px;letter-spacing:0;color:rgba(255,255,255,.7);margin-left:10px}
+.bar{position:absolute;left:64px;height:12px;border-radius:6px;transform-origin:0 50%;transform:scaleX(0)}
+</style></head><body>
+<img id="bg"><div id="topshade"></div><div id="shade"></div>
+<!-- HOOK -->
+<div class="g" id="hook" style="top:300px"><div class="kick" id="hk1">2027-yil</div><div class="hero" id="hk2" style="font-size:136px;margin-top:22px">Uylar narxi</div>
+  <div style="font-weight:600;font-size:58px;color:#fff;margin-top:14px;letter-spacing:-1px" id="hk3">keskin oshib ketadimi?</div></div>
+<!-- 3–4× / 5× -->
+<div class="g" id="x34" style="top:620px"><div class="kick">10 yilda · taxminan</div><div class="hero au" style="font-size:300px;margin-top:10px">3–4×</div></div>
+<div class="g" id="x5" style="top:620px"><div class="kick">markazlarda</div><div class="hero au" style="font-size:340px;margin-top:10px">5×</div><div style="font-weight:600;font-size:52px;color:#fff">gacha oshgan</div></div>
+<!-- narx kartasi -->
+<div class="card" id="cNarx" style="top:600px;height:700px">
+  <div class="row" style="top:62px"><span class="kick" style="font-size:24px">Namangan · uy narxi</span></div>
+  <div class="row" style="top:150px" id="n1"><span class="yr">2016</span><span class="pr">150–200<small>mln</small></span></div>
+  <div class="bar" id="nb1" style="top:300px;width:190px;background:rgba(255,255,255,.5)"></div>
+  <div class="row" style="top:380px" id="n2"><span class="yr">HOZIR</span><span class="pr au">600–800<small>mln</small></span></div>
+  <div class="bar" id="nb2" style="top:530px;width:752px;background:var(--au)"></div>
+  <div class="row" style="top:592px" id="n3"><span class="kick" style="font-size:24px;letter-spacing:4px">≈ 4 barobar</span></div>
+</div>
+<!-- 6,5–7% -->
+<div class="g" id="p67" style="top:260px"><div class="kick">1 yilda tannarx o'sishi</div><div class="hero au" style="font-size:190px;margin-top:14px">6,5–7%</div></div>
+<!-- omillar -->
+<div class="g" id="om" style="top:300px"><span class="chip" id="omt"></span></div>
+<!-- eskrou -->
+<div class="g" id="esk" style="top:260px"><span class="chip">Yangilik · eskrou tizimi</span></div>
+<div class="g" id="esk2" style="top:640px"><div class="kick">qo'shimcha o'zgarish</div><div class="hero au" style="font-size:210px;margin-top:10px">+7,5–15%</div></div>
+<div class="g" id="p15" style="top:260px"><div class="kick">umumiy · taxminan</div><div class="hero au" style="font-size:190px;margin-top:10px">≈15%</div></div>
+<div class="g" id="p60" style="top:280px"><span class="chip">400 mln + 15% = <b style="color:var(--au)">+60 mln</b></span></div>
+<!-- 400 -> 460 -->
+<div class="card" id="cUy" style="top:600px;height:640px">
+  <div class="row" style="top:62px"><span class="kick" style="font-size:24px">Sizning uyingiz</span></div>
+  <div class="row" style="top:150px" id="u1"><span class="yr">HOZIR</span><span class="pr">400<small>mln</small></span></div>
+  <div class="bar" id="ub1" style="top:300px;width:620px;background:rgba(255,255,255,.5)"></div>
+  <div class="row" style="top:380px" id="u2"><span class="yr">2027</span><span class="pr au">450–460<small>mln</small></span></div>
+  <div class="bar" id="ub2" style="top:530px;width:752px;background:var(--au)"></div>
+</div>
+<!-- brend -->
+<div class="g" id="brand" style="top:700px"><div class="kick">Namangan markazi</div><div class="hero" style="font-size:132px;margin-top:20px;letter-spacing:-3px">Bunyodkor<br>City</div></div>
+<div class="g" id="aks" style="top:280px"><span class="chip">Katta aksiya</span></div>
+<div class="g" id="cta" style="top:300px"><div class="kick">Savdo ofisiga tashrif buyuring</div><div class="hero" style="font-size:96px;margin-top:18px">Katta chegirma</div></div>
+<div id="caps"></div>
+<script src="../mashq/node_modules/gsap/dist/gsap.min.js"></script>
+<script src="plan.js"></script>
+<script>
+(async () => {
+const P = window.PLAN;
+const tl = gsap.timeline({paused: true}); window.tl = tl; const FPS = 30, TOTAL = P.total, N = P.n;
+const $ = (s) => document.querySelector(s); const E = 'power3.out';
+function show(id, t0, t1, from = {y: 24}) { gsap.set(id, {opacity: 0, filter: 'blur(10px)', ...from}); tl.to(id, {opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: .5, ease: E}, t0);
+  tl.to(id, {opacity: 0, y: -12, filter: 'blur(8px)', duration: .3, ease: 'power2.in'}, t1 - .3); }
+// --- subtitr: ibora -> 2–4 so'zli bo'laklar; joy kadr turiga qarab
+const NOCAP = new Set([0, 1]);   // hook paytida katta grafika o'zi gap
+const TOPY = {close: 1400, wide: 1470, broll: 1460, card: 1560};
+P.phrases.forEach((p, pi) => {
+  if (NOCAP.has(pi)) return;
+  const W = p.words; let ch = [], cur = [];
+  W.forEach((w, i) => { cur.push(w); const end = /[,.?!—:]$/.test(w[0]); if (cur.length >= 4 || (end && cur.length >= 2) || i === W.length - 1) { ch.push(cur); cur = []; } });
+  ch.forEach((c, k) => {
+    const d = document.createElement('div'); d.className = 'cap'; d.style.top = (TOPY[p.kind] || 1450) + 'px'; $('#caps').appendChild(d);
+    c.forEach(([w, t]) => { const s = document.createElement('span'); s.textContent = w; d.appendChild(s); tl.set(s, {className: 'on'}, t); });
+    const t0 = c[0][1], t1 = k < ch.length - 1 ? ch[k + 1][0][1] : (P.phrases[pi + 1] ? Math.min(P.phrases[pi + 1].t0, p.t1 + .5) : TOTAL);
+    gsap.set(d, {opacity: 0, y: 14}); tl.to(d, {opacity: 1, y: 0, duration: .22, ease: E}, t0 - .04); tl.to(d, {opacity: 0, duration: .14}, t1 - .1);
+  });
+});
+const T = (i) => P.phrases[i];
+// --- hook
+gsap.set(['#hk1', '#hk2', '#hk3'], {opacity: 0, y: 26, filter: 'blur(10px)'}); tl.set('#hook', {opacity: 1}, 0); tl.to('#topshade', {opacity: 1, duration: .3}, 0);
+tl.to('#hk1', {opacity: 1, y: 0, filter: 'blur(0px)', duration: .45, ease: E}, .05); tl.to('#hk2', {opacity: 1, y: 0, filter: 'blur(0px)', duration: .55, ease: E}, T(1).t0);
+tl.to('#hk3', {opacity: 1, y: 0, filter: 'blur(0px)', duration: .45, ease: E}, T(1).words[2][1]);
+tl.to('#hook', {opacity: 0, filter: 'blur(10px)', duration: .3}, T(2).t0 - .1); tl.to('#topshade', {opacity: 0, duration: .3}, T(2).t0);
+// --- raqamlar
+show('#x34', T(4).words[2][1] - .1, T(5).t0, {scale: .92}); show('#x5', T(5).words[3][1] - .1, T(5).t1 + .1, {scale: .92});
+// narx kartasi
+gsap.set('#cNarx', {opacity: 0, y: 36, scale: .97}); tl.to('#cNarx', {opacity: 1, y: 0, scale: 1, duration: .6, ease: E}, T(7).t0 + .05);
+gsap.set(['#n1', '#n2', '#n3'], {opacity: 0, y: 18});
+tl.to('#n1', {opacity: 1, y: 0, duration: .45, ease: E}, T(7).t0 + .3); tl.to('#nb1', {scaleX: 1, duration: .7, ease: E}, T(7).t0 + .6);
+tl.to('#n2', {opacity: 1, y: 0, duration: .45, ease: E}, T(7).words[4][1]); tl.to('#nb2', {scaleX: 1, duration: 1.1, ease: 'power2.inOut'}, T(7).words[4][1] + .2);
+tl.to('#n3', {opacity: 1, y: 0, duration: .4, ease: E}, T(7).words[4][1] + 1.2);
+tl.to('#cNarx', {opacity: 0, y: -16, filter: 'blur(8px)', duration: .35}, T(7).t1 - .1);
+show('#p67', T(8).words[8][1] - .2, T(8).t1); tl.to('#topshade', {opacity: 1, duration: .3}, T(8).words[8][1] - .2); tl.to('#topshade', {opacity: 0, duration: .3}, T(8).t1);
+// omillar
+const OM = [[11, 'Usta haqi ↑'], [12, 'Qurilish materiallari ↑'], [13, 'Aholi soni · inflyatsiya'], [14, 'Hammasini hisoblasak']];
+gsap.set('#om', {opacity: 0});
+OM.forEach(([i, txt]) => { tl.set('#omt', {textContent: txt}, T(i).t0); tl.fromTo('#om', {opacity: 0, y: 18, filter: 'blur(8px)'}, {opacity: 1, y: 0, filter: 'blur(0px)', duration: .4, ease: E, immediateRender: false}, T(i).t0 + .05); });
+tl.to('#om', {opacity: 0, duration: .3}, T(14).t1 - .2);
+show('#esk', T(17).t0 + .1, T(17).t1); show('#esk2', T(18).words[2][1] - .1, T(18).t1, {scale: .92});
+show('#p15', T(19).words[4][1] - .1, T(19).t1); show('#p60', T(20).words[11][1] - .1, T(20).t1);
+// 400 -> 460
+gsap.set('#cUy', {opacity: 0, y: 36, scale: .97}); tl.to('#cUy', {opacity: 1, y: 0, scale: 1, duration: .6, ease: E}, T(21).t0 + .05);
+gsap.set(['#u1', '#u2'], {opacity: 0, y: 18});
+tl.to('#u1', {opacity: 1, y: 0, duration: .45, ease: E}, T(21).words[2][1]); tl.to('#ub1', {scaleX: 1, duration: .7, ease: E}, T(21).words[2][1] + .3);
+tl.to('#u2', {opacity: 1, y: 0, duration: .45, ease: E}, T(21).words[8][1]); tl.to('#ub2', {scaleX: 1, duration: 1.0, ease: 'power2.inOut'}, T(21).words[8][1] + .2);
+tl.to('#cUy', {opacity: 0, y: -16, filter: 'blur(8px)', duration: .35}, T(21).t1 - .1);
+show('#brand', T(26).t0 + .05, T(26).t1 + .05, {scale: .95}); show('#aks', T(27).t0 + .05, T(27).t1);
+show('#cta', T(29).t0 + .05, TOTAL + .4); tl.to('#topshade', {opacity: 1, duration: .3}, T(29).t0);
+tl.set({}, {}, TOTAL);
+const bg = $('#bg');
+window.renderFrame = async i => { const src = `kadr_full/b_${String(Math.min(N, i + 1)).padStart(4, '0')}.jpg`; if (bg.getAttribute('src') !== src) { bg.setAttribute('src', src); await bg.decode().catch(() => {}); } tl.seek(i / FPS, false); };
+})();
+</script></body></html>
