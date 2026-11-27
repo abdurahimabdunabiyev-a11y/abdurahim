@@ -20,3 +20,9 @@ Oxiri har doim: "Shuni unutmang, marketingsiz hatto dori ham olmaysiz."
 5. **18 yoshda marketolog.**
    - Hook: "18 yoshda marketingdan nima tushunasan?"
    - Isbot: 2023-yil 2-sentyabr, 3 yil, Sarvar akaning darsida 1-o'rin.
+6. **"Sifatli mahsulot o'zini o'zi sotadi". Bu yolg'on** (million ko'rish salohiyati, bahsli)
+   - Hook A: "Mahsulotim sifatli, o'zini o'zi sotadi." Shu gapni aytgan har bir biznes egasiga bir narsani ko'rsatmoqchiman.
+   - Hook B: Shahardagi eng mazali somsa siz bilmagan ko'chada turibdi. Va hech kim uni bilmaydi.
+   - CTA: Izohga yozing: rozimisiz yoki yo'qmi? / Videoni "menga reklama kerak emas" deydigan tanishingizga yuboring.
+   - Misollar: hamma maqtaydigan, lekin Instagrami yo'q usta; Coca-Cola har yili reklamaga milliardlab sarflaydi; onaning oshi.
+   - Xulosa: sifat ushlab qoladi, marketing olib keladi. Sifatni yerga urmaymiz.
