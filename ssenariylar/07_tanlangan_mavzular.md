@@ -26,3 +26,11 @@ Oxiri har doim: "Shuni unutmang, marketingsiz hatto dori ham olmaysiz."
    - CTA: Izohga yozing: rozimisiz yoki yo'qmi? / Videoni "menga reklama kerak emas" deydigan tanishingizga yuboring.
    - Misollar: hamma maqtaydigan, lekin Instagrami yo'q usta; Coca-Cola har yili reklamaga milliardlab sarflaydi; onaning oshi.
    - Xulosa: sifat ushlab qoladi, marketing olib keladi. Sifatni yerga urmaymiz.
+7. **3 ta taklif, lekin maqsad bittasini sotish** (aldovchi variant)
+   - Hook: Kinoteatrda popkorn 3 xil. Siz qaysi birini olasiz? Javobingizni allaqachon bilaman.
+   - Misollar: popkorn (narxni syomkadan oldin tekshirish), mobil tariflar "eng ommabop", Start/Optimal/Premium paketlar.
+   - Xulosa: 3 ta narx bilan savol "olamanmi" dan "qaysi birini olaman" ga o'zgaradi.
+8. **"Marketing pulini oqlamaydi"** (bahsli; 6-mavzu bilan misollar takrorlanmasin)
+   - Hook: "Marketing pulini oqlamaydi." Unda nega eng boy kompaniyalar har oy unga millionlab sarflaydi?
+   - Misollar: dehqon urug'ni qishda eksa; Apple; mobil operatorlar hamma joyda.
+   - Xulosa: noto'g'ri qilingan marketing pulini oqlamaydi. Marketing bu investitsiya.
