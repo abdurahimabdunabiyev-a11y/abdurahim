@@ -124,3 +124,18 @@ Sabab: Abdurahim hali o'z uslubini topmagan, biroz mashhur bo'lgach olinadi.
 > Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
 
 **Ekranda:** Armstrong 🌕, Gagarin 🚀, Burj Xalifa 🏙, har birida "2-chi: ???"; "+20 daqiqa"; "ASL ✓ / KOPIYA ✗"; qozon animatsiyasi.
+
+## Bitta reklama, bitta gap (tasdiqlandi, 28-noyabr; rejada 7-video, 15-dekabr)
+
+~45 s.
+
+> Bilasizmi, nega reklamangizni hech kim eslab qolmaydi? Chunki bitta reklamaga hammasini tiqasiz.
+> (ekranda 5 ta rasm tez-tez chiqadi) Qani, qaysi birini eslab qoldingiz?
+> (faqat kofe qoladi) Endi bittasi: kofe. Buni ertaga ham eslaysiz. Agar "Tongni achchiq qahva bilan boshlang" desam, har ertalab shu kofe esingizga tushadi.
+> Katta brendlar buni yaxshi biladi. Coca-Cola hech qachon bitta reklamada "bayramda ham, to'yda ham, ertalab ham kola iching" demaydi.
+> Har reklamada bitta sahna ko'rsatadi: oila osh yeb o'tiribdi, kola shunchaki dasturxonda turibdi. Shuning uchun bugun hayotimizdagi har bir dasturxonda kola bor.
+> Siz ham bitta videoda bitta narsani ayting va uni hayotdagi bitta holatga bog'lang.
+> Izohga yozing: sizning mahsulotingiz qaysi holatga bog'lanadi?
+> Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
+
+**Ekranda:** 5 rasm × 0.5 s, "🤔?"; yolg'iz kofe "☀️ tong"; "bayram + to'y + ertalab" ✗; oilaviy osh va kola; "1 REKLAMA = 1 SAHNA".
