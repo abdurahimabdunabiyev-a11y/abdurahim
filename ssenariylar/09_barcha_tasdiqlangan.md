@@ -129,3 +129,20 @@ Sabab: Abdurahim hali o'z uslubini topmagan, biroz mashhur bo'lgach olinadi.
 > Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
 
 **Ekranda:** Armstrong 🌕, Gagarin 🚀, Burj Xalifa 🏙, har birida "2-chi: ???"; "+20 daqiqa"; "ASL ✓ / KOPIYA ✗"; qozon animatsiyasi.
+
+## Tanlov paradoksi (oxirgi variant, 28-noyabr)
+
+**Lokatsiya:** do'kondagi suv javoni oldida. ~35 s.
+
+> Sizda ham hayotingizdagi eng muhim qarorlar aynan mana shu yerda bo'ladimi?
+> Men shaxsan o'zim shunaqaman. Do'konga kelib, kamida 5 minut turaman. Qaysini olsam ekan, uni olaymi, buni olaymi deb. Oxiri baribir o'zimga tanish bo'lgan suvni olaman.
+> Eng qizig'i, bu faqat menda emas, ko'pchilikda bor ekan. Olimlar buni sinab ham ko'rishgan.
+> Bir kuni do'konga 24 xil murabbo qo'yishgan. Odamlar ko'p to'xtagan, lekin 100 kishidan atigi 3 tasi sotib olgan.
+> Boshqa kuni 6 xil qo'yishgan. To'xtaganlar kamroq bo'lgan, lekin 30 tasi sotib olgan.
+> Ya'ni taklif qancha ko'p bo'lsa, odam tanlashga shuncha qiynaladi va oxiri hech narsa olmaydi.
+> Xulosa oddiy: ko'p taklif odamni to'xtatadi, kam taklif esa sotadi.
+> Izohda doim bir soat tanlaydigan do'stingizni belgilab qo'ying.
+> [yangi shior]
+
+**Ekranda:** taymer "05:00"; 24 murabbo "ko'p to'xtadi 👀 → 3 ta oldi"; 6 murabbo "kam to'xtadi → 30 ta oldi ✅"; "KO'P TAKLIF TO'XTATADI. KAM TAKLIF SOTADI."
+**Fakt:** Iyengar va Lepper, 2000: 24 xilda 60% to'xtagan, 3% olgan; 6 xilda 40% to'xtagan, 30% olgan.
