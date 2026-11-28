@@ -146,3 +146,21 @@ Sabab: Abdurahim hali o'z uslubini topmagan, biroz mashhur bo'lgach olinadi.
 
 **Ekranda:** taymer "05:00"; 24 murabbo "ko'p to'xtadi 👀 → 3 ta oldi"; 6 murabbo "kam to'xtadi → 30 ta oldi ✅"; "KO'P TAKLIF TO'XTATADI. KAM TAKLIF SOTADI."
 **Fakt:** Iyengar va Lepper, 2000: 24 xilda 60% to'xtagan, 3% olgan; 6 xilda 40% to'xtagan, 30% olgan.
+
+## Reyting (BIRLASHTIRILGAN, 28-noyabr) — ikkala eski reyting o'rniga
+
+Tabiatda o'tirib. Savol kadr ortidan, Abdurahim o'rin va qisqa javob. ~60 s.
+
+Boshida: Instagramda biznesni nima o'stiradi, nima o'ldiradi? 1 eng zo'ri, 10 eng yomoni.
+- Sotib olingan obunachilar — 10
+- Konkurs va giveaway — 9
+- Direct'ga 5 daqiqada javob — 2
+- "Narxi Direct'da" — 8
+- Izohga kalit so'z va PDF — 3
+- O'z xatolaringizni aytish — 4
+- Boshqa blogerlarni tanqid qilish — 10
+- Mijozning o'z videosi bilan natija — 3
+- Bepul foydali video — 2
+- Eski mijozga qayta sotish — 1
+- Biznes egasining yuzi — 1
+Oxirida: Siz qaysi birini qilyapsiz? Izohga yozing. [yangi shior]
