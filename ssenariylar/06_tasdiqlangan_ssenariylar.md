@@ -108,3 +108,19 @@
 > Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
 
 **Ekranda:** "⭐⭐⭐⭐⭐, lekin 0 mijoz"; "⭐⭐⭐, lekin navbat bor"; shior ustidan qizil ✗; Coca-Cola va "milliardlab $"; "SIFAT = USHLAYDI, MARKETING = OLIB KELADI". Joy nomlari aytilmaydi.
+
+## Birinchilarni eslaymiz (tayyor, lekin KEYINGA QOLDIRILDI, 28-noyabr)
+
+Sabab: Abdurahim hali o'z uslubini topmagan, biroz mashhur bo'lgach olinadi.
+
+> (Oyni ko'rsatib) Oyga birinchi kim chiqqan? Armstrong. Koinotga-chi? Gagarin. Dunyodagi eng baland bino? Burj Xalifa.
+> Ikkinchi bo'lganlarni-chi?
+> (pauza) Vaholanki, Armstrongdan 20 daqiqa keyin srazi boshqa odam ham Oyga chiqqan. Uni hech kim eslamaydi.
+> Biz har doim birinchi bo'lganlarni va o'z uslubiga ega insonlarni eslab qolamiz.
+> Instagramda ham shunday. O'z uslubingizda chiqsangiz, tezroq esda qolasiz. Kimningdir kopiyasi bo'lsangiz, sizni hech kim eslamaydi.
+> Bu bilan "ideya o'g'irlamang" demoqchi emasman. Boshqalardan ideya oling, hammasini bitta qozonga soling, o'zingizdan ham qo'shib aralashtiring. Shunda yangicha nimadir paydo bo'ladi.
+> Masalan, men har bir videomni bitta gap bilan tugataman. Bu mening uslubim.
+> Izohga yozing: Instagramda o'z uslubi bor kimni bilasiz?
+> Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
+
+**Ekranda:** Armstrong 🌕, Gagarin 🚀, Burj Xalifa 🏙, har birida "2-chi: ???"; "+20 daqiqa"; "ASL ✓ / KOPIYA ✗"; qozon animatsiyasi.
