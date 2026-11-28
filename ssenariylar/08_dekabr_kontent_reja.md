@@ -5,7 +5,7 @@ Qoida: keng tarqaladigan → foydali (ekspertlik) → sotadigan (shaxsiy brend).
 
 | № | Sana | Mavzu | Vazifasi | Holat |
 |---|---|---|---|---|
-| 1 | 1-dek, Se | Shior ("Sendachi, Zizi bormi?") | Imzo gapni tanishtiradi, nostalgiya | Ssenariy tayyor, 1-syomka |
+| 1 | 1-dek, Se | BO'SH (Shior olib tashlandi) | — | Yangi mavzu kerak |
 | 2 | 3-dek, Pa | Yegan og'iz uyalar | Keng tarqalish | Ssenariy tayyor, 1-syomka |
 | 3 | 5-dek, Sh | Bozorda sotuvchi nega avval qimmat aytadi | Keng tarqalish | Ssenariy tayyor, 1-syomka |
 | 4 | 8-dek, Se | Poda effekti (bozor navbati) | Keng tarqalish | ✅ Tasdiqlandi |
@@ -19,10 +19,11 @@ Qoida: keng tarqaladigan → foydali (ekspertlik) → sotadigan (shaxsiy brend).
 | 12 | 26-dek, Sh | Kimdir 100$ oladi, kimdir 10$ | Shaxsiy brendni sotish | Ssenariy yozish kerak |
 
 ## Ishlab chiqarish grafigi
-- 28-noyabr: 1-syomka (Shior, Yegan og'iz uyalar, Bozor, Reyting)
+- 28-noyabr: 1-syomka (Yegan og'iz uyalar, Bozor, Reyting)
 - 30-noyabrgacha: 8 ta ssenariy yoziladi va tasdiqlanadi
 - 2–3-dekabr: 2-syomka (8 ta video)
 - Montaj: har bir video chiqishidan kamida 2 kun oldin tayyor
 
 ## Keyinga qoldirilgan
 - Birinchilarni eslaymiz (ssenariy tayyor, uslub topilgach olinadi)
+- Shior ("Sendachi, Zizi bormi?") — rad etildi, 28-noyabr

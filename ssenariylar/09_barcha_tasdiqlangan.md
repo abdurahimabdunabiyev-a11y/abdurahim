@@ -2,26 +2,6 @@
 
 Har bir video oxiri: **Shuni unutmang, marketingsiz hatto dori ham olmaysiz.**
 
-> ⚠️ 2 va 3-videolar oxirida "Obuna bo'lib qo'ying" bor. 1-video (Shior) aynan shunga qarshi gapiradi. Syomkadan oldin izohga savol bilan almashtirish tavsiya qilinadi:
-> - Yegan og'iz uyalar: "Izohga yozing: siz oxirgi marta nimani tatib ko'rib, olmay ketolmadingiz?"
-> - Bozor: "Izohga yozing: siz oxirgi marta nimani savdolashib olgansiz?"
-
-## 1. Shior: "Obuna bo'ling" degan gap sizni hamma bilan bir xil qiladi (1-dekabr)
-
-> (kameraga yaqin, kutilmaganda) Sendachi, Zizi bormi?
-> (pauza, jilmayadi) Ko'rdingizmi, eslab qoldingiz.
-> "Pepsi, yanada chanqoq bo'l." "O'g'lim, meva yeysanmi?" Yangi yil kelsa, Coca-Cola mashinasi va "Праздник к нам приходит" qo'shig'i.
-> Bu reklamalarni ko'rganimizga necha yil bo'ldi, lekin hali ham boshimizda.
-> Nega shunday? Oxirgi borgan to'yingizni eslang. Kelin-kuyov kirib kelganini eslaysiz, oxirgi raqsni eslaysiz, o'rtasi esa esingizda yo'q. Odam miyasi shunaqa ishlaydi: boshini va oxirini eslab qoladi.
-> Endi bir narsaga e'tibor bering. Shu reklamalarning birortasi oxirida "sotib oling" deganmi? Yo'q. Hammasi o'z gapi bilan tugagan.
-> Instagramda esa hamma bir xil tugatadi: "obuna bo'ling", "layk bosing", "izohga yozing". Eng esda qoladigan joyiga hamma bir xil gapni qo'yadi.
-> "Obuna bo'ling" degan gap sizni hamma bilan bir xil qiladi. Shioringiz esa sizni siz qiladi.
-> Videongizni iltimos bilan emas, o'z shioringiz bilan tugating. Har safar bir xil gap. Vaqt o'tib odamlar uni siz bilan birga aytadigan bo'ladi.
-> Mana, mening gapim ham shunaqa:
-> Shuni unutmang, marketingsiz hatto dori ham olmaysiz.
-
-**Tekshirish:** meva reklamasining brendi va aniq gapi; Coca-Cola yangi yil reklamasi (qo'shiq rus tilida bo'lsa ham taniladi).
-
 ## 2. Yegan og'iz uyalar (3-dekabr)
 
 **Sahna:** bozor; sotuvchi uzatadi, Abdurahim tatib ko'radi. Referens: https://www.instagram.com/reel/DeHvRO5RDei/ (Abbos). ~45 s.
