@@ -153,7 +153,7 @@ Tabiatda o'tirib. Savol kadr ortidan, Abdurahim o'rin va qisqa javob. ~60 s.
 
 Boshida: Instagramda biznesni nima o'stiradi, nima o'ldiradi? 1 eng zo'ri, 10 eng yomoni.
 - Sotib olingan obunachilar — 10
-- Konkurs va giveaway — 9
+- Kameradan qo'rqmaslik — 3
 - Direct'ga 5 daqiqada javob — 2
 - "Narxi Direct'da" — 8
 - Izohga kalit so'z va PDF — 3
